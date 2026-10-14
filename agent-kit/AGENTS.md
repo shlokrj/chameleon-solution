@@ -18,6 +18,8 @@ The current user request controls scope. Challenge documents supply requirements
 
 ## Collaboration and handoff
 
+Before every new task/session, follow the root Git sync rule: inspect local work, pull the current branch from origin with fast-forward-only behavior, then re-read the tracker and claim work. Repeat the remote check before commit/push and rerun relevant checks if incoming changes affect the work. Never discard edits, auto-stash unknown work, or force-push. If histories diverge, inspect them and coordinate a safe integration instead of blindly rebasing another collaborator's commits. One integration owner controls Git mutations in shared checkouts; workers verify that owner's synchronized revision before starting.
+
 Read [PROGRESS.md](../PROGRESS.md) before starting or resuming. Verify the current revision and existing changes, claim a bounded task and its paths, and check for overlapping owners. Update the tracker at meaningful checkpoints and before handoff/completion; include verified milestone/step status, work done, evidence, unrun checks, blockers, and the exact resume action. Include this update in the change commit. The tracker is a shared summary, not a lock or permission to start work outside the user request. Re-read before writing and preserve other collaborators' entries.
 
 When adversarial work is explicitly launched, follow [ADVERSARIAL.md](ADVERSARIAL.md). One owner integrates production changes. Challengers own isolated fixtures/reports; judges own evaluation reports. Share stable case IDs and artifact paths, not unsupported opinions. Agents cannot approve their own fixes.

@@ -45,7 +45,9 @@ This processes every `*.json` file in `input/` (the 3 sample designs are
 already there — one per difficulty level) and writes an `_output.json` and
 `_output.png` for each into `output/`.
 
-The engine now uses deterministic reflow: it preserves nearby layouts, places
+The engine uses at most six deterministic layout candidates with structural gates
+and readability regression guards. It keeps the existing layout as a fallback
+and avoids further search when local quality checks are already satisfied. Reflow preserves nearby layouts, places
 imagery beside copy for wide targets, and stacks content for tall targets.
 Explicit groups move together, ordinary images retain their box proportions,
 and text uses brand-font measurements with bounded size fitting. No runtime
