@@ -2,6 +2,7 @@
 from copy import deepcopy
 import math
 from engine.typography import fit_text, text_extent
+from engine.relationships import support_pairs
 
 
 def bounds(elements):
@@ -21,7 +22,9 @@ def place(unit, slot):
     """Uniformly transform the whole unit so relationships/ratios survive."""
     left, top, right, bottom = bounds(unit)
     x, y, w, h = slot
-    scale = min(w / max(right-left, 1e-9), h / max(bottom-top, 1e-9))
+    ratios = [slot_size/source_size for slot_size, source_size in
+              ((w, right-left), (h, bottom-top)) if source_size > 0]
+    scale = min(ratios) if ratios else 1.0
     dx, dy = x+(w-(right-left)*scale)/2, y+(h-(bottom-top)*scale)/2
     for el in unit:
         el['x'] = dx + (el['x']-left)*scale
@@ -93,6 +96,9 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
     for index, el in enumerate(elements):
         key = ('group', el['group_id']) if el.get('group_id') is not None else ('single', index)
         grouped.setdefault(key, []).append(el)
+    for panel_index, text_index in support_pairs(source):
+        # Internal grouping only: preserve original group_id/metadata exactly.
+        grouped[('single', panel_index)].extend(grouped.pop(('single', text_index)))
     units = list(grouped.values())
     foreground, decorative = [], []
     min_foreground_z = min((e.get('z_index', 0) for e in elements if e['type'] == 'text'), default=0)

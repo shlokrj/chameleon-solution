@@ -1,0 +1,152 @@
+{
+  "canvas": {
+    "width": 900,
+    "height": 300
+  },
+  "elements": [
+    {
+      "id": "0",
+      "type": "text",
+      "x": 20,
+      "y": 12,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 0"
+    },
+    {
+      "id": "1",
+      "type": "text",
+      "x": 310,
+      "y": 12,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 1"
+    },
+    {
+      "id": "2",
+      "type": "text",
+      "x": 600,
+      "y": 12,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 2"
+    },
+    {
+      "id": "3",
+      "type": "text",
+      "x": 20,
+      "y": 82,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 3"
+    },
+    {
+      "id": "4",
+      "type": "text",
+      "x": 310,
+      "y": 82,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 4"
+    },
+    {
+      "id": "5",
+      "type": "text",
+      "x": 600,
+      "y": 82,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 5"
+    },
+    {
+      "id": "6",
+      "type": "text",
+      "x": 20,
+      "y": 152,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 6"
+    },
+    {
+      "id": "7",
+      "type": "text",
+      "x": 310,
+      "y": 152,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 7"
+    },
+    {
+      "id": "8",
+      "type": "text",
+      "x": 600,
+      "y": 152,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 8"
+    },
+    {
+      "id": "9",
+      "type": "text",
+      "x": 20,
+      "y": 222,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 9"
+    },
+    {
+      "id": "10",
+      "type": "text",
+      "x": 310,
+      "y": 222,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 10"
+    },
+    {
+      "id": "11",
+      "type": "text",
+      "x": 600,
+      "y": 222,
+      "width": 270,
+      "height": 60,
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(0,0,0,1)",
+      "content": "Label 11"
+    }
+  ]
+}

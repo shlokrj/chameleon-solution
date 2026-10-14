@@ -1,0 +1,38 @@
+{
+  "source": {
+    "canvas": {
+      "width": 600,
+      "height": 600
+    },
+    "elements": [
+      {
+        "id": "photo",
+        "type": "image",
+        "x": 80,
+        "y": 180,
+        "width": 440,
+        "height": 160,
+        "asset_id": "solstice_bg_gradient.png",
+        "fit": "cover",
+        "z_index": 1
+      },
+      {
+        "id": "label",
+        "type": "text",
+        "x": 110,
+        "y": 220,
+        "width": 360,
+        "height": 70,
+        "content": "EVENING EDITION",
+        "font_family": "Solstice Sans",
+        "font_size": 28,
+        "color": "rgba(255,255,255,1)",
+        "z_index": 2
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 900,
+    "height": 300
+  }
+}

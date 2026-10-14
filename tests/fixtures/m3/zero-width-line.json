@@ -1,0 +1,26 @@
+{
+  "source": {
+    "canvas": {
+      "width": 400,
+      "height": 400
+    },
+    "elements": [
+      {
+        "id": "rule",
+        "type": "shape",
+        "x": 200,
+        "y": 100,
+        "width": 0,
+        "height": 200,
+        "shape_type": "line",
+        "fill_color": "rgba(0,0,0,1)",
+        "stroke_color": "rgba(0,0,0,1)",
+        "stroke_width": 4
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 400,
+    "height": 400
+  }
+}

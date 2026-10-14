@@ -1,0 +1,38 @@
+{
+  "source": {
+    "canvas": {
+      "width": 600,
+      "height": 600
+    },
+    "elements": [
+      {
+        "id": "panel",
+        "type": "shape",
+        "x": 90,
+        "y": 180,
+        "width": 420,
+        "height": 130,
+        "shape_type": "rectangle",
+        "fill_color": "rgba(0,0,0,1)",
+        "z_index": 1
+      },
+      {
+        "id": "copy",
+        "type": "text",
+        "x": 110,
+        "y": 210,
+        "width": 380,
+        "height": 70,
+        "content": "SOLSTICE",
+        "font_family": "Solstice Sans",
+        "font_size": 40,
+        "color": "rgba(255,255,255,1)",
+        "z_index": 2
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 900,
+    "height": 300
+  }
+}

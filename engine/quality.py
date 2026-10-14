@@ -3,6 +3,7 @@ import math
 from collections import Counter
 from engine.layout import bounds
 from engine.typography import text_extent
+from engine.relationships import contains, support_pairs
 
 MUTABLE = {'x', 'y', 'width', 'height', 'font_size'}
 READABLE_FONT_PX = 12.0  # local diagnostic threshold, not a contest requirement
@@ -78,11 +79,18 @@ def quality(source, design):
                 continue
             # Preserve already-intentional layering; score only increased overlap.
             collisions += max(0, overlap(a, b)-overlap(old[a['id']], old[b['id']])-0.01)
+    by_id = {e['id']: e for e in design['elements']}
+    support_violations = []
+    for panel_index, text_index in support_pairs(source):
+        panel_id = source['elements'][panel_index]['id']
+        text_id = source['elements'][text_index]['id']
+        if not contains(by_id[panel_id], by_id[text_id]):
+            support_violations.append(text_id)
     deficit = sum(deficits)/max(1, len(deficits))
-    return {'overflow_ids': overflow, 'small_text_ids': tiny,
+    return {'support_violations': support_violations, 'overflow_ids': overflow, 'small_text_ids': tiny,
             'minimum_font_size': min((e['font_size'] for e in text), default=None),
             'readability_deficit': deficit, 'hierarchy_inversion': inversion,
-            'new_overlap': collisions, 'loss': deficit + 0.1*inversion + collisions}
+            'new_overlap': collisions, 'loss': deficit + 0.1*inversion + collisions + len(support_violations)}
 
 
 def regression_reasons(source, baseline, candidate):
