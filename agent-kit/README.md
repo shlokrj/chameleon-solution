@@ -8,7 +8,8 @@ A working brief for building a robust, efficient design-retargeting engine. This
 2. Check [SOURCES.md](SOURCES.md) for source conflicts and unresolved organizer details.
 3. Implement in milestones from [IMPLEMENTATION.md](IMPLEMENTATION.md).
 4. Validate with [EVALUATION.md](EVALUATION.md); use [ADVERSARIAL.md](ADVERSARIAL.md) for model-versus-model rounds.
-5. Record evidence using [EXPERIMENTS.md](EXPERIMENTS.md).
+5. Use [MODEL_NOTES.md](MODEL_NOTES.md) when comparing models, selecting failures to fix, or deciding whether added complexity earns its cost.
+6. Record evidence using [EXPERIMENTS.md](EXPERIMENTS.md).
 
 Load only the documents relevant to the current milestone. The schema and original rules remain in the repository; this kit deliberately does not duplicate them field by field.
 
@@ -21,7 +22,7 @@ These are project-local skill source files. They are not automatically installed
 
 ## Launch prompt
 
-> Work on the Chameleon engine in this repository. Read AGENTS.md and agent-kit/README.md, then follow the linked spec and implementation skill. Establish a measured baseline before changing the algorithm. Implement and validate one milestone at a time. Optimize robustness and quality first, then reduce measured runtime and resource cost. Preserve source assets, text, fonts, element identity, and grouping. Report evidence and unresolved limitations. Do not commit or submit.
+> Work on the Chameleon engine in this repository. Read AGENTS.md and agent-kit/README.md, then follow the linked spec and implementation skill. Establish a measured baseline before changing the algorithm. Implement and validate one milestone at a time. Optimize robustness and quality first, then reduce measured runtime and resource cost. Preserve source assets, text, fonts, element identity, and grouping. Report evidence and unresolved limitations. Follow the repository commit-and-push policy after validating each completed requested change. Do not submit to the competition.
 
 To explicitly enable adversarial collaboration, append:
 

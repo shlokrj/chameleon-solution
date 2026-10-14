@@ -26,4 +26,4 @@ Every handoff states the revision, changed paths, tests actually run, reproduced
 
 Use the release checklist in [EVALUATION.md](EVALUATION.md). A successful starter self-check is insufficient. No claims of official scores, hidden-set success, universal feasibility, or visual correctness without evidence.
 
-Never co-author commits. If the user requests a commit, use their configured identity alone, a lowercase Conventional Commit subject, and only intended paths. Otherwise leave changes uncommitted.
+The user has authorized committing and pushing every completed requested change or feature. After relevant checks, stage only intended paths, use their configured identity alone and a lowercase Conventional Commit subject, then push the current branch to origin. Never co-author commits. A later instruction to leave work uncommitted takes precedence. Do not force-push; if the push is rejected, inspect remote changes and preserve both sets of work before retrying. Report the commit and push outcome honestly.

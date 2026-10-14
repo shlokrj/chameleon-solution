@@ -12,6 +12,8 @@ Purpose: use disagreement to discover reproducible failures, not to reward confi
 
 Prefer different available model families for builder and challenger, with actual model/version recorded. If only one model is available, use isolated sessions/contexts and disclose that this is role separation, not cross-model validation. Swap roles in a later round to reduce anchoring. One integration owner prevents conflicting edits. Model output is a proposal, never proof.
 
+Use [MODEL_NOTES.md](MODEL_NOTES.md) for fair comparisons, failure triage, and improvement decisions.
+
 ## Default development budget (local policy, not competition rules)
 
 At most 3 rounds per cycle, 6 proposed cases per challenger per round, and 2 repair attempts per accepted failure. Begin with one builder, one challenger, and one judge only if those resources are available. Record actual time/token cost when exposed by tools; do not invent it. Reduce parallel work if coordination costs exceed progress. Continue beyond this budget only under a new explicit work scope.
