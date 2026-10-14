@@ -1,75 +1,149 @@
-"""
-THIS IS THE FILE YOU IMPLEMENT.
-
-Everything else in this repo (input loading, output writing, rendering,
-the Dockerfile) is plumbing so you can focus on exactly one function:
-`resize()`. See RULES.md and the design schema for the full contract.
-"""
-
-from typing import Any
+"""Deterministic retargeting with explicit groups and font-aware text fitting."""
+from copy import deepcopy
+import math
+from engine.typography import fit_text, text_extent
 
 
-def resize(source: dict[str, Any], target_canvas: dict[str, Any]) -> dict[str, Any]:
-    """
-    Args:
-        source: {"canvas": {"width": int, "height": int}, "elements": [...]}
-                 — the design at its original size. See
-                 chameleon_design_schema_v0.9.json for the full element spec
-                 (text / image / shape, position, size, rotation, opacity,
-                 z_index, group_id, and type-specific fields).
-        target_canvas: {"width": int, "height": int} — the shape you're
-                 resizing into.
+def bounds(elements):
+    """Include unrotated boxes and rotated extents under the strict contract."""
+    boxes = []
+    for el in elements:
+        x, y, w, h = (el[k] for k in ('x', 'y', 'width', 'height'))
+        angle = math.radians(el.get('rotation', 0))
+        rw = abs(w * math.cos(angle)) + abs(h * math.sin(angle))
+        rh = abs(w * math.sin(angle)) + abs(h * math.cos(angle))
+        boxes.extend([(x, y, x+w, y+h), (x+(w-rw)/2, y+(h-rh)/2, x+(w+rw)/2, y+(h+rh)/2)])
+    return (min(b[0] for b in boxes), min(b[1] for b in boxes),
+            max(b[2] for b in boxes), max(b[3] for b in boxes))
 
-    Returns:
-        A design dict with the SAME shape as `source`:
-        {"canvas": target_canvas, "elements": [...]}
 
-        Hard requirements (see RULES.md for the full list):
-        - Every element `id` in `source` must appear exactly once in your
-          output. Do not add, remove, or invent elements.
-        - Do not regenerate or redraw any asset's pixel content — you are
-          repositioning and resizing the elements you were given, nothing
-          more. This is a disqualifying rule, not a style preference.
-        - Non-background image elements should be kept in proportion
-          (matching the source aspect ratio within ~5%) unless they are a
-          full-bleed / `fit: "cover"` element, which is expected to crop.
-        - `font_size` may change to help text fit. `font_family` and
-          `content` should not, for this stage of scoring (see RULES.md,
-          "Adaptive typography and copy").
-        - Nothing should end up outside `target_canvas`'s bounds.
+def place(unit, slot):
+    """Uniformly transform the whole unit so relationships/ratios survive."""
+    left, top, right, bottom = bounds(unit)
+    x, y, w, h = slot
+    scale = min(w / max(right-left, 1e-9), h / max(bottom-top, 1e-9))
+    dx, dy = x+(w-(right-left)*scale)/2, y+(h-(bottom-top)*scale)/2
+    for el in unit:
+        el['x'] = dx + (el['x']-left)*scale
+        el['y'] = dy + (el['y']-top)*scale
+        el['width'] *= scale
+        el['height'] *= scale
+        if el['type'] == 'text':
+            fit_text(el, el['font_size']*scale)
 
-    This is where your actual approach goes: constraint solving, a learned
-    layout model, heuristics, whatever you choose. Latency is not a scoring
-    concern (see RULES.md) — spend your effort on quality, not speed.
-    """
 
-    # ------------------------------------------------------------------
-    # Naive baseline so this file runs out of the box. This is a uniform
-    # stretch — literally the thing the brief tells you NOT to do ("a
-    # naive program stretches the picture; a good one moves the
-    # furniture"). It's here so `python -m engine.main` produces valid,
-    # schema-correct output on day one. Replace the body of this function;
-    # do not just tune these three lines.
-    # ------------------------------------------------------------------
-    scale_x = target_canvas["width"] / source["canvas"]["width"]
-    scale_y = target_canvas["height"] / source["canvas"]["height"]
+def stack(units, slot, gap, horizontal=False):
+    if not units:
+        return
+    x, y, w, h = slot
+    gap = min(gap, (w if horizontal else h) / max(1, 2*len(units)))
+    sizes = []
+    for unit in units:
+        a, b, c, d = bounds(unit)
+        sizes.append(max(1e-6, (c-a)/max(d-b, 1e-6) if horizontal else (d-b)/max(c-a, 1e-6)))
+    available = max(0, (w if horizontal else h) - gap*(len(units)-1))
+    offset = 0
+    for unit, size in zip(units, sizes):
+        extent = available*size/sum(sizes)
+        place(unit, (x+offset, y, extent, h) if horizontal else (x, y+offset, w, extent))
+        offset += extent+gap
 
-    out_elements = []
-    for el in source["elements"]:
-        el = dict(el)  # shallow copy — don't mutate the input
-        el["x"] = el["x"] * scale_x
-        el["y"] = el["y"] * scale_y
-        el["width"] = el["width"] * scale_x
-        el["height"] = el["height"] * scale_y
-        if el["type"] == "text":
-            # font_size scaling isn't required to be uniform — this is
-            # just a starting point. Floored at 1px: the schema requires
-            # font_size >= 1, and an extreme downscale (e.g. a tall poster
-            # squeezed into a short banner) can otherwise compute < 1.
-            el["font_size"] = max(1.0, el["font_size"] * min(scale_x, scale_y))
-        out_elements.append(el)
 
-    return {
-        "canvas": {"width": target_canvas["width"], "height": target_canvas["height"]},
-        "elements": out_elements,
-    }
+def text_stack(units, slot, gap, upper_scale):
+    if not units:
+        return
+    x, y, width, height = slot
+    # These units are singleton text boxes. Preserve their relative type sizes.
+    elements = [u[0] for u in units]
+    gap = min(gap, height / max(1, 2*len(elements)))
+    def measurements(scale):
+        return [text_extent(el, max(1, el['font_size']*scale), width) for el in elements]
+    low, high = 0.0, upper_scale
+    for _ in range(18):
+        scale = (low+high)/2
+        extents = measurements(scale)
+        fits = sum(e[1] for e in extents)+gap*(len(elements)-1) <= height
+        fits &= all(e[0] <= width and (el.get('max_lines') is None or e[2] <= el['max_lines']) for el, e in zip(elements, extents))
+        if fits:
+            low = scale
+        else:
+            high = scale
+    extents = measurements(low)
+    total = sum(e[1] for e in extents)
+    available = max(0, height-gap*(len(elements)-1))
+    compression = min(1, available/max(total, 1e-9))
+    offset = max(0, (available-total)/2)
+    for el, (_, eh, _) in zip(elements, extents):
+        el.update(x=x, y=y+offset, width=width, height=eh*compression)
+        fit_text(el, max(1, el['font_size']*low))
+        # A rotated singleton needs its complete bounding box inside its slot.
+        if el.get('rotation', 0):
+            place([el], (x, y+offset, width, eh*compression))
+        offset += eh*compression+gap
+
+
+def resize(source, target_canvas):
+    result = deepcopy(source)
+    result['canvas'] = deepcopy(target_canvas)
+    sw, sh = source['canvas']['width'], source['canvas']['height']
+    tw, th = target_canvas['width'], target_canvas['height']
+    sx, sy = tw/sw, th/sh
+    elements = result['elements']
+    grouped = {}
+    for index, el in enumerate(elements):
+        key = ('group', el['group_id']) if el.get('group_id') is not None else ('single', index)
+        grouped.setdefault(key, []).append(el)
+    units = list(grouped.values())
+    foreground, decorative = [], []
+    min_foreground_z = min((e.get('z_index', 0) for e in elements if e['type'] == 'text'), default=0)
+    for unit in units:
+        el = unit[0]
+        is_single = len(unit) == 1
+        full_canvas = (el['x'] <= 0 and el['y'] <= 0 and el['x']+el['width'] >= sw and el['y']+el['height'] >= sh)
+        if is_single and full_canvas and ((el['type'] == 'image' and el.get('fit') == 'cover') or el['type'] == 'shape') and not el.get('rotation', 0):
+            el.update(x=0.0, y=0.0, width=float(tw), height=float(th))
+        elif is_single and el['type'] == 'shape' and el.get('group_id') is None and el.get('z_index', 0) < min_foreground_z:
+            decorative.append(unit)
+        else:
+            foreground.append(unit)
+    # Map decorative layers without interpreting metadata/IDs as instructions.
+    for unit in decorative:
+        el = unit[0]
+        w, h = el['width']*min(sx, sy), el['height']*min(sx, sy)
+        place(unit, (max(0, min(tw-w, el['x']*sx)), max(0, min(th-h, el['y']*sy)), min(w, tw), min(h, th)))
+    ratio_change = sx/sy
+    if 0.67 <= ratio_change <= 1.5:
+        for unit in foreground:
+            a, b, c, d = bounds(unit)
+            # Preserve normalized centers, but scale complete groups uniformly.
+            w, h = min(tw, (c-a)*min(sx, sy)), min(th, (d-b)*min(sx, sy))
+            x = max(0, min(tw-w, (a+c)/2*sx-w/2))
+            y = max(0, min(th-h, (b+d)/2*sy-h/2))
+            place(unit, (x, y, w, h))
+        return result
+    foreground.sort(key=lambda u: (bounds(u)[1], bounds(u)[0], min(e.get('z_index', 0) for e in u)))
+    images = [u for u in foreground if all(e['type'] == 'image' for e in u)]
+    text = [u for u in foreground if len(u) == 1 and u[0]['type'] == 'text']
+    groups = [u for u in foreground if u not in images and u not in text]
+    margin = min(tw, th)*0.04
+    gap = min(tw, th)*0.025
+    x, y, w, h = margin, margin, tw-2*margin, th-2*margin
+    if tw >= th:
+        image_width = w*0.25 if images and (text or groups) else w if images else 0
+        stack(images, (x, y, image_width, h), gap)
+        if image_width and (text or groups):
+            x += image_width+gap
+            w -= image_width+gap
+        group_height = h*0.22 if groups and text else h if groups else 0
+        stack(groups, (x, y+h-group_height, w, group_height), gap, horizontal=True)
+        text_stack(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, max(sx, sy))
+    else:
+        image_height = h*0.36 if images and (text or groups) else h if images else 0
+        stack(images, (x, y, w, image_height), gap, horizontal=True)
+        if image_height and (text or groups):
+            y += image_height+gap
+            h -= image_height+gap
+        group_height = h*0.25 if groups and text else h if groups else 0
+        stack(groups, (x, y+h-group_height, w, group_height), gap)
+        text_stack(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, max(sx, sy))
+    return result

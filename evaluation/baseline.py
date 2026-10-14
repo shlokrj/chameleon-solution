@@ -3,6 +3,7 @@
 Run from repository root: python -m evaluation.baseline
 Artifacts are local/ignored; JSON report records validation failures honestly.
 """
+import argparse
 import copy
 import hashlib
 import importlib.metadata
@@ -12,7 +13,6 @@ import subprocess
 import time
 from pathlib import Path
 from jsonschema import Draft202012Validator
-from engine.resize import resize
 from evaluation.contract import check_contract
 
 
@@ -26,7 +26,10 @@ def main():
     # Direct import: failure must never silently produce a placeholder preview.
     from renderer.converter.convert import render_design_to_png
     import_seconds = time.perf_counter() - start
-    destination = Path('artifacts/baseline')
+    from engine.resize import resize
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path, default=Path('artifacts/baseline'))
+    destination = parser.parse_args().output
     destination.mkdir(parents=True, exist_ok=True)
     schema = json.loads(Path('chameleon_design_schema_v0.9.json').read_text())
     before = hashes()
@@ -35,6 +38,8 @@ def main():
               'renderer_import_seconds': import_seconds,
               'packages': {p: importlib.metadata.version(p) for p in ['Pillow', 'jsonschema', 'cr-renderer']},
               'renderer_origin': importlib.metadata.distribution('cr-renderer').read_text('direct_url.json'),
+              'code_hashes': {str(p): hashlib.sha256(p.read_bytes()).hexdigest()
+                              for folder in ['engine', 'evaluation'] for p in sorted(Path(folder).glob('*.py'))},
               'cases': []}
     for path in sorted(Path('input').glob('*.json')):
         task = json.loads(path.read_text())
@@ -61,7 +66,17 @@ def main():
             warm_pipeline.append(time.perf_counter() - began)
             if repeated != output or trial != untouched:
                 issues.append({'code': 'policy', 'detail': 'repeat differed or mutated input'})
-        report['cases'].append({'warm_engine_seconds': warm_engine, 'warm_pipeline_seconds': warm_pipeline, 'case': path.stem, 'engine_seconds': engine_seconds,
+        from engine.typography import text_extent
+        text_diagnostics = []
+        for el in output['elements']:
+            if el['type'] != 'text':
+                continue
+            measured_width, measured_height, lines = text_extent(el, el['font_size'], el['width'])
+            text_diagnostics.append({'id': el['id'], 'font_size': el['font_size'],
+                'measured_width': measured_width, 'measured_height': measured_height,
+                'box_width': el['width'], 'box_height': el['height'], 'lines': lines,
+                'estimated_overflow': measured_width > el['width']+1e-6 or measured_height > el['height']+1e-6})
+        report['cases'].append({'text_diagnostics': text_diagnostics, 'warm_engine_seconds': warm_engine, 'warm_pipeline_seconds': warm_pipeline, 'case': path.stem, 'engine_seconds': engine_seconds,
                                 'pipeline_seconds': pipeline_seconds, 'warnings': warnings, 'issues': issues})
     report['brand_files_unchanged'] = before == hashes()
     report['brand_hashes'] = before

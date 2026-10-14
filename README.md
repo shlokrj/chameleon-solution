@@ -1,8 +1,8 @@
 # CHAMELEON — starter repo
 
 This is the scaffolding for your engine. It handles input loading, output
-writing, rendering, and Docker packaging — so the only file you need to
-edit is **`engine/resize.py`**.
+writing, rendering, and Docker packaging — with layout logic in **`engine/resize.py`** and font fitting in
+**`engine/typography.py`**.
 
 ```
 input:  a task JSON (source design + target canvas)
@@ -45,12 +45,29 @@ This processes every `*.json` file in `input/` (the 3 sample designs are
 already there — one per difficulty level) and writes an `_output.json` and
 `_output.png` for each into `output/`.
 
-The included baseline is a **uniform stretch** — deliberately the wrong
-approach (see the main brief: "a naive program stretches the picture; a
-good one moves the furniture"). It's there so the pipeline runs on day
-one. Run it once, look at `output/*_output.png`, and you'll see exactly
-why it's not good enough — that's the point. Replace the body of
-`resize()` in `engine/resize.py`, not just its constants.
+The engine now uses deterministic reflow: it preserves nearby layouts, places
+imagery beside copy for wide targets, and stacks content for tall targets.
+Explicit groups move together, ordinary images retain their box proportions,
+and text uses brand-font measurements with bounded size fitting. No runtime
+model or network access is required by the layout algorithm.
+
+This is an initial heuristic, not a finished solution: dense extreme banners
+can still have very small text, and generalization and Docker validation are
+not yet established. See [PROGRESS.md](PROGRESS.md) for the current milestone.
+
+## Development checks
+
+```bash
+pip install -r requirements-dev.txt
+python -m unittest discover -s tests -v
+python -m evaluation.baseline --output artifacts/current
+```
+
+The evaluation command calls the real renderer directly, writes source/output
+previews and a report, and exits nonzero on structural findings. Text-fit
+measurements are estimates shared with the engine, not an independent visual
+oracle. Inspect the PNGs too. Generated artifacts stay local; milestone reports
+are tracked in `agent-kit/runs/`.
 
 ## What the self-check does (and doesn't do)
 

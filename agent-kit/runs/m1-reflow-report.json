@@ -1,0 +1,248 @@
+{
+  "revision": "ae6e2890fb5eca22e6f18fd0091560278c59eeb3",
+  "python": "3.12.13",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "renderer_import_seconds": 0.7851374170277268,
+  "packages": {
+    "Pillow": "12.3.0",
+    "jsonschema": "4.26.0",
+    "cr-renderer": "0.1.0"
+  },
+  "renderer_origin": "{\"url\": \"https://github.com/CyberAgentAILab/cr-renderer\", \"vcs_info\": {\"commit_id\": \"a17e1fb9a732959dd6c21ae168d5ee09d74bd64f\", \"vcs\": \"git\"}}",
+  "code_hashes": {
+    "engine/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "engine/main.py": "cb7d3518ba4ff5bfe07b5f8971aa9d34592dd51d77a1ae45cd2a140dbe72191d",
+    "engine/resize.py": "d375bec8ede7d38a4c61b4fc58af4d4b5bcf3c2262424814303c5110c9dd2525",
+    "engine/typography.py": "905dbfe8c6cd22843da2d01f2fa5349f0556b007dd254d32de51f6f42fc710dd",
+    "evaluation/__init__.py": "68a385587c07f45c868b5956d39f6c8ee5ce489a237ed42a4755d5a91fb2306c",
+    "evaluation/baseline.py": "b00832beb322e8fb51b6c534d21917c5c5abbe320de43694b74a3e4b8991ce29",
+    "evaluation/contract.py": "3750fbebe3698d55891f3076227650b6ad95dca116f3ac5ea052434d5a779392"
+  },
+  "cases": [
+    {
+      "text_diagnostics": [
+        {
+          "id": "headline",
+          "font_size": 60.0,
+          "measured_width": 448.5599937438965,
+          "measured_height": 76.7999267578125,
+          "box_width": 800.0,
+          "box_height": 160.0,
+          "lines": 1,
+          "estimated_overflow": false
+        },
+        {
+          "id": "cta",
+          "font_size": 30.0,
+          "measured_width": 343.5000014305115,
+          "measured_height": 42.000274658203125,
+          "box_width": 800.0,
+          "box_height": 60.0,
+          "lines": 1,
+          "estimated_overflow": false
+        }
+      ],
+      "warm_engine_seconds": [
+        0.00034666701685637236,
+        0.0003987079835496843,
+        0.0003523749765008688,
+        0.0003344580181874335,
+        0.0003450420335866511
+      ],
+      "warm_pipeline_seconds": [
+        0.1728443750180304,
+        0.1728420410072431,
+        0.1725941249751486,
+        0.17277229198953137,
+        0.1721982920425944
+      ],
+      "case": "chameleon_sample_level1_warmup",
+      "engine_seconds": 0.027072083030361682,
+      "pipeline_seconds": 0.22231066599488258,
+      "warnings": [],
+      "issues": []
+    },
+    {
+      "text_diagnostics": [
+        {
+          "id": "headline",
+          "font_size": 82.962646484375,
+          "measured_width": 620.2287425994873,
+          "measured_height": 106.19208908081055,
+          "box_width": 1166.0,
+          "box_height": 106.19208908081055,
+          "lines": 1,
+          "estimated_overflow": false
+        },
+        {
+          "id": "subhead",
+          "font_size": 35.555419921875,
+          "measured_width": 941.8986248970032,
+          "measured_height": 49.77791213989258,
+          "box_width": 1166.0,
+          "box_height": 49.77791213989258,
+          "lines": 1,
+          "estimated_overflow": false
+        },
+        {
+          "id": "badge_label",
+          "font_size": 26.022857142857138,
+          "measured_width": 168.78425693511963,
+          "measured_height": 36.43223857879639,
+          "box_width": 318.0571428571428,
+          "box_height": 46.262857142857136,
+          "lines": 1,
+          "estimated_overflow": false
+        },
+        {
+          "id": "cta_label",
+          "font_size": 19.79022222222222,
+          "measured_width": 226.59804344177246,
+          "measured_height": 27.706491470336914,
+          "box_width": 377.8133333333333,
+          "box_height": 39.58044444444444,
+          "lines": 1,
+          "estimated_overflow": false
+        }
+      ],
+      "warm_engine_seconds": [
+        0.004015708982478827,
+        0.003936166001949459,
+        0.004010292002931237,
+        0.003990541968960315,
+        0.003917291993275285
+      ],
+      "warm_pipeline_seconds": [
+        0.15612058399710804,
+        0.15460624999832362,
+        0.1546845420380123,
+        0.15439487498952076,
+        0.1555395420291461
+      ],
+      "case": "chameleon_sample_level2_core",
+      "engine_seconds": 0.004571624973323196,
+      "pipeline_seconds": 0.16044233296997845,
+      "warnings": [],
+      "issues": []
+    },
+    {
+      "text_diagnostics": [
+        {
+          "id": "headline",
+          "font_size": 13.356511999059606,
+          "measured_width": 473.11436796188354,
+          "measured_height": 33.124133835898505,
+          "box_width": 538.3499999999999,
+          "box_height": 33.124133835898505,
+          "lines": 2,
+          "estimated_overflow": false
+        },
+        {
+          "id": "subhead",
+          "font_size": 7.346081599482783,
+          "measured_width": 521.667307972908,
+          "measured_height": 19.099879819022284,
+          "box_width": 538.3499999999999,
+          "box_height": 19.099879819022284,
+          "lines": 2,
+          "estimated_overflow": false
+        },
+        {
+          "id": "badge1_label",
+          "font_size": 5.4648,
+          "measured_width": 43.95338559150696,
+          "measured_height": 7.650769948959351,
+          "box_width": 105.65280000000001,
+          "box_height": 9.472320000000002,
+          "lines": 1,
+          "estimated_overflow": false
+        },
+        {
+          "id": "badge2_label",
+          "font_size": 5.4648,
+          "measured_width": 62.40801429748535,
+          "measured_height": 7.650769948959351,
+          "box_width": 123.86880000000001,
+          "box_height": 9.472320000000002,
+          "lines": 1,
+          "estimated_overflow": false
+        },
+        {
+          "id": "badge3_label",
+          "font_size": 5.4648,
+          "measured_width": 37.7945556640625,
+          "measured_height": 7.650769948959351,
+          "box_width": 94.7232,
+          "box_height": 9.472320000000002,
+          "lines": 1,
+          "estimated_overflow": false
+        },
+        {
+          "id": "cta_label",
+          "font_size": 4.452800000000001,
+          "measured_width": 50.98455846309662,
+          "measured_height": 6.233960270881653,
+          "box_width": 85.00800000000001,
+          "box_height": 8.905600000000002,
+          "lines": 1,
+          "estimated_overflow": false
+        },
+        {
+          "id": "ribbon_label",
+          "font_size": 3.1626790624065677,
+          "measured_width": 20.244308054447174,
+          "measured_height": 4.42777943611145,
+          "box_width": 47.440185936098516,
+          "box_height": 5.376554406091165,
+          "lines": 1,
+          "estimated_overflow": false
+        },
+        {
+          "id": "legal_text",
+          "font_size": 4.006953599717882,
+          "measured_width": 231.1130742430687,
+          "measured_height": 5.6097718477249146,
+          "box_width": 538.3499999999999,
+          "box_height": 5.6097718477249146,
+          "lines": 1,
+          "estimated_overflow": false
+        }
+      ],
+      "warm_engine_seconds": [
+        0.009060082957148552,
+        0.008913583005778491,
+        0.008936041966080666,
+        0.008819792012218386,
+        0.07540733303176239
+      ],
+      "warm_pipeline_seconds": [
+        0.07092504197498783,
+        0.0688754579750821,
+        0.06807920901337638,
+        0.06804412498604506,
+        0.1717598750256002
+      ],
+      "case": "chameleon_sample_level3_advanced",
+      "engine_seconds": 0.010180166980717331,
+      "pipeline_seconds": 0.07580662501277402,
+      "warnings": [
+        "Missing asset 'solstice_holiday_badge_2025.png' for element 'holiday_watermark' - rendered a placeholder."
+      ],
+      "issues": []
+    }
+  ],
+  "brand_files_unchanged": true,
+  "brand_hashes": {
+    "brand_kit/README.md": "3ceaa09f5da84719c66d682a29a56d225f969fd2edc4b38c0a9147fb3855ecf2",
+    "brand_kit/assets/solstice_bg_gradient.png": "7ebf18d2a0d4b487cdf30578e4d6123e59e81502d78e55087768bfc5a465faeb",
+    "brand_kit/assets/solstice_bottle.png": "a9bea75d9592cee51bd1ee56e043662091326c612fc8c208eee3872c216aa053",
+    "brand_kit/assets/solstice_logo_lockup.png": "3a443c106090e7b043d85d553280e464b313d893baebafe6765fd3df1022f049",
+    "brand_kit/fonts/SolsticeSans-Bold.ttf": "609a215925701021b97578c71702bfc492882556ce05602b670aaa74a32a1156",
+    "brand_kit/fonts/SolsticeSans-BoldItalic.ttf": "e47af214406befc181508cf7ff87b774a955a670f7a54d8563a9757d45b2167d",
+    "brand_kit/fonts/SolsticeSans-Italic.ttf": "848a0433face0f273e313e4fdb3497a764f3c96b3b6670dffcc3cc38dcc83f2a",
+    "brand_kit/fonts/SolsticeSans-Regular.ttf": "4500567b25fc1af2983cee01c1e57e01a0108b8b3844c182936d14c7dec7f69c",
+    "brand_kit/fonts/SolsticeSerif-Bold.ttf": "837d42cc1b336364b69714c73288a0ec7ceded41c137d5f62943df5f0745551a",
+    "brand_kit/fonts/SolsticeSerif-Italic.ttf": "07526ca6ef70e5a7853abcdd614aeb62cdb958ed0cabc0f771f85094b4c67ccf",
+    "brand_kit/fonts/SolsticeSerif-Regular.ttf": "b7eb2a832ae91824a7c670469f4a4e0c4910a3ceedc1d31aad07ea2bc336d2a7"
+  }
+}

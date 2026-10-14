@@ -29,6 +29,7 @@ Approved models and maximum weight/model size; final schema version; exact targe
 - `engine/main.py` compares ID sets, so duplicate IDs can escape its self-check. It does not enforce image proportions, text visibility, rotated extents, or the complete schema.
 - Self-check warnings do not fail the process; an exit code of zero is not acceptance evidence.
 - Renderer import failure can silently produce labeled-box fallback previews. Validate direct real-renderer import and execution in evaluation.
+- The converter iterates through style-run `end` inclusively, while schema v0.9 describes end-exclusive indices. M1 preserves the supplied runs and measures current renderer behavior; this discrepancy remains unresolved.
 - `wrap_text` wraps at spaces and leaves overlong single words overflowing; measure actual wrapping instead of estimating character count. Check styled glyphs against final rendering too.
 - The missing Level 3 holiday badge is intentional. Preserve its reference; do not create a replacement. Distinguish this one asset placeholder from a whole-render fallback.
 - `requirements.txt` references a moving upstream renderer repository. Record the installed revision; assess pinning for reproducibility before final packaging.
