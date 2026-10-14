@@ -4,6 +4,8 @@ A working brief for building a robust, efficient design-retargeting engine. This
 
 ## Start here
 
+Read the shared [project progress and handoff](../PROGRESS.md) first to find the current milestone, active owners, completed steps, and next action. Keep it updated as required by AGENTS.md.
+
 1. Read [AGENTS.md](AGENTS.md) and [SPEC.md](SPEC.md).
 2. Check [SOURCES.md](SOURCES.md) for source conflicts and unresolved organizer details.
 3. Implement in milestones from [IMPLEMENTATION.md](IMPLEMENTATION.md).
