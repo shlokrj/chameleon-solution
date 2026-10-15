@@ -19,8 +19,8 @@ def resize_with_diagnostics(source, target_canvas, *, max_candidates=MAX_CANDIDA
     best_key = None
     selected = None
     for index, (image, group, force) in enumerate(allocations[:max_candidates]):
-        design = build_layout(source, target_canvas, image_share=image, group_share=group, force_reflow=force)
-        record = {'index': index, 'image_share': image, 'group_share': group, 'force_reflow': force}
+        design = build_layout(source, target_canvas, image_share=image, group_share=group, force_reflow=force, text_grid=index == MAX_CANDIDATES-1)
+        record = {'index': index, 'image_share': image, 'group_share': group, 'force_reflow': force, 'text_grid': index == MAX_CANDIDATES-1}
         records.append(record)
         issues = hard_issues(source, target_canvas, design)
         if issues:

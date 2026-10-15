@@ -60,32 +60,91 @@ def text_stack(units, slot, gap, upper_scale):
     elements = [u[0] for u in units]
     gap = min(gap, height / max(1, 2*len(elements)))
     def measurements(scale):
-        return [text_extent(el, max(1, el['font_size']*scale), width) for el in elements]
+        measured = []
+        for el in elements:
+            rotated = bool(el.get('rotation', 0))
+            wrap_width = min(width, height) if rotated else width
+            ew, eh, lines = text_extent(el, max(1, el['font_size']*scale), wrap_width)
+            box_width = max(ew, 1e-6) if rotated else width
+            angle = math.radians(el.get('rotation', 0))
+            bw = max(box_width, abs(box_width*math.cos(angle))+abs(eh*math.sin(angle)))
+            bh = max(eh, abs(box_width*math.sin(angle))+abs(eh*math.cos(angle)))
+            measured.append((box_width, eh, bw, bh, lines, ew))
+        return measured
+    def fits(extents):
+        return (sum(e[3] for e in extents)+gap*(len(elements)-1) <= height
+                and all(e[2] <= width and e[5] <= e[0] and
+                        (el.get('max_lines') is None or e[4] <= el['max_lines'])
+                        for el, e in zip(elements, extents)))
     low, high = 0.0, upper_scale
-    for _ in range(18):
-        scale = (low+high)/2
-        extents = measurements(scale)
-        fits = sum(e[1] for e in extents)+gap*(len(elements)-1) <= height
-        fits &= all(e[0] <= width and (el.get('max_lines') is None or e[2] <= el['max_lines']) for el, e in zip(elements, extents))
-        if fits:
-            low = scale
-        else:
-            high = scale
+    if fits(measurements(high)):
+        low = high
+    else:
+        for _ in range(18):
+            scale = (low+high)/2
+            if fits(measurements(scale)):
+                low = scale
+            else:
+                high = scale
     extents = measurements(low)
-    total = sum(e[1] for e in extents)
+    total = sum(e[3] for e in extents)
     available = max(0, height-gap*(len(elements)-1))
     compression = min(1, available/max(total, 1e-9))
     offset = max(0, (available-total)/2)
-    for el, (_, eh, _) in zip(elements, extents):
-        el.update(x=x, y=y+offset, width=width, height=eh*compression)
+    for el, (ew, eh, bw, bh, _, _) in zip(elements, extents):
+        el.update(x=x+(width-ew)/2, y=y+offset+(bh-eh)*compression/2,
+                  width=ew, height=eh*compression)
         fit_text(el, max(1, el['font_size']*low))
-        # A rotated singleton needs its complete bounding box inside its slot.
+        if el.get('rotation', 0) and compression < 1:
+            place([el], (x, y+offset, width, bh*compression))
+        offset += bh*compression+gap
+
+
+def source_grid(units):
+    """Recognize complete aligned rows, without inferring columns from prose."""
+    rows = []
+    for unit in units:
+        el = unit[0]
         if el.get('rotation', 0):
-            place([el], (x, y+offset, width, eh*compression))
-        offset += eh*compression+gap
+            return None
+        if not rows or abs(el['y']-rows[-1][0][0]['y']) > max(1e-6, min(el['height'], rows[-1][0][0]['height'])*0.01):
+            rows.append([])
+        rows[-1].append(unit)
+    if len(rows) < 2 or len(rows[0]) < 2:
+        return None
+    columns = len(rows[0])
+    for row in rows:
+        row.sort(key=lambda unit: unit[0]['x'])
+    for row in rows:
+        if len(row) != columns:
+            return None
+        for i, unit in enumerate(row):
+            el = unit[0]
+            if abs(el['x']-rows[0][i][0]['x']) > max(1e-6, min(el['width'], rows[0][i][0]['width'])*0.01):
+                return None
+            if i and row[i-1][0]['x']+row[i-1][0]['width'] > el['x']:
+                return None
+    if any(max(u[0]['y']+u[0]['height'] for u in row) > following[0][0]['y']
+           for row, following in zip(rows, rows[1:])):
+        return None
+    return rows
 
 
-def build_layout(source, target_canvas, *, image_share=None, group_share=None, force_reflow=False):
+def arrange_text(units, slot, gap, upper_scale, use_grid):
+    rows = source_grid(units) if use_grid else None
+    if rows is None:
+        text_stack(units, slot, gap, upper_scale)
+        return
+    x, y, w, h = slot
+    columns = len(rows[0])
+    gap = min(gap, w/(2*columns), h/(2*len(rows)))
+    cw, ch = (w-gap*(columns-1))/columns, (h-gap*(len(rows)-1))/len(rows)
+    for r, row in enumerate(rows):
+        for c, unit in enumerate(row):
+            text_stack([unit], (x+c*(cw+gap), y+r*(ch+gap), cw, ch), 0, upper_scale)
+
+
+def build_layout(source, target_canvas, *, image_share=None, group_share=None, force_reflow=False, text_grid=False):
     result = deepcopy(source)
     result['canvas'] = deepcopy(target_canvas)
     sw, sh = source['canvas']['width'], source['canvas']['height']
@@ -142,7 +201,7 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
             w -= image_width+gap
         group_height = h*(0.22 if group_share is None else group_share) if groups and text else h if groups else 0
         stack(groups, (x, y+h-group_height, w, group_height), gap, horizontal=True)
-        text_stack(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, max(sx, sy))
+        arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, max(sx, sy), text_grid)
     else:
         image_height = h*(0.36 if image_share is None else image_share) if images and (text or groups) else h if images else 0
         stack(images, (x, y, w, image_height), gap, horizontal=True)
@@ -151,5 +210,5 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
             h -= image_height+gap
         group_height = h*(0.25 if group_share is None else group_share) if groups and text else h if groups else 0
         stack(groups, (x, y+h-group_height, w, group_height), gap)
-        text_stack(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, max(sx, sy))
+        arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, max(sx, sy), text_grid)
     return result

@@ -1,0 +1,320 @@
+{
+  "engine_hashes": {
+    "engine/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "engine/layout.py": "03c4fda1d5423953271c6387456e60ab9724c3113c7573a69ae83944a9fbe14d",
+    "engine/main.py": "cb7d3518ba4ff5bfe07b5f8971aa9d34592dd51d77a1ae45cd2a140dbe72191d",
+    "engine/quality.py": "0f4b2384fbd9fe467d9517aca4ed720eb7e3736c1913c1c24f684979a6a36d0c",
+    "engine/relationships.py": "4d3ab9d00f5542392301658949c3bac2022f02aa1274bcb6dd19176c6bb0ab7c",
+    "engine/resize.py": "f095490288fca13a13cd5de56b74828981f96354afb0cde8bfed4ab8eaa53ede",
+    "engine/typography.py": "905dbfe8c6cd22843da2d01f2fa5349f0556b007dd254d32de51f6f42fc710dd"
+  },
+  "hashes_unchanged": true,
+  "cases": [
+    {
+      "case": "rotated-copy",
+      "source_schema_valid": true,
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 42.0,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      }
+    },
+    {
+      "case": "dense-labels",
+      "source_schema_valid": true,
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 5,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "minimum_font_size": 11.5177001953125,
+              "readability_deficit": 0.2756439522101006,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.2756439522101006
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.12,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 2,
+            "image_share": 0.18,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 4,
+            "image_share": 0.18,
+            "group_share": 0.36,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 5,
+            "image_share": 0.32,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": true,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 42.0,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      }
+    },
+    {
+      "case": "diagonal-copy",
+      "source_schema_valid": true,
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 42.0,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      }
+    },
+    {
+      "case": "upside-down-copy",
+      "source_schema_valid": true,
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 40.021507263183594,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      }
+    },
+    {
+      "case": "fractional-grid",
+      "source_schema_valid": true,
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 5,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11"
+              ],
+              "minimum_font_size": 11.5177001953125,
+              "readability_deficit": 0.2756439522101006,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.2756439522101006
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.12,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 2,
+            "image_share": 0.18,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 4,
+            "image_share": 0.18,
+            "group_share": 0.36,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 5,
+            "image_share": 0.32,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": true,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 42.0,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      }
+    },
+    {
+      "case": "hierarchy-grid",
+      "source_schema_valid": true,
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 18.928426106770836,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      }
+    }
+  ]
+}

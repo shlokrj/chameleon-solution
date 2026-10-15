@@ -68,3 +68,7 @@ After baseline profiling, set explicit development budgets for candidate count, 
 ## What to hand back
 
 Use [EXPERIMENTS.md](EXPERIMENTS.md). State the selected revision, evidence supporting it, unresolved worst case, compared resource costs, and next useful experiment. A narrow measured improvement is a valid result. Do not claim "best model," "fully robust," or "submission ready" from one cycle or one small synthetic suite.
+
+## Lessons from the M3 text repair cycle
+
+Use feasibility witnesses to distinguish unavoidable density from unnecessary shrinkage. Test small coordinate perturbations as well as exact grids: a 0.25px alignment change exposed a large readability discontinuity despite passing structural checks. Reserve rotation-aware extents before font fitting rather than shrinking an already-fitted box again. Keep layout alternatives within the existing candidate budget and compare worst-case readability as well as runtime. The [text repair record](runs/m3-text-repairs.md) separates fresh discovery from exposed-case verification; repaired cases must not be reused as a final holdout.

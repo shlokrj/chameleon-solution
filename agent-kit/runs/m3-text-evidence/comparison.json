@@ -1,0 +1,1907 @@
+{
+  "baseline": "6d1dbe5",
+  "candidate_parent": "c8de17fc7e7ea8e7e5b43168733aadd38baf38a6",
+  "python": "3.12.13",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "code_hashes": {
+    "engine/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "engine/layout.py": "03c4fda1d5423953271c6387456e60ab9724c3113c7573a69ae83944a9fbe14d",
+    "engine/main.py": "cb7d3518ba4ff5bfe07b5f8971aa9d34592dd51d77a1ae45cd2a140dbe72191d",
+    "engine/quality.py": "0f4b2384fbd9fe467d9517aca4ed720eb7e3736c1913c1c24f684979a6a36d0c",
+    "engine/relationships.py": "4d3ab9d00f5542392301658949c3bac2022f02aa1274bcb6dd19176c6bb0ab7c",
+    "engine/resize.py": "f095490288fca13a13cd5de56b74828981f96354afb0cde8bfed4ab8eaa53ede",
+    "engine/typography.py": "905dbfe8c6cd22843da2d01f2fa5349f0556b007dd254d32de51f6f42fc710dd",
+    "evaluation/__init__.py": "68a385587c07f45c868b5956d39f6c8ee5ce489a237ed42a4755d5a91fb2306c",
+    "evaluation/baseline.py": "b00832beb322e8fb51b6c534d21917c5c5abbe320de43694b74a3e4b8991ce29",
+    "evaluation/compare.py": "c8912d067b4a3b9884c06b7f1305f39b97be40e0d2f81e4677c164c66714ea99",
+    "evaluation/contract.py": "3750fbebe3698d55891f3076227650b6ad95dca116f3ac5ea052434d5a779392",
+    "evaluation/development.py": "76fc705ab8f98230f3151618a37496f3a64e3f7912e35a3e19a28d8d96249188",
+    "evaluation/regressions.py": "1e63f274ead5c2ab2dc964c1eca37fe09df01d1a252633e74e7de7ff4a540b6e"
+  },
+  "cases": [
+    {
+      "case": "editorial-banner",
+      "family": "editorial",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 20.69366455078125,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 20.69366455078125,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 20.69366455078125,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.004627916030585766,
+          0.004082291969098151,
+          0.004083207983057946,
+          0.003899875038769096,
+          0.0039366669952869415
+        ],
+        "candidate": [
+          0.004546749987639487,
+          0.004530582984443754,
+          0.004517041030339897,
+          0.004495917004533112,
+          0.004453458008356392
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "editorial-story",
+      "family": "editorial",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 15.599940490722657,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 15.600000000000001,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 15.600000000000001,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.0041693749953992665,
+          0.004270999983418733,
+          0.005552165966946632,
+          0.003897540969774127,
+          0.0038530000019818544
+        ],
+        "candidate": [
+          0.0010100830113515258,
+          0.0009873330127447844,
+          0.0009548329981043935,
+          0.0009527920046821237,
+          0.0009356249938718975
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "editorial-compact",
+      "family": "editorial",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "t3"
+        ],
+        "minimum_font_size": 8.62236328125,
+        "readability_deficit": 0.019806301742792132,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.019806301742792132
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "t3"
+        ],
+        "minimum_font_size": 8.62236328125,
+        "readability_deficit": 0.019806301742792132,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.019806301742792132
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "t3"
+              ],
+              "minimum_font_size": 8.62236328125,
+              "readability_deficit": 0.019806301742792132,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.019806301742792132
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.12,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 2,
+            "image_share": 0.18,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 4,
+            "image_share": 0.18,
+            "group_share": 0.36,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 5,
+            "image_share": 0.32,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": true,
+            "status": "duplicate"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.0038155830116011202,
+          0.0039826250285841525,
+          0.0039326659752987325,
+          0.003949208999983966,
+          0.003926499979570508
+        ],
+        "candidate": [
+          0.02590016700560227,
+          0.026829542010091245,
+          0.02669462497578934,
+          0.02774245897307992,
+          0.026215874997433275
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "catalog-banner",
+      "family": "catalog",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 15.18,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 15.18,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 15.18,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.0021178339957259595,
+          0.0021133330301381648,
+          0.0020591249922290444,
+          0.00204299995675683,
+          0.003117125015705824
+        ],
+        "candidate": [
+          0.002565332979429513,
+          0.0025392090319655836,
+          0.002570291981101036,
+          0.0025269999750889838,
+          0.0025295420200563967
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "catalog-story",
+      "family": "catalog",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 17.0221875,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 17.0221875,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 17.0221875,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.0020488750305958092,
+          0.002033500000834465,
+          0.002021667023655027,
+          0.001998417021241039,
+          0.0019950830028392375
+        ],
+        "candidate": [
+          0.0008596669649705291,
+          0.0008469159947708249,
+          0.0008484999998472631,
+          0.0019093750161118805,
+          0.0008370419964194298
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "catalog-compact",
+      "family": "catalog",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "g0-label",
+          "g1-label"
+        ],
+        "minimum_font_size": 6.324999999999999,
+        "readability_deficit": 0.1118250868055556,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.1118250868055556
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "g0-label",
+          "g1-label"
+        ],
+        "minimum_font_size": 7.4750000000000005,
+        "readability_deficit": 0.07109592013888888,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.07109592013888888
+      },
+      "diagnostics": {
+        "selected": 1,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 6.324999999999999,
+              "readability_deficit": 0.1118250868055556,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.1118250868055556
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.12,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 7.4750000000000005,
+              "readability_deficit": 0.07109592013888888,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.07109592013888888
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 2,
+            "image_share": 0.18,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 7.4750000000000005,
+              "readability_deficit": 0.07109592013888888,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.07109592013888888
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 8.625,
+              "readability_deficit": 0.03955078125,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.03955078125
+            },
+            "status": "regression",
+            "reasons": [
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 4,
+            "image_share": 0.18,
+            "group_share": 0.36,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 10.35,
+              "readability_deficit": 0.009453125000000008,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.009453125000000008
+            },
+            "status": "regression",
+            "reasons": [
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 5,
+            "image_share": 0.32,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": true,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 8.625,
+              "readability_deficit": 0.03955078125,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.03955078125
+            },
+            "status": "regression",
+            "reasons": [
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.0020082079572603106,
+          0.0029606250463984907,
+          0.002021958993282169,
+          0.0019925410160794854,
+          0.001987708965316415
+        ],
+        "candidate": [
+          0.01588445797096938,
+          0.014704375003930181,
+          0.014753333001863211,
+          0.01570258301217109,
+          0.015865417022723705
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "event-banner",
+      "family": "event",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "g0-label"
+        ],
+        "minimum_font_size": 8.980901519482966,
+        "readability_deficit": 0.015824575755312955,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.015824575755312955
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "g0-label"
+        ],
+        "minimum_font_size": 8.980901519482966,
+        "readability_deficit": 0.015824575755312955,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.015824575755312955
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label"
+              ],
+              "minimum_font_size": 8.980901519482966,
+              "readability_deficit": 0.015824575755312955,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.015824575755312955
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.12,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label"
+              ],
+              "minimum_font_size": 10.613792704843505,
+              "readability_deficit": 0.003336060182543554,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.003336060182543554
+            },
+            "status": "regression",
+            "reasons": [
+              "mark: image short edge shrank over 20%",
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 2,
+            "image_share": 0.18,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label"
+              ],
+              "minimum_font_size": 10.613792704843505,
+              "readability_deficit": 0.003336060182543554,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.003336060182543554
+            },
+            "status": "regression",
+            "reasons": [
+              "mark: image short edge shrank over 20%",
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 12.246683890204043,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "regression",
+            "reasons": [
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 4,
+            "image_share": 0.18,
+            "group_share": 0.36,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 14.696020668244854,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "regression",
+            "reasons": [
+              "mark: image short edge shrank over 20%",
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 5,
+            "image_share": 0.32,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": true,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 12.246683890204043,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "regression",
+            "reasons": [
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.002117042022291571,
+          0.002097667020279914,
+          0.0020935829961672425,
+          0.002101666002999991,
+          0.003155709011480212
+        ],
+        "candidate": [
+          0.016360084002371877,
+          0.016195292002521455,
+          0.01604833302553743,
+          0.015093708992935717,
+          0.015110292006283998
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "event-story",
+      "family": "event",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 12.526421158615506,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 12.526421158615506,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 12.526421158615506,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.0022225420107133687,
+          0.002164083009120077,
+          0.0021514170221053064,
+          0.0021573330159299076,
+          0.0021555839921347797
+        ],
+        "candidate": [
+          0.0008514159708283842,
+          0.0008365410030819476,
+          0.0008254579734057188,
+          0.0008233750122599304,
+          0.0008212079992517829
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "event-compact",
+      "family": "event",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "g0-label",
+          "g1-label"
+        ],
+        "minimum_font_size": 3.742042299784569,
+        "readability_deficit": 0.17430467079608913,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.17430467079608913
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "g0-label",
+          "g1-label"
+        ],
+        "minimum_font_size": 3.742042299784569,
+        "readability_deficit": 0.17430467079608913,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.17430467079608913
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 3.742042299784569,
+              "readability_deficit": 0.17430467079608913,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.17430467079608913
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.12,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 4.422413627018128,
+              "readability_deficit": 0.13523513930555653,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.13523513930555653
+            },
+            "status": "regression",
+            "reasons": [
+              "mark: image short edge shrank over 20%",
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 2,
+            "image_share": 0.18,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 4.422413627018128,
+              "readability_deficit": 0.13523513930555653,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.13523513930555653
+            },
+            "status": "regression",
+            "reasons": [
+              "mark: image short edge shrank over 20%",
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "t1",
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 5.1027849542516845,
+              "readability_deficit": 0.10287703914081105,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.10287703914081105
+            },
+            "status": "regression",
+            "reasons": [
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 4,
+            "image_share": 0.18,
+            "group_share": 0.36,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "t1",
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 6.1233419451020215,
+              "readability_deficit": 0.06917139456122384,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.06917139456122384
+            },
+            "status": "regression",
+            "reasons": [
+              "mark: image short edge shrank over 20%",
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 5,
+            "image_share": 0.32,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": true,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "t1",
+                "g0-label",
+                "g1-label"
+              ],
+              "minimum_font_size": 5.1027849542516845,
+              "readability_deficit": 0.10287703914081105,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.10287703914081105
+            },
+            "status": "regression",
+            "reasons": [
+              "t0: type shrank over 5%",
+              "t1: type shrank over 5%"
+            ]
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.002114208007697016,
+          0.0021048749913461506,
+          0.0030792499892413616,
+          0.0021455829846672714,
+          0.0021032499498687685
+        ],
+        "candidate": [
+          0.016076333005912602,
+          0.015202041016891599,
+          0.015153291984461248,
+          0.016163791995495558,
+          0.016319749993272126
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "dense-labels-banner",
+      "family": "dense-labels",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 15.18,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 15.18,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 15.18,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.0036185840144753456,
+          0.0035876670153811574,
+          0.004676499986089766,
+          0.0035911659942939878,
+          0.0035821670317091048
+        ],
+        "candidate": [
+          0.004475708003155887,
+          0.0044554159976542,
+          0.00445108296116814,
+          0.004457417002413422,
+          0.004461958014871925
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "dense-labels-story",
+      "family": "dense-labels",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "g0-label",
+          "g1-label",
+          "g2-label",
+          "g3-label",
+          "g4-label"
+        ],
+        "minimum_font_size": 9.4875,
+        "readability_deficit": 0.027398681640624995,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.027398681640624995
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 12.133333333333333,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "diagnostics": {
+        "selected": 3,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label",
+                "g2-label",
+                "g3-label",
+                "g4-label"
+              ],
+              "minimum_font_size": 9.4875,
+              "readability_deficit": 0.027398681640624995,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.027398681640624995
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "g0-label",
+                "g1-label",
+                "g2-label",
+                "g3-label",
+                "g4-label"
+              ],
+              "minimum_font_size": 11.835000000000003,
+              "readability_deficit": 0.00011816406249999687,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.00011816406249999687
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 2,
+            "image_share": 0.36,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.4,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 12.133333333333333,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 4,
+            "image_share": 0.45,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 5,
+            "image_share": 0.36,
+            "group_share": 0.4,
+            "force_reflow": true,
+            "text_grid": true,
+            "status": "duplicate"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.004620624997187406,
+          0.003639000002294779,
+          0.0036224579671397805,
+          0.003622583986725658,
+          0.0036095420364290476
+        ],
+        "candidate": [
+          0.007633291999809444,
+          0.007664292003028095,
+          0.008636167040094733,
+          0.007607959036249667,
+          0.008573916973546147
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "dense-labels-compact",
+      "family": "dense-labels",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "t1",
+          "g0-label",
+          "g1-label",
+          "g2-label",
+          "g3-label",
+          "g4-label",
+          "t2"
+        ],
+        "minimum_font_size": 6.324999999999999,
+        "readability_deficit": 0.16489441583553954,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.16489441583553954
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "t1",
+          "g0-label",
+          "g1-label",
+          "g2-label",
+          "g3-label",
+          "g4-label",
+          "t2"
+        ],
+        "minimum_font_size": 6.485443793402778,
+        "readability_deficit": 0.052718419618078306,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.052718419618078306
+      },
+      "diagnostics": {
+        "selected": 4,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "t1",
+                "g0-label",
+                "g1-label",
+                "g2-label",
+                "g3-label",
+                "g4-label",
+                "t2"
+              ],
+              "minimum_font_size": 6.324999999999999,
+              "readability_deficit": 0.16489441583553954,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.16489441583553954
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.12,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "t1",
+                "g0-label",
+                "g1-label",
+                "g2-label",
+                "g3-label",
+                "g4-label",
+                "t2"
+              ],
+              "minimum_font_size": 6.485443793402778,
+              "readability_deficit": 0.11594318501193927,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.11594318501193927
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 2,
+            "image_share": 0.18,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "t1",
+                "g0-label",
+                "g1-label",
+                "g2-label",
+                "g3-label",
+                "g4-label",
+                "t2"
+              ],
+              "minimum_font_size": 6.485443793402778,
+              "readability_deficit": 0.07651176140082817,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.07651176140082817
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 4,
+            "image_share": 0.18,
+            "group_share": 0.36,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "t1",
+                "g0-label",
+                "g1-label",
+                "g2-label",
+                "g3-label",
+                "g4-label",
+                "t2"
+              ],
+              "minimum_font_size": 6.485443793402778,
+              "readability_deficit": 0.052718419618078306,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.052718419618078306
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 5,
+            "image_share": 0.32,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": true,
+            "status": "duplicate"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.0046768750180490315,
+          0.003500749997328967,
+          0.0034923750208690763,
+          0.004500166978687048,
+          0.0034905420034192502
+        ],
+        "candidate": [
+          0.02591749996645376,
+          0.025803625001572073,
+          0.025855042040348053,
+          0.025752624962478876,
+          0.025781166972592473
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "chameleon_sample_level1_warmup",
+      "family": "supplied",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 30.0,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 30.0,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 30.0,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.00015179195906966925,
+          0.00013079203199595213,
+          0.00012641598004847765,
+          0.0001437920145690441,
+          0.00014045898569747806
+        ],
+        "candidate": [
+          0.00030104198958724737,
+          0.0002858330262824893,
+          0.00026587501633912325,
+          0.0002690420369617641,
+          0.00027616595616564155
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "chameleon_sample_level2_core",
+      "family": "supplied",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 19.79022222222222,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [],
+        "minimum_font_size": 19.79022222222222,
+        "readability_deficit": 0.0,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.0
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 19.79022222222222,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.0020721660112030804,
+          0.002055375021882355,
+          0.002039249986410141,
+          0.0020447089918889105,
+          0.0020354590378701687
+        ],
+        "candidate": [
+          0.0008940419647842646,
+          0.0009145409567281604,
+          0.0008782080258242786,
+          0.0008763750083744526,
+          0.0008737919852137566
+        ]
+      },
+      "render_warnings": {
+        "source": [],
+        "baseline": [],
+        "candidate": []
+      }
+    },
+    {
+      "case": "chameleon_sample_level3_advanced",
+      "family": "supplied",
+      "baseline_issues": [],
+      "candidate_issues": [],
+      "baseline_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "subhead",
+          "badge1_label",
+          "badge2_label",
+          "badge3_label",
+          "cta_label",
+          "ribbon_label",
+          "legal_text"
+        ],
+        "minimum_font_size": 3.1626790624065677,
+        "readability_deficit": 0.302719386761947,
+        "hierarchy_inversion": 0.26694916577114935,
+        "new_overlap": 0.0,
+        "loss": 0.3294143033390619
+      },
+      "candidate_quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "subhead",
+          "badge1_label",
+          "badge2_label",
+          "badge3_label",
+          "cta_label",
+          "ribbon_label",
+          "legal_text"
+        ],
+        "minimum_font_size": 3.1626790624065677,
+        "readability_deficit": 0.302719386761947,
+        "hierarchy_inversion": 0.26694916577114935,
+        "new_overlap": 0.0,
+        "loss": 0.3294143033390619
+      },
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "subhead",
+                "badge1_label",
+                "badge2_label",
+                "badge3_label",
+                "cta_label",
+                "ribbon_label",
+                "legal_text"
+              ],
+              "minimum_font_size": 3.1626790624065677,
+              "readability_deficit": 0.302719386761947,
+              "hierarchy_inversion": 0.26694916577114935,
+              "new_overlap": 0.0,
+              "loss": 0.3294143033390619
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.12,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "subhead",
+                "badge1_label",
+                "badge2_label",
+                "badge3_label",
+                "cta_label",
+                "ribbon_label",
+                "legal_text"
+              ],
+              "minimum_font_size": 3.7377116192077615,
+              "readability_deficit": 0.25967926852177337,
+              "hierarchy_inversion": 0.010637787726703707,
+              "new_overlap": 0.0,
+              "loss": 0.26074304729444375
+            },
+            "status": "regression",
+            "reasons": [
+              "headline: type shrank over 5%",
+              "subhead: type shrank over 5%",
+              "legal_text: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 2,
+            "image_share": 0.18,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "subhead",
+                "badge1_label",
+                "badge2_label",
+                "badge3_label",
+                "cta_label",
+                "ribbon_label",
+                "legal_text"
+              ],
+              "minimum_font_size": 3.7377116192077615,
+              "readability_deficit": 0.25967926852177337,
+              "hierarchy_inversion": 0.010637787726703707,
+              "new_overlap": 0.0,
+              "loss": 0.26074304729444375
+            },
+            "status": "regression",
+            "reasons": [
+              "headline: type shrank over 5%",
+              "subhead: type shrank over 5%",
+              "legal_text: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "headline",
+                "subhead",
+                "badge1_label",
+                "badge2_label",
+                "badge3_label",
+                "cta_label",
+                "ribbon_label",
+                "legal_text"
+              ],
+              "minimum_font_size": 3.5480224609374993,
+              "readability_deficit": 0.2732253166562654,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.2732253166562654
+            },
+            "status": "regression",
+            "reasons": [
+              "headline: type shrank over 5%",
+              "subhead: type shrank over 5%",
+              "legal_text: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 4,
+            "image_share": 0.18,
+            "group_share": 0.36,
+            "force_reflow": true,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "headline",
+                "subhead",
+                "badge1_label",
+                "badge2_label",
+                "badge3_label",
+                "cta_label",
+                "ribbon_label",
+                "legal_text"
+              ],
+              "minimum_font_size": 3.426786634657118,
+              "readability_deficit": 0.24999551551812205,
+              "hierarchy_inversion": 0.0,
+              "new_overlap": 0.0,
+              "loss": 0.24999551551812205
+            },
+            "status": "regression",
+            "reasons": [
+              "headline: type shrank over 5%",
+              "subhead: type shrank over 5%",
+              "legal_text: type shrank over 5%"
+            ]
+          },
+          {
+            "index": 5,
+            "image_share": 0.32,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": true,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [
+                "headline",
+                "subhead",
+                "badge1_label",
+                "badge2_label",
+                "badge3_label",
+                "cta_label",
+                "ribbon_label",
+                "legal_text"
+              ],
+              "minimum_font_size": 3.311069154319832,
+              "readability_deficit": 0.303196080384534,
+              "hierarchy_inversion": 0.07156398600389335,
+              "new_overlap": 0.0,
+              "loss": 0.31035247898492335
+            },
+            "status": "regression",
+            "reasons": [
+              "headline: type shrank over 5%",
+              "subhead: type shrank over 5%",
+              "legal_text: type shrank over 5%"
+            ]
+          }
+        ]
+      },
+      "engine_seconds": {
+        "baseline": [
+          0.004810958984307945,
+          0.005505540990270674,
+          0.004714291950222105,
+          0.004738749994430691,
+          0.004732124973088503
+        ],
+        "candidate": [
+          0.03749345801770687,
+          0.03624504100298509,
+          0.036123499972745776,
+          0.03699900000356138,
+          0.03697137499693781
+        ]
+      },
+      "render_warnings": {
+        "source": [
+          "Missing asset 'solstice_holiday_badge_2025.png' for element 'holiday_watermark' - rendered a placeholder."
+        ],
+        "baseline": [
+          "Missing asset 'solstice_holiday_badge_2025.png' for element 'holiday_watermark' - rendered a placeholder."
+        ],
+        "candidate": [
+          "Missing asset 'solstice_holiday_badge_2025.png' for element 'holiday_watermark' - rendered a placeholder."
+        ]
+      }
+    }
+  ]
+}

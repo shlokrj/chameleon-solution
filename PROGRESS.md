@@ -4,12 +4,12 @@ Read this first when joining or resuming work. This is the shared current-state 
 
 ## Current state
 
-- **Phase:** M3 panel/image backing and zero-width line repairs verified; rotation/grid findings remain open.
+- **Phase:** M3 backing, line, rotation, and grid repairs independently verified; final fresh review outstanding.
 - **Implementation progress:** 3 of 5 milestones complete. Next: M3, adversarial hardening. This count is not a percentage of effort or an estimate of time remaining.
-- **Engine:** bounded candidate search plus inferred backing relationships. 30 tests and 15 prior comparison cases pass structural checks. Judge verified panel/image contrast repairs and line geometry; rotated singleton text and dense grids still shrink unnecessarily. See [M3 handoff](agent-kit/runs/m3-hardening.md).
-- **Latest verified predecessor:** `3324d76` on `main`, pushed to `origin`. The M3 repairs and evidence are recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
+- **Engine:** bounded candidate search plus inferred backing relationships. 36 tests, 15 comparison cases, and five saved adversarial tasks pass structural checks. Judge verified rotated text, dense grids, and subpixel alignment repairs. See [text repair evidence](agent-kit/runs/m3-text-repairs.md).
+- **Latest verified predecessor:** `c8de17f` on `main`, pushed to `origin`. The M3 repairs and evidence are recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
 - **Active implementation owners:** none; challenger/judge passes ended and all claims released.
-- **Next concrete action:** claim M3-R1 (rotation-aware text placement), then M3-R2 (bounded text-grid candidate). Reproduce the tracked fixtures/witnesses in [M3 handoff](agent-kit/runs/m3-hardening.md); final fresh-case judging is still outstanding.
+- **Next concrete action:** freeze the text-repair revision and run a final bounded fresh-case review before closing M3; then profile cold/warm runtime and memory for M4.
 
 ## Milestone board
 
@@ -21,7 +21,7 @@ The definitions and exit criteria live in [IMPLEMENTATION.md](agent-kit/IMPLEMEN
 | M0 | Establish evidence | complete | [Baseline evidence](agent-kit/runs/m0-baseline.md); real rendering verified; Docker unavailable |
 | M1 | Deterministic reflow | complete | [Reflow evidence](agent-kit/runs/m1-reflow.md); sample checks pass; dense-banner readability remains limited |
 | M2 | Bounded selection and repair | complete | [Selection evidence](agent-kit/runs/m2-selection.md); 15 paired cases, bounded/failure behavior verified |
-| M3 | Adversarial hardening | in progress | [Repairs verified](agent-kit/runs/m3-hardening.md); M3-R1/R2 quality defects remain open |
+| M3 | Adversarial hardening | in progress | [Text repairs verified](agent-kit/runs/m3-text-repairs.md); final fresh review outstanding |
 | M4 | Efficiency and delivery | not started | Profile, compare resource costs, verify offline packaging and release checklist |
 
 ## Completed steps within M0
@@ -49,11 +49,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No tasks are currently claimed. Replace the empty row when work starts; retain closed-task outcomes in the work log rather than leaving stale active claims.
+No tasks currently claimed; root and judge have completed this repair cycle.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | — | Next: M3-R1, then M3-R2 |
+| — | — | — | — | unassigned | — | Next: final M3 fresh review |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -78,6 +78,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `6d1dbe5` | Added reflow and font fitting; improved evaluation output and README; recorded M1 evidence | 16 tests passed; all 3 supplied outputs have zero structural findings; final renders reviewed; 5 timing repetitions per case | M1 complete; next M2.1; dense-banner readability and Docker remain open |
 | `3324d76` | Added contract gates, quality diagnostics, development comparison, and sync-before-work rules | 23 tests; 15 paired cases structurally valid; three changed pairs visually reviewed; five timing repetitions | M2 complete; freeze and start M3; Docker unavailable |
 | `fix: preserve implicit text backing during reflow` (containing commit) | Preserved panel/image-backed text and one-dimensional geometry; tracked adversarial fixtures and independent findings | 30 tests; 15 development/sample comparisons; judge verified repairs | M3 remains open: rotated text and dense grids; no active agents |
+
+| `fix: preserve readable rotated text and source grids` (containing commit) | Repaired M3-R1/R2 and subpixel alignment; refined model notes | 36 tests; 15 comparisons; 5 saved regressions; independent six-case repair verification | Final fresh review, then M4 profiling/offline packaging |
 
 ## How to update this file
 
