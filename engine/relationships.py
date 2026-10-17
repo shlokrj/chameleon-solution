@@ -21,7 +21,7 @@ def contains(panel, element, tolerance=1e-6):
 
 
 def support_pairs(source):
-    """Return panel/text indices for opaque, non-background enclosing rectangles.
+    """Return parent/child indices for text and its enclosing backing ancestry.
 
     Existing explicit groups take precedence. For nested panels, the frontmost
     containing panel wins, using the renderer's stable z/index paint ordering.
@@ -29,21 +29,36 @@ def support_pairs(source):
     This does not establish pixel contrast or infer arbitrary translucent layering.
     """
     elements = source['elements']
-    canvas_area = source['canvas']['width']*source['canvas']['height']
+    width, height = source['canvas']['width'], source['canvas']['height']
+    def background(el):
+        return (not el.get('rotation', 0) and el['x'] <= 0 and el['y'] <= 0
+                and el['x']+el['width'] >= width and el['y']+el['height'] >= height)
     panels = [(i, el) for i, el in enumerate(elements)
               if ((el['type'] == 'shape' and el.get('shape_type') == 'rectangle')
                   or (el['type'] == 'image' and el.get('fit') in {'cover', 'fill'}))
               and el.get('group_id') is None
-              and 0 < el['width']*el['height'] < canvas_area*0.8
+              and el['width'] > 0 and el['height'] > 0 and not background(el)
               and el.get('opacity', 1)*(parse_rgba(el.get('fill_color'))[3] if el['type'] == 'shape' else 1) >= 0.5]
-    pairs = []
+    # Stable paint order makes ancestry acyclic, even for coincident panels.
+    # Only walk ancestors of supported text: unrelated shapes stay independent.
+    parents = {}
+    def parent(index, child):
+        if index not in parents:
+            candidates = [(i, panel) for i, panel in panels
+                          if (panel.get('z_index', 0), i) < (child.get('z_index', 0), index)
+                          and contains(panel, child)]
+            parents[index] = (max(candidates, key=lambda pair: (pair[1].get('z_index', 0), pair[0]))[0]
+                              if candidates else None)
+        return parents[index]
+    pairs, seen = [], set()
     for index, text in enumerate(elements):
         if text['type'] != 'text' or text.get('group_id') is not None:
             continue
-        candidates = [(i, panel) for i, panel in panels
-                      if (panel.get('z_index', 0), i) < (text.get('z_index', 0), index)
-                      and contains(panel, text)]
-        if candidates:
-            panel_index, _ = max(candidates, key=lambda pair: (pair[1].get('z_index', 0), pair[0]))
+        while True:
+            panel_index = parent(index, elements[index])
+            if panel_index is None or (panel_index, index) in seen:
+                break
+            seen.add((panel_index, index))
             pairs.append((panel_index, index))
+            index = panel_index
     return pairs

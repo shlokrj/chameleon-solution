@@ -1,0 +1,407 @@
+{
+  "head": "cb694d564b82acce0fe768472395c77a65fe5197",
+  "engine_hashes": {
+    "engine/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "engine/layout.py": "864ed2d37af57df17f312b55399f9891a038aa476c71a1fd880aae25f04443e0",
+    "engine/main.py": "cb7d3518ba4ff5bfe07b5f8971aa9d34592dd51d77a1ae45cd2a140dbe72191d",
+    "engine/quality.py": "0f4b2384fbd9fe467d9517aca4ed720eb7e3736c1913c1c24f684979a6a36d0c",
+    "engine/relationships.py": "9f7b9f17dbc4513a78f77eef84fd9a3f9450610b07e17268518959c36e3083bf",
+    "engine/resize.py": "f095490288fca13a13cd5de56b74828981f96354afb0cde8bfed4ab8eaa53ede",
+    "engine/typography.py": "905dbfe8c6cd22843da2d01f2fa5349f0556b007dd254d32de51f6f42fc710dd"
+  },
+  "hashes_unchanged": true,
+  "cases": [
+    {
+      "case": "large_inset_backing",
+      "source_schema_valid": true,
+      "source_warnings": [],
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 13.8,
+              "readability_deficit": 0.18567273461800302,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.18567273461800302
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.12,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 2,
+            "image_share": 0.18,
+            "group_share": 0.26,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 4,
+            "image_share": 0.18,
+            "group_share": 0.36,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 5,
+            "image_share": 0.32,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": true,
+            "status": "duplicate"
+          }
+        ]
+      },
+      "output_warnings": []
+    },
+    {
+      "case": "nested_support_panels",
+      "source_schema_valid": true,
+      "source_warnings": [],
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 15.456000000000001,
+              "readability_deficit": 0.09106458526964371,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.09106458526964371
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 2,
+            "image_share": 0.36,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.4,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 4,
+            "image_share": 0.45,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 5,
+            "image_share": 0.36,
+            "group_share": 0.4,
+            "force_reflow": true,
+            "text_grid": true,
+            "status": "duplicate"
+          }
+        ]
+      },
+      "output_warnings": []
+    },
+    {
+      "case": "reverse_input_distinct_paint",
+      "source_schema_valid": true,
+      "source_warnings": [],
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 15.456000000000001,
+              "readability_deficit": 0.09106458526964371,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.09106458526964371
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 2,
+            "image_share": 0.36,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.4,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 4,
+            "image_share": 0.45,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 5,
+            "image_share": 0.36,
+            "group_share": 0.4,
+            "force_reflow": true,
+            "text_grid": true,
+            "status": "duplicate"
+          }
+        ]
+      },
+      "output_warnings": []
+    },
+    {
+      "case": "branching_ancestry",
+      "source_schema_valid": true,
+      "source_warnings": [],
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 13.8,
+              "readability_deficit": 0.1418121552152431,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.1418121552152431
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 2,
+            "image_share": 0.36,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.4,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 4,
+            "image_share": 0.45,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 5,
+            "image_share": 0.36,
+            "group_share": 0.4,
+            "force_reflow": true,
+            "text_grid": true,
+            "status": "duplicate"
+          }
+        ]
+      },
+      "output_warnings": []
+    },
+    {
+      "case": "full_canvas_parent_boundary",
+      "source_schema_valid": true,
+      "source_warnings": [],
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 1,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 39.39764705882353,
+              "readability_deficit": 0.0,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.0
+            },
+            "status": "eligible"
+          }
+        ]
+      },
+      "output_warnings": []
+    },
+    {
+      "case": "equal_paint_explicit_group",
+      "source_schema_valid": true,
+      "source_warnings": [],
+      "contract": [],
+      "input_unchanged": true,
+      "diagnostics": {
+        "selected": 0,
+        "candidate_count": 6,
+        "candidates": [
+          {
+            "index": 0,
+            "image_share": null,
+            "group_share": null,
+            "force_reflow": false,
+            "text_grid": false,
+            "quality": {
+              "support_violations": [],
+              "overflow_ids": [],
+              "small_text_ids": [],
+              "minimum_font_size": 15.456000000000001,
+              "readability_deficit": 0.09106458526964371,
+              "hierarchy_inversion": 0,
+              "new_overlap": 0.0,
+              "loss": 0.09106458526964371
+            },
+            "status": "eligible"
+          },
+          {
+            "index": 1,
+            "image_share": 0.25,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 2,
+            "image_share": 0.36,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 3,
+            "image_share": 0.25,
+            "group_share": 0.4,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 4,
+            "image_share": 0.45,
+            "group_share": 0.3,
+            "force_reflow": true,
+            "text_grid": false,
+            "status": "duplicate"
+          },
+          {
+            "index": 5,
+            "image_share": 0.36,
+            "group_share": 0.4,
+            "force_reflow": true,
+            "text_grid": true,
+            "status": "duplicate"
+          }
+        ]
+      },
+      "output_warnings": []
+    }
+  ]
+}

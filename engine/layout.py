@@ -155,9 +155,17 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
     for index, el in enumerate(elements):
         key = ('group', el['group_id']) if el.get('group_id') is not None else ('single', index)
         grouped.setdefault(key, []).append(el)
-    for panel_index, text_index in support_pairs(source):
-        # Internal grouping only: preserve original group_id/metadata exactly.
-        grouped[('single', panel_index)].extend(grouped.pop(('single', text_index)))
+    # Merge connected backing chains without relying on element input order.
+    owners = {index: ('single', index) for index, el in enumerate(elements)
+              if el.get('group_id') is None}
+    for panel_index, child_index in support_pairs(source):
+        parent_key, child_key = owners[panel_index], owners[child_index]
+        if parent_key == child_key:
+            continue
+        grouped[parent_key].extend(grouped.pop(child_key))
+        for index, key in owners.items():
+            if key == child_key:
+                owners[index] = parent_key
     units = list(grouped.values())
     foreground, decorative = [], []
     min_foreground_z = min((e.get('z_index', 0) for e in elements if e['type'] == 'text'), default=0)

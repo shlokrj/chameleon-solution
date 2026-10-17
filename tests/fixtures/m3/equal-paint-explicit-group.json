@@ -1,0 +1,52 @@
+{
+  "source": {
+    "canvas": {
+      "width": 600,
+      "height": 600
+    },
+    "elements": [
+      {
+        "id": "outer",
+        "type": "shape",
+        "x": 50,
+        "y": 100,
+        "width": 500,
+        "height": 350,
+        "shape_type": "rectangle",
+        "fill_color": "rgba(80,80,80,1)",
+        "z_index": 0,
+        "group_id": "complete-card"
+      },
+      {
+        "id": "inner",
+        "type": "shape",
+        "x": 100,
+        "y": 170,
+        "width": 400,
+        "height": 170,
+        "shape_type": "rectangle",
+        "fill_color": "rgba(0,0,0,1)",
+        "z_index": 0,
+        "group_id": "complete-card"
+      },
+      {
+        "id": "label",
+        "type": "text",
+        "x": 125,
+        "y": 210,
+        "width": 350,
+        "height": 80,
+        "content": "INNER CIRCLE",
+        "font_family": "Solstice Sans",
+        "font_size": 28,
+        "color": "rgba(255,255,255,1)",
+        "z_index": 0,
+        "group_id": "complete-card"
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 300,
+    "height": 750
+  }
+}

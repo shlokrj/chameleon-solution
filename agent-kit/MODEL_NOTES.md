@@ -78,3 +78,7 @@ Use feasibility witnesses to distinguish unavoidable density from unnecessary sh
 The [final M3 batch](runs/m3-final-review.md) exposed two limits in previously successful backing inference: a fixed area cutoff misses large inset panels, and selecting only the nearest backing loses outer nesting. Challenge heuristic boundaries and relationship chains, not just isolated elements. Six structural passes accompanied two visual defects; retain rendered witnesses as evidence.
 
 The [M4 profile](runs/m4-profile.md) shows why candidate count is not a runtime budget: 120-element cases cost much more than the supplied examples. Separate engine time, rendering, process startup, and whole-worker peak memory. Keep poor-readability cases in performance reports and optimize measured hotspots only after higher-priority contrast defects.
+
+## Closing the bounded M3 cycle
+
+[Backing ancestry repairs](runs/m3-layer-repairs.md) replaced an arbitrary area cutoff with actual full-canvas geometry and followed text-backed nesting through paint order. Check chains, branches, and input reordering when adding inferred relationships; single-pair tests miss merge-order bugs. The judge accepted both defects and four fresh interaction cases. Close the bounded milestone with explicit remaining tradeoffs instead of equating small-case success with universal quality: uniform grouped scaling preserves contrast but can waste space and reduce typography. Next compare measured efficiency changes against unchanged-output evidence and bounded memory.

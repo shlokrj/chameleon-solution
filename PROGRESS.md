@@ -4,12 +4,12 @@ Read this first when joining or resuming work. This is the shared current-state 
 
 ## Current state
 
-- **Phase:** M3 fresh review completed with two new layering defects; M4 local profiling baseline recorded.
-- **Implementation progress:** 3 of 5 milestones complete. Next: repair M3-R3/R4; M4 profiling has begun. This count is not a percentage of effort or an estimate of time remaining.
-- **Engine:** bounded candidate search plus inferred backing relationships. 38 tests and 11 saved adversarial tasks pass structural checks. Fresh judge review found large-inset contrast loss (P1) and lost nested-panel relationships (P2). See [fresh review](agent-kit/runs/m3-final-review.md); passing structure does not establish visual correctness.
-- **Latest verified predecessor:** `b7515b9` on `main`, pushed to `origin`. The M3 repairs and evidence are recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
+- **Phase:** M3 bounded hardening cycle complete; M4 efficiency and delivery in progress.
+- **Implementation progress:** 4 of 5 milestones complete. Next: M4 measured optimization and offline delivery validation. This count is not a percentage of effort or an estimate of time remaining.
+- **Engine:** bounded candidate search plus inferred backing relationships. 44 tests and 15 saved adversarial tasks pass structural checks. Judge verified large-inset and nested-panel repairs plus four fresh interaction cases. See [M3 closure and limitations](agent-kit/runs/m3-layer-repairs.md).
+- **Latest verified predecessor:** `cb694d5` on `main`, pushed to `origin`. The M3 repairs and evidence are recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
 - **Active implementation owners:** none; challenger/judge passes ended and all claims released.
-- **Next concrete action:** claim M3-R3 (large inset panel contrast), then M3-R4 (nested panels); reproduce tracked witnesses, repair generally, and obtain independent verification. Use the recorded M4 profile for later optimization.
+- **Next concrete action:** claim M4 measured optimization: reduce repeated font/typeface measurement and overlap geometry work using the recorded profile; compare quality, warm/cold time and memory. Offline Docker validation remains outstanding.
 
 ## Milestone board
 
@@ -21,7 +21,7 @@ The definitions and exit criteria live in [IMPLEMENTATION.md](agent-kit/IMPLEMEN
 | M0 | Establish evidence | complete | [Baseline evidence](agent-kit/runs/m0-baseline.md); real rendering verified; Docker unavailable |
 | M1 | Deterministic reflow | complete | [Reflow evidence](agent-kit/runs/m1-reflow.md); sample checks pass; dense-banner readability remains limited |
 | M2 | Bounded selection and repair | complete | [Selection evidence](agent-kit/runs/m2-selection.md); 15 paired cases, bounded/failure behavior verified |
-| M3 | Adversarial hardening | in progress | [Fresh review](agent-kit/runs/m3-final-review.md): R3/R4 open; prior repairs verified |
+| M3 | Adversarial hardening | complete | [Bounded-cycle closure](agent-kit/runs/m3-layer-repairs.md); accepted defects repaired, fresh interactions pass, quality limits recorded |
 | M4 | Efficiency and delivery | in progress | [Cold/warm and RSS baseline](agent-kit/runs/m4-profile.md); optimization and offline Docker validation remain |
 
 ## Completed steps within M0
@@ -49,11 +49,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims. Root completed profiling tooling; judge completed the six-case fresh review. Engine remains b7515b9.
+No active claims; root and judge completed the bounded layering repair/review cycle.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | — | Next: M3-R3, then M3-R4 |
+| — | — | — | — | unassigned | — | Next: M4 measured optimization |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -79,8 +79,9 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `3324d76` | Added contract gates, quality diagnostics, development comparison, and sync-before-work rules | 23 tests; 15 paired cases structurally valid; three changed pairs visually reviewed; five timing repetitions | M2 complete; freeze and start M3; Docker unavailable |
 | `fix: preserve implicit text backing during reflow` (containing commit) | Preserved panel/image-backed text and one-dimensional geometry; tracked adversarial fixtures and independent findings | 30 tests; 15 development/sample comparisons; judge verified repairs | M3 remains open: rotated text and dense grids; no active agents |
 | `fix: preserve readable rotated text and source grids` (containing commit) | Repaired M3-R1/R2 and subpixel alignment; refined model notes | 36 tests; 15 comparisons; 5 saved regressions; independent six-case repair verification | Final fresh review, then M4 profiling/offline packaging |
-
 | `test: record fresh review and isolated performance baseline` (containing commit) | Saved six fresh tasks/two feasible witnesses; added isolated profiling and model notes | 38 tests; 11 rendered structural regressions; judge 4/6 visual passes; 18 profile workers with raw timings/RSS | R3/R4 remain open; Docker unavailable; prioritize contrast before optimization |
+
+| `fix: preserve large and nested backing relationships` (containing commit) | Repaired R3/R4; closed bounded M3 cycle; preserved four fresh cases and refined notes | 44 tests; 15 rendered adversarial tasks; 15 unchanged development outputs; judge 6/6 scoped passes | M4 optimization next; small-group type, dense banners and Docker remain limitations |
 
 ## How to update this file
 

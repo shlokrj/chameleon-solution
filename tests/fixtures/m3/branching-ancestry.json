@@ -1,0 +1,73 @@
+{
+  "source": {
+    "canvas": {
+      "width": 600,
+      "height": 600
+    },
+    "elements": [
+      {
+        "id": "outer",
+        "type": "shape",
+        "x": 20,
+        "y": 20,
+        "width": 560,
+        "height": 560,
+        "shape_type": "rectangle",
+        "fill_color": "rgba(80,80,80,1)",
+        "z_index": 0
+      },
+      {
+        "id": "inner",
+        "type": "shape",
+        "x": 60,
+        "y": 80,
+        "width": 480,
+        "height": 180,
+        "shape_type": "rectangle",
+        "fill_color": "rgba(0,0,0,1)",
+        "z_index": 1
+      },
+      {
+        "id": "label",
+        "type": "text",
+        "x": 90,
+        "y": 130,
+        "width": 400,
+        "height": 60,
+        "content": "FIRST PANEL",
+        "font_family": "Solstice Sans",
+        "font_size": 28,
+        "color": "rgba(255,255,255,1)",
+        "z_index": 2
+      },
+      {
+        "id": "inner-b",
+        "type": "shape",
+        "x": 60,
+        "y": 320,
+        "width": 480,
+        "height": 180,
+        "shape_type": "rectangle",
+        "fill_color": "rgba(0,0,0,1)",
+        "z_index": 3
+      },
+      {
+        "id": "label-b",
+        "type": "text",
+        "x": 90,
+        "y": 370,
+        "width": 400,
+        "height": 60,
+        "content": "SECOND PANEL",
+        "font_family": "Solstice Sans",
+        "font_size": 28,
+        "color": "rgba(255,255,255,1)",
+        "z_index": 4
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 300,
+    "height": 750
+  }
+}
