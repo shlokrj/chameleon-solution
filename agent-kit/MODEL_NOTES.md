@@ -82,3 +82,7 @@ The [M4 profile](runs/m4-profile.md) shows why candidate count is not a runtime 
 ## Closing the bounded M3 cycle
 
 [Backing ancestry repairs](runs/m3-layer-repairs.md) replaced an arbitrary area cutoff with actual full-canvas geometry and followed text-backed nesting through paint order. Check chains, branches, and input reordering when adding inferred relationships; single-pair tests miss merge-order bugs. The judge accepted both defects and four fresh interaction cases. Close the bounded milestone with explicit remaining tradeoffs instead of equating small-case success with universal quality: uniform grouped scaling preserves contrast but can waste space and reduce typography. Next compare measured efficiency changes against unchanged-output evidence and bounded memory.
+
+## Measured M4 font reuse
+
+The [font optimization](runs/m4-font-reuse.md) removed repeated typeface construction using an existing bounded cache; it did not require caching arbitrary text or sizes. Compare full JSON and decoded render pixels against an isolated baseline, especially when changing typography dependencies that older comparison tools intentionally require to remain identical. Distinguish engine speedups from total rendering time and whole-worker memory from engine allocations. Fully styled text must not accidentally inherit unused base-font metrics.

@@ -3,7 +3,7 @@ from functools import lru_cache
 from pathlib import Path
 import skia
 from renderer.converter.brand_fonts import load_brand_font_manager
-from renderer.converter.wrap import char_widths, wrap_text
+from renderer.converter.wrap import wrap_text
 
 
 @lru_cache(maxsize=1)
@@ -34,7 +34,10 @@ def text_extent(el, size, width):
     weight = el.get('font_weight', 'regular')
     italic = el.get('font_style', 'normal') == 'italic'
     style = style_name(weight, italic)
-    widths = char_widths(font_manager(), family, weight, style, size, text)
+    # Match renderer glyph advances while reusing the bounded typeface cache.
+    # Font objects stay local: sizes vary during fitting and must not leak state.
+    base_font = skia.Font(font_data(family, weight, style), size)
+    widths = base_font.getWidths(base_font.textToGlyphs(text))
     wrapped = wrap_text(text, widths, width)
     styles = [(weight, italic)] * len(text)
     for run in el.get('style_runs', []):
@@ -42,8 +45,10 @@ def text_extent(el, size, width):
             old_weight, old_italic = styles[i]
             styles[i] = (run.get('font_weight', old_weight),
                          run.get('font_style', 'italic' if old_italic else 'normal') == 'italic')
-    metrics = {}
-    for w, it in set(styles):
+    base_metrics = base_font.getMetrics()
+    metrics = ({(weight, italic): (widths, base_metrics.fDescent-base_metrics.fAscent)}
+               if (weight, italic) in styles else {})
+    for w, it in set(styles) - {(weight, italic)}:
         font = skia.Font(font_data(family, w, style_name(w, it)), size)
         glyph_widths = font.getWidths(font.textToGlyphs(text))
         fm = font.getMetrics()

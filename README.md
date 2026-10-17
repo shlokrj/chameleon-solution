@@ -65,6 +65,7 @@ python -m unittest discover -s tests -v
 python -m evaluation.baseline --output artifacts/current
 python -m evaluation.regressions --output artifacts/regressions
 python -m evaluation.profile --output artifacts/profile
+python -m evaluation.parity --output artifacts/parity
 ```
 
 The evaluation command calls the real renderer directly, writes source/output
@@ -76,7 +77,9 @@ are tracked in `agent-kit/runs/`.
 The profiler runs separate processes for startup and warmed measurements on
 three supplied cases and six element-count/shape cases. It records engine and
 render times separately, whole-process peak memory, structural failures, and
-readability diagnostics. These are local measurements, not container results.
+readability diagnostics. These are local measurements, not container results. The parity command captures
+complete layouts and rendered-pixel hashes; pass `--reference /path/to/report.json`
+to compare against a report produced in an isolated baseline checkout.
 
 ## What the self-check does (and doesn't do)
 
