@@ -1,0 +1,64 @@
+{
+  "source": {
+    "canvas": {
+      "width": 600,
+      "height": 600
+    },
+    "elements": [
+      {
+        "id": "background",
+        "type": "shape",
+        "x": 0,
+        "y": 0,
+        "width": 600,
+        "height": 600,
+        "shape_type": "rectangle",
+        "fill_color": "rgba(0,0,0,1)",
+        "z_index": 0
+      },
+      {
+        "id": "title",
+        "type": "text",
+        "x": 60,
+        "y": 100,
+        "width": 480,
+        "height": 100,
+        "content": "THE NIGHT EDITION",
+        "font_family": "Solstice Sans",
+        "font_size": 28,
+        "color": "rgba(255,255,255,1)",
+        "z_index": 2
+      },
+      {
+        "id": "badge",
+        "type": "shape",
+        "x": 160,
+        "y": 400,
+        "width": 280,
+        "height": 90,
+        "shape_type": "rectangle",
+        "fill_color": "rgba(255,255,255,1)",
+        "group_id": "badge",
+        "z_index": 3
+      },
+      {
+        "id": "badge-label",
+        "type": "text",
+        "x": 185,
+        "y": 420,
+        "width": 230,
+        "height": 50,
+        "content": "OPEN LATE",
+        "font_family": "Solstice Sans",
+        "font_size": 28,
+        "color": "rgba(0,0,0,1)",
+        "group_id": "badge",
+        "z_index": 4
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 300,
+    "height": 800
+  }
+}

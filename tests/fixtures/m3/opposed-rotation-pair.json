@@ -1,0 +1,40 @@
+{
+  "source": {
+    "canvas": {
+      "width": 600,
+      "height": 600
+    },
+    "elements": [
+      {
+        "id": "a",
+        "type": "text",
+        "x": 100,
+        "y": 100,
+        "width": 280,
+        "height": 70,
+        "content": "Morning",
+        "font_family": "Solstice Sans",
+        "font_size": 28,
+        "color": "rgba(0,0,0,1)",
+        "rotation": 25
+      },
+      {
+        "id": "b",
+        "type": "text",
+        "x": 180,
+        "y": 350,
+        "width": 280,
+        "height": 70,
+        "content": "Evening",
+        "font_family": "Solstice Sans",
+        "font_size": 28,
+        "color": "rgba(0,0,0,1)",
+        "rotation": -25
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 950,
+    "height": 280
+  }
+}

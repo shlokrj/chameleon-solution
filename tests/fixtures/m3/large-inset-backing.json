@@ -1,0 +1,38 @@
+{
+  "source": {
+    "canvas": {
+      "width": 600,
+      "height": 600
+    },
+    "elements": [
+      {
+        "id": "back",
+        "type": "shape",
+        "x": 20,
+        "y": 20,
+        "width": 560,
+        "height": 560,
+        "shape_type": "rectangle",
+        "fill_color": "rgba(0,0,0,1)",
+        "z_index": 1
+      },
+      {
+        "id": "copy",
+        "type": "text",
+        "x": 80,
+        "y": 180,
+        "width": 440,
+        "height": 90,
+        "content": "AFTER HOURS",
+        "font_family": "Solstice Sans",
+        "font_size": 28,
+        "color": "rgba(255,255,255,1)",
+        "z_index": 2
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 900,
+    "height": 300
+  }
+}

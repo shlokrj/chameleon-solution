@@ -1,0 +1,32 @@
+{
+  "canvas": {
+    "width": 900,
+    "height": 300
+  },
+  "elements": [
+    {
+      "id": "back",
+      "type": "shape",
+      "x": 20,
+      "y": 10,
+      "width": 860,
+      "height": 280,
+      "shape_type": "rectangle",
+      "fill_color": "rgba(0,0,0,1)",
+      "z_index": 1
+    },
+    {
+      "id": "copy",
+      "type": "text",
+      "x": 70,
+      "y": 100,
+      "width": 700,
+      "height": 90,
+      "content": "AFTER HOURS",
+      "font_family": "Solstice Sans",
+      "font_size": 28,
+      "color": "rgba(255,255,255,1)",
+      "z_index": 2
+    }
+  ]
+}

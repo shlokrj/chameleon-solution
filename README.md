@@ -63,6 +63,8 @@ not yet established. See [PROGRESS.md](PROGRESS.md) for the current milestone.
 pip install -r requirements-dev.txt
 python -m unittest discover -s tests -v
 python -m evaluation.baseline --output artifacts/current
+python -m evaluation.regressions --output artifacts/regressions
+python -m evaluation.profile --output artifacts/profile
 ```
 
 The evaluation command calls the real renderer directly, writes source/output
@@ -70,6 +72,11 @@ previews and a report, and exits nonzero on structural findings. Text-fit
 measurements are estimates shared with the engine, not an independent visual
 oracle. Inspect the PNGs too. Generated artifacts stay local; milestone reports
 are tracked in `agent-kit/runs/`.
+
+The profiler runs separate processes for startup and warmed measurements on
+three supplied cases and six element-count/shape cases. It records engine and
+render times separately, whole-process peak memory, structural failures, and
+readability diagnostics. These are local measurements, not container results.
 
 ## What the self-check does (and doesn't do)
 

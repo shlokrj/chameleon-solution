@@ -1,0 +1,43 @@
+{
+  "canvas": {
+    "width": 300,
+    "height": 750
+  },
+  "elements": [
+    {
+      "id": "outer",
+      "type": "shape",
+      "x": 25.0,
+      "y": 250.0,
+      "width": 250.0,
+      "height": 175.0,
+      "shape_type": "rectangle",
+      "fill_color": "rgba(80,80,80,1)",
+      "z_index": 0
+    },
+    {
+      "id": "inner",
+      "type": "shape",
+      "x": 50.0,
+      "y": 285.0,
+      "width": 200.0,
+      "height": 85.0,
+      "shape_type": "rectangle",
+      "fill_color": "rgba(0,0,0,1)",
+      "z_index": 1
+    },
+    {
+      "id": "label",
+      "type": "text",
+      "x": 62.5,
+      "y": 305.0,
+      "width": 175.0,
+      "height": 40.0,
+      "content": "INNER CIRCLE",
+      "font_family": "Solstice Sans",
+      "font_size": 14.0,
+      "color": "rgba(255,255,255,1)",
+      "z_index": 2
+    }
+  ]
+}

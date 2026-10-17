@@ -72,3 +72,9 @@ Use [EXPERIMENTS.md](EXPERIMENTS.md). State the selected revision, evidence supp
 ## Lessons from the M3 text repair cycle
 
 Use feasibility witnesses to distinguish unavoidable density from unnecessary shrinkage. Test small coordinate perturbations as well as exact grids: a 0.25px alignment change exposed a large readability discontinuity despite passing structural checks. Reserve rotation-aware extents before font fitting rather than shrinking an already-fitted box again. Keep layout alternatives within the existing candidate budget and compare worst-case readability as well as runtime. The [text repair record](runs/m3-text-repairs.md) separates fresh discovery from exposed-case verification; repaired cases must not be reused as a final holdout.
+
+## Fresh-review and scaling lessons
+
+The [final M3 batch](runs/m3-final-review.md) exposed two limits in previously successful backing inference: a fixed area cutoff misses large inset panels, and selecting only the nearest backing loses outer nesting. Challenge heuristic boundaries and relationship chains, not just isolated elements. Six structural passes accompanied two visual defects; retain rendered witnesses as evidence.
+
+The [M4 profile](runs/m4-profile.md) shows why candidate count is not a runtime budget: 120-element cases cost much more than the supplied examples. Separate engine time, rendering, process startup, and whole-worker peak memory. Keep poor-readability cases in performance reports and optimize measured hotspots only after higher-priority contrast defects.

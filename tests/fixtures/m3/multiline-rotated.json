@@ -1,0 +1,28 @@
+{
+  "source": {
+    "canvas": {
+      "width": 600,
+      "height": 600
+    },
+    "elements": [
+      {
+        "id": "a",
+        "type": "text",
+        "x": 140,
+        "y": 200,
+        "width": 320,
+        "height": 160,
+        "content": "Made for\nlong weekends",
+        "font_family": "Solstice Sans",
+        "font_size": 28,
+        "color": "rgba(0,0,0,1)",
+        "rotation": 70,
+        "line_height": 1.4
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 850,
+    "height": 300
+  }
+}
