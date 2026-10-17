@@ -86,3 +86,7 @@ The [M4 profile](runs/m4-profile.md) shows why candidate count is not a runtime 
 ## Measured M4 font reuse
 
 The [font optimization](runs/m4-font-reuse.md) removed repeated typeface construction using an existing bounded cache; it did not require caching arbitrary text or sizes. Compare full JSON and decoded render pixels against an isolated baseline, especially when changing typography dependencies that older comparison tools intentionally require to remain identical. Distinguish engine speedups from total rendering time and whole-worker memory from engine allocations. Fully styled text must not accidentally inherit unused base-font metrics.
+
+## Measured overlap reuse
+
+[Overlap geometry reuse](runs/m4-overlap-reuse.md) keeps per-candidate bounds local and preserves formula and summation order. Verify exact numerical scores as well as selected layouts/pixels; shared-helper unit references alone cannot catch a shared formula change. Linear geometry storage does not make pairwise scoring linear. After two measured optimization steps, prioritize reproducible packaging and the remaining release checks instead of extending optimization without evidence.

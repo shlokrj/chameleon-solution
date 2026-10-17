@@ -46,8 +46,12 @@ def hard_issues(source, target, design):
 
 
 def overlap(a, b):
-    ax, ay, ar, ab = bounds([a])
-    bx, by, br, bb = bounds([b])
+    return overlap_bounds(bounds([a]), bounds([b]))
+
+
+def overlap_bounds(a, b):
+    ax, ay, ar, ab = a
+    bx, by, br, bb = b
     area = max(0, min(ar, br)-max(ax, bx))*max(0, min(ab, bb)-max(ay, by))
     return area / max(1e-9, min((ar-ax)*(ab-ay), (br-bx)*(bb-by)))
 
@@ -72,13 +76,17 @@ def quality(source, design):
                     if old[a['id']]['font_size'] > old[b['id']]['font_size']*1.5)
     relevant = [e for e in design['elements'] if e['type'] == 'text' or
                 (e['type'] == 'image' and e.get('fit', 'contain') != 'cover')]
+    # Per-evaluation storage: geometry changes across candidates and calls.
+    # Reuse each rotated extent instead of recomputing it for every pair.
+    current_bounds = {e['id']: bounds([e]) for e in relevant}
+    source_bounds = {e['id']: bounds([old[e['id']]]) for e in relevant}
     collisions = 0.0
     for i, a in enumerate(relevant):
         for b in relevant[i+1:]:
             if a.get('group_id') is not None and a.get('group_id') == b.get('group_id'):
                 continue
             # Preserve already-intentional layering; score only increased overlap.
-            collisions += max(0, overlap(a, b)-overlap(old[a['id']], old[b['id']])-0.01)
+            collisions += max(0, overlap_bounds(current_bounds[a['id']], current_bounds[b['id']])-overlap_bounds(source_bounds[a['id']], source_bounds[b['id']])-0.01)
     by_id = {e['id']: e for e in design['elements']}
     support_violations = []
     for panel_index, text_index in support_pairs(source):

@@ -7,6 +7,7 @@ from pathlib import Path
 from PIL import Image
 from jsonschema import Draft202012Validator
 from engine.resize import resize
+from engine.quality import quality
 from evaluation.contract import check_contract
 from evaluation.development import tasks
 from evaluation.profile import scaling_task
@@ -56,7 +57,7 @@ def main():
         with Image.open(png) as image:
             pixels = image.convert('RGBA')
             digest = hashlib.sha256(str(pixels.size).encode()+pixels.tobytes()).hexdigest()
-        records[name] = dict(task=original, design=design, pixel_sha256=digest, issues=issues, warnings=warnings)
+        records[name] = dict(task=original, design=design, pixel_sha256=digest, quality=quality(original['source'], design), issues=issues, warnings=warnings)
     differences = []
     if args.reference:
         prior = json.loads(args.reference.read_text())['cases']
@@ -64,8 +65,8 @@ def main():
             if name not in prior or name not in records:
                 differences.append({'case': name, 'field': 'case_missing'})
                 continue
-            for field in ['task', 'design', 'pixel_sha256']:
-                if prior[name][field] != records[name][field]:
+            for field in ['task', 'design', 'pixel_sha256', 'quality']:
+                if prior[name].get(field) != records[name][field]:
                     differences.append({'case': name, 'field': field})
     report = dict(cases=records, differences=differences,
                   engine_hashes={str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(Path('engine').glob('*.py'))})

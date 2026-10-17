@@ -78,7 +78,7 @@ The profiler runs separate processes for startup and warmed measurements on
 three supplied cases and six element-count/shape cases. It records engine and
 render times separately, whole-process peak memory, structural failures, and
 readability diagnostics. These are local measurements, not container results. The parity command captures
-complete layouts and rendered-pixel hashes; pass `--reference /path/to/report.json`
+complete layouts, quality scores, and rendered-pixel hashes; pass `--reference /path/to/report.json`
 to compare against a report produced in an isolated baseline checkout.
 
 ## What the self-check does (and doesn't do)

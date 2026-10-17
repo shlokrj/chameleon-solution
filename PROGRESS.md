@@ -6,10 +6,10 @@ Read this first when joining or resuming work. This is the shared current-state 
 
 - **Phase:** M3 bounded hardening cycle complete; M4 efficiency and delivery in progress.
 - **Implementation progress:** 4 of 5 milestones complete. Next: M4 measured optimization and offline delivery validation. This count is not a percentage of effort or an estimate of time remaining.
-- **Engine:** bounded candidate search plus inferred backing relationships. 47 tests pass; cached-typeface reuse preserves exact JSON and rendered pixels across 42 cases. Paired warm engine medians improve 1.5–6.9× on nine cases. See [M4 font reuse evidence](agent-kit/runs/m4-font-reuse.md) and [M3 limitations](agent-kit/runs/m3-layer-repairs.md).
-- **Latest verified predecessor:** `338b50c` on `main`, pushed to `origin`. The M3 repairs and evidence are recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
+- **Engine:** bounded candidate search plus inferred backing relationships. 50 tests pass. Font and overlap optimizations preserve exact layouts, selected quality scores and rendered pixels across 42 cases. Latest overlap change improves 120-label warm engine medians about 23–32% against 88ab64f. See [M4 overlap evidence](agent-kit/runs/m4-overlap-reuse.md) and [M3 limitations](agent-kit/runs/m3-layer-repairs.md).
+- **Latest verified predecessor:** `88ab64f` on `main`, pushed to `origin`. The M3 repairs and evidence are recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
 - **Active implementation owners:** none; challenger/judge passes ended and all claims released.
-- **Next concrete action:** claim M4 overlap-geometry reuse; compare exact scores/layouts and sequential profiles against this revision, then address reproducible dependencies and offline Docker validation.
+- **Next concrete action:** claim reproducible dependency pinning and packaging checks; retain the measured optimization baseline. Docker is unavailable locally, so explicitly track clean linux/amd64 build/network-disabled validation as outstanding.
 
 ## Milestone board
 
@@ -22,7 +22,7 @@ The definitions and exit criteria live in [IMPLEMENTATION.md](agent-kit/IMPLEMEN
 | M1 | Deterministic reflow | complete | [Reflow evidence](agent-kit/runs/m1-reflow.md); sample checks pass; dense-banner readability remains limited |
 | M2 | Bounded selection and repair | complete | [Selection evidence](agent-kit/runs/m2-selection.md); 15 paired cases, bounded/failure behavior verified |
 | M3 | Adversarial hardening | complete | [Bounded-cycle closure](agent-kit/runs/m3-layer-repairs.md); accepted defects repaired, fresh interactions pass, quality limits recorded |
-| M4 | Efficiency and delivery | in progress | [Font reuse measured](agent-kit/runs/m4-font-reuse.md); overlap costs and offline Docker validation remain |
+| M4 | Efficiency and delivery | in progress | [Font and overlap reuse measured](agent-kit/runs/m4-overlap-reuse.md); reproducible dependencies and offline Docker validation remain |
 
 ## Completed steps within M0
 
@@ -49,11 +49,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims; root completed font optimization and validation; judge completed static review.
+No active claims; root completed overlap optimization and paired validation; judge completed static review.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | — | Next: M4 overlap geometry and packaging |
+| — | — | — | — | unassigned | — | Next: M4 dependencies and offline packaging |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -84,6 +84,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `fix: preserve large and nested backing relationships` (containing commit) | Repaired R3/R4; closed bounded M3 cycle; preserved four fresh cases and refined notes | 44 tests; 15 rendered adversarial tasks; 15 unchanged development outputs; judge 6/6 scoped passes | M4 optimization next; small-group type, dense banners and Docker remain limitations |
 
 | `perf: reuse cached typefaces during text fitting` (containing commit) | Reused bounded typefaces/base metrics; added isolated parity harness and notes | 47 tests; 42 identical JSON/pixel results; 36 sequential profile workers; independent static review | M4 overlap costs and offline packaging remain; no readability change |
+
+| `perf: reuse bounds during overlap scoring` (containing commit) | Reused per-call rotated bounds; added exact quality parity and tests | 50 tests; 42 identical selected scores/JSON/pixels; 36 sequential profile workers; static review | Dependency reproducibility and offline Docker validation next; quality limitations unchanged |
 
 ## How to update this file
 
