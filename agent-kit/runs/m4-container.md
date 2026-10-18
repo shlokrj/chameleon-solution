@@ -40,3 +40,9 @@ colima start
 ```
 
 Final local artifacts: artifacts/m4-container-final.log and artifacts/container-check.HtLlhL/output. Earlier clean-build log is artifacts/m4-container-run.log. Broader Linux reports/PNGs are artifacts/m4-container-parity and artifacts/m4-container-repeat.
+
+## Post-restart verification
+
+After the Mac restart on 2026-10-18, restarted the existing Colima VM with `colima start`. Docker client/server report 29.9.1 / 29.5.2. The retained production image runs as x86_64 with networking disabled and imports the engine successfully.
+
+Ran the complete `scripts/verify-container.sh` again: both amd64 images build using cached layers, all 55 tests pass offline, the production entrypoint generates all three output pairs, and independent delivery validation reports no issues. The expected missing holiday badge warning remains. Local evidence: `artifacts/m4-container-restart.log` and `artifacts/container-check.eDeANO/output/validation-report.json`. No engine or Docker configuration changes were needed. This verifies restart recovery and packaging; it does not resolve the separately documented Linux readability limitation.

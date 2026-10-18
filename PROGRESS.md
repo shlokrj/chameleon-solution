@@ -7,7 +7,7 @@ Read this first when joining or resuming work. This is the shared current-state 
 - **Phase:** M3 complete; M4 offline containers verified, final Linux quality/release review remains.
 - **Implementation progress:** 4 of 5 milestones complete. Next: Linux quality follow-up and final release review. This count is not a percentage of effort or an estimate of time remaining.
 - **Engine:** bounded candidate search plus inferred backing relationships. 55 tests pass inside Linux amd64 with networking disabled; all three production output pairs validate; 42 Linux cases repeat exactly. Docker/Colima is running. Cross-platform font differences include a dense-label readability regression; see [container evidence](agent-kit/runs/m4-container.md).
-- **Latest verified predecessor:** `fe4e76f` on `main`, pushed to `origin`. The M3 repairs and evidence are recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
+- **Latest verified predecessor:** `461d910` on `main`, pushed to `origin`. The post-restart Docker verification is recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
 - **Active implementation owners:** none; challenger/judge passes ended and all claims released.
 - **Next concrete action:** review dense-labels-compact under Linux (group labels 6.325px vs macOS 9.569px), retain Linux-based quality evidence, and resolve applicable organizer/release questions. Docker setup and offline verification are complete.
 
@@ -49,7 +49,7 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims; Docker runtime setup and offline container verification completed.
+No active claims; Docker setup and full post-restart offline verification completed.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
@@ -90,6 +90,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `build: pin tested dependencies and require real rendering` (containing commit) | Pinned runtime/dev versions and Python image; removed whole-render fallback; added delivery validator/container script | Clean native install + pip check; 55 tests; 42 parity cases; 3 entrypoint pairs; Linux wheel dry-run; static review | Docker build/offline run blocked; image/container resource and release checks unrun |
 
 | `build: verify offline amd64 containers on colima` (containing commit) | Installed Docker/Colima, verified real amd64 builds/offline outputs, recorded resources and platform caveat | 55 container tests; 3 production pairs; 42 deterministic Linux repeats; five resource runs | Docker blocker resolved; dense Linux labels and organizer/release questions remain |
+
+| `docs: record post-restart docker verification` (containing commit) | Confirmed Docker/Colima recovery and complete container workflow after Mac restart | Both images built; 55 offline tests; 3 production JSON/PNG pairs independently validated | Docker work complete; Linux readability and final release review remain separate follow-ups |
 
 ## How to update this file
 
