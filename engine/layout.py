@@ -1,8 +1,18 @@
 """Deterministic retargeting with explicit groups and font-aware text fitting."""
 from copy import deepcopy
 import math
+from pathlib import Path
+from renderer.converter.assets import asset_path
 from engine.typography import fit_text, text_extent
 from engine.relationships import support_pairs
+
+ASSETS_DIR = str(Path(__file__).resolve().parents[1] / 'brand_kit/assets')
+# Smaller copy may keep this size while larger copy shrinks, but stays at most
+# HIERARCHY_RATIO of the largest copy so the headline remains dominant.
+# ponytail: one absolute floor; per-role floors if catalogue tuning shows a need.
+MIN_READABLE_PX = 10.0
+HIERARCHY_RATIO = 0.7
+STYLE_LENGTHS = ('corner_radius', 'stroke_width')
 
 
 def bounds(elements):
@@ -18,6 +28,17 @@ def bounds(elements):
             max(b[2] for b in boxes), max(b[3] for b in boxes))
 
 
+def box_overlap(a, b):
+    return max(0, min(a[2], b[2])-max(a[0], b[0]))*max(0, min(a[3], b[3])-max(a[1], b[1]))
+
+
+def new_collision(before, after):
+    """True if any pair of units overlaps where the source pair did not."""
+    old, new = [bounds(u) for u in before], [bounds(u) for u in after]
+    return any(box_overlap(new[i], new[j]) > 1e-6 and box_overlap(old[i], old[j]) <= 1e-6
+               for i in range(len(new)) for j in range(i+1, len(new)))
+
+
 def place(unit, slot):
     """Uniformly transform the whole unit so relationships/ratios survive."""
     left, top, right, bottom = bounds(unit)
@@ -31,25 +52,55 @@ def place(unit, slot):
         el['y'] = dy + (el['y']-top)*scale
         el['width'] *= scale
         el['height'] *= scale
+        for key in STYLE_LENGTHS:  # a pill stays a pill at any size
+            if key in el:
+                el[key] *= scale
         if el['type'] == 'text':
             fit_text(el, el['font_size']*scale)
 
 
-def stack(units, slot, gap, horizontal=False):
+def flow(units, slot, gap, upper_scale):
+    """Wrap units into centered rows at one shared scale, like flex-wrap.
+
+    A shared scale keeps relative sizes (a large button stays larger than a
+    small badge); rows let wide and tall zones both fill naturally.
+    """
     if not units:
         return
     x, y, w, h = slot
-    gap = min(gap, (w if horizontal else h) / max(1, 2*len(units)))
-    sizes = []
-    for unit in units:
-        a, b, c, d = bounds(unit)
-        sizes.append(max(1e-6, (c-a)/max(d-b, 1e-6) if horizontal else (d-b)/max(c-a, 1e-6)))
-    available = max(0, (w if horizontal else h) - gap*(len(units)-1))
-    offset = 0
-    for unit, size in zip(units, sizes):
-        extent = available*size/sum(sizes)
-        place(unit, (x+offset, y, extent, h) if horizontal else (x, y+offset, w, extent))
-        offset += extent+gap
+    sizes = [(c-a, d-b) for a, b, c, d in map(bounds, units)]
+    def rows(scale):
+        result, row, row_width = [], [], 0.0
+        for i, (uw, _) in enumerate(sizes):
+            if row and row_width+gap+uw*scale > w:
+                result.append(row)
+                row, row_width = [], 0.0
+            row_width += (gap if row else 0)+uw*scale
+            row.append(i)
+        return result+[row]
+    def fits(scale):
+        laid = rows(scale)
+        heights = [max(sizes[i][1] for i in row)*scale for row in laid]
+        return (all(sum(sizes[i][0] for i in row)*scale+gap*(len(row)-1) <= w+1e-9 for row in laid)
+                and sum(heights)+gap*(len(laid)-1) <= h+1e-9)
+    low, high = 0.0, upper_scale
+    if fits(high):
+        low = high
+    else:
+        for _ in range(24):
+            mid = (low+high)/2
+            low, high = (mid, high) if fits(mid) else (low, mid)
+    laid = rows(low)
+    heights = [max(sizes[i][1] for i in row)*low for row in laid]
+    top = y+max(0, h-sum(heights)-gap*(len(laid)-1))/2
+    for row, row_height in zip(laid, heights):
+        row_width = sum(sizes[i][0] for i in row)*low+gap*(len(row)-1)
+        left = x+max(0, w-row_width)/2
+        for i in row:
+            uw, uh = sizes[i][0]*low, sizes[i][1]*low
+            place(units[i], (left, top+(row_height-uh)/2, uw, uh))
+            left += uw+gap
+        top += row_height+gap
 
 
 def text_stack(units, slot, gap, upper_scale):
@@ -59,12 +110,18 @@ def text_stack(units, slot, gap, upper_scale):
     # These units are singleton text boxes. Preserve their relative type sizes.
     elements = [u[0] for u in units]
     gap = min(gap, height / max(1, 2*len(elements)))
+    largest = max(el['font_size'] for el in elements)
+    def sizes(scale):
+        # Shrink proportionally, but let small copy hold a readable floor
+        # below the (shrunk) largest copy: order and dominance are preserved.
+        floor = min(MIN_READABLE_PX, largest*scale*HIERARCHY_RATIO)
+        return [max(1, min(el['font_size']*upper_scale, max(el['font_size']*scale, floor))) for el in elements]
     def measurements(scale):
         measured = []
-        for el in elements:
+        for el, size in zip(elements, sizes(scale)):
             rotated = bool(el.get('rotation', 0))
             wrap_width = min(width, height) if rotated else width
-            ew, eh, lines = text_extent(el, max(1, el['font_size']*scale), wrap_width)
+            ew, eh, lines = text_extent(el, size, wrap_width)
             box_width = max(ew, 1e-6) if rotated else width
             angle = math.radians(el.get('rotation', 0))
             bw = max(box_width, abs(box_width*math.cos(angle))+abs(eh*math.sin(angle)))
@@ -91,10 +148,10 @@ def text_stack(units, slot, gap, upper_scale):
     available = max(0, height-gap*(len(elements)-1))
     compression = min(1, available/max(total, 1e-9))
     offset = max(0, (available-total)/2)
-    for el, (ew, eh, bw, bh, _, _) in zip(elements, extents):
+    for el, size, (ew, eh, bw, bh, _, _) in zip(elements, sizes(low), extents):
         el.update(x=x+(width-ew)/2, y=y+offset+(bh-eh)*compression/2,
                   width=ew, height=eh*compression)
-        fit_text(el, max(1, el['font_size']*low))
+        fit_text(el, size)
         if el.get('rotation', 0) and compression < 1:
             place([el], (x, y+offset, width, bh*compression))
         offset += bh*compression+gap
@@ -144,7 +201,7 @@ def arrange_text(units, slot, gap, upper_scale, use_grid):
             text_stack([unit], (x+c*(cw+gap), y+r*(ch+gap), cw, ch), 0, upper_scale)
 
 
-def build_layout(source, target_canvas, *, image_share=None, group_share=None, force_reflow=False, text_grid=False):
+def build_layout(source, target_canvas, *, image_share=None, group_share=None, force_reflow=False, text_grid=False, group_side=False):
     result = deepcopy(source)
     result['canvas'] = deepcopy(target_canvas)
     sw, sh = source['canvas']['width'], source['canvas']['height']
@@ -186,37 +243,57 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
         place(unit, (max(0, min(tw-w, el['x']*sx)), max(0, min(th-h, el['y']*sy)), min(w, tw), min(h, th)))
     ratio_change = sx/sy
     if not force_reflow and 0.67 <= ratio_change <= 1.5:
-        for unit in foreground:
-            a, b, c, d = bounds(unit)
-            # Preserve normalized centers, but scale complete groups uniformly.
-            w, h = min(tw, (c-a)*min(sx, sy)), min(th, (d-b)*min(sx, sy))
-            x = max(0, min(tw-w, (a+c)/2*sx-w/2))
-            y = max(0, min(th-h, (b+d)/2*sy-h/2))
-            place(unit, (x, y, w, h))
+        # Preserve normalized centers and scale complete groups uniformly.
+        # Prefer the geometric-mean scale so extra room is used instead of
+        # left as empty bands; fall back if units would newly collide.
+        originals = [deepcopy(unit) for unit in foreground]
+        geometric = math.sqrt(sx*sy)
+        for scale in (geometric, (geometric+min(sx, sy))/2, min(sx, sy)):
+            for unit, original in zip(foreground, originals):
+                for el, src in zip(unit, original):
+                    el.update(deepcopy(src))
+                a, b, c, d = bounds(unit)
+                w, h = min(tw, (c-a)*scale), min(th, (d-b)*scale)
+                x = max(0, min(tw-w, (a+c)/2*sx-w/2))
+                y = max(0, min(th-h, (b+d)/2*sy-h/2))
+                place(unit, (x, y, w, h))
+            if not new_collision(originals, foreground):
+                break
         return result
     foreground.sort(key=lambda u: (bounds(u)[1], bounds(u)[0], min(e.get('z_index', 0) for e in u)))
-    images = [u for u in foreground if all(e['type'] == 'image' for e in u)]
+    # A missing asset renders as a placeholder box: keep it, but as a
+    # secondary unit beside the buttons/badges rather than in the hero slot.
+    missing = [u for u in foreground if len(u) == 1 and u[0]['type'] == 'image'
+               and asset_path(ASSETS_DIR, u[0].get('asset_id')) is None]
+    images = [u for u in foreground if all(e['type'] == 'image' for e in u) and u not in missing]
     text = [u for u in foreground if len(u) == 1 and u[0]['type'] == 'text']
     groups = [u for u in foreground if u not in images and u not in text]
     margin = min(tw, th)*0.04
     gap = min(tw, th)*0.025
+    upper = max(sx, sy)
     x, y, w, h = margin, margin, tw-2*margin, th-2*margin
     if tw >= th:
         image_width = w*(0.25 if image_share is None else image_share) if images and (text or groups) else w if images else 0
-        stack(images, (x, y, image_width, h), gap)
+        flow(images, (x, y, image_width, h), gap, upper)
         if image_width and (text or groups):
             x += image_width+gap
             w -= image_width+gap
+        if group_side and groups and text:
+            # Banner archetype: buttons/badges get a full-height right column.
+            group_width = w*(0.22 if group_share is None else group_share)
+            flow(groups, (x+w-group_width, y, group_width, h), gap, upper)
+            arrange_text(text, (x, y, w-group_width-gap, h), gap, upper, text_grid)
+            return result
         group_height = h*(0.22 if group_share is None else group_share) if groups and text else h if groups else 0
-        stack(groups, (x, y+h-group_height, w, group_height), gap, horizontal=True)
-        arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, max(sx, sy), text_grid)
+        flow(groups, (x, y+h-group_height, w, group_height), gap, upper)
+        arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, upper, text_grid)
     else:
         image_height = h*(0.36 if image_share is None else image_share) if images and (text or groups) else h if images else 0
-        stack(images, (x, y, w, image_height), gap, horizontal=True)
+        flow(images, (x, y, w, image_height), gap, upper)
         if image_height and (text or groups):
             y += image_height+gap
             h -= image_height+gap
         group_height = h*(0.25 if group_share is None else group_share) if groups and text else h if groups else 0
-        stack(groups, (x, y+h-group_height, w, group_height), gap)
-        arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, max(sx, sy), text_grid)
+        flow(groups, (x, y+h-group_height, w, group_height), gap, upper)
+        arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, upper, text_grid)
     return result

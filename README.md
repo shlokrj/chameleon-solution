@@ -50,10 +50,16 @@ already there — one per difficulty level) and writes an `_output.json` and
 
 The engine uses at most six deterministic layout candidates with structural gates
 and readability regression guards. It keeps the existing layout as a fallback
-and avoids further search when local quality checks are already satisfied. Reflow preserves nearby layouts, places
-imagery beside copy for wide targets, and stacks content for tall targets.
-Explicit groups move together, ordinary images retain their box proportions,
-and text uses brand-font measurements with bounded size fitting. No runtime
+and avoids further search when local quality checks are already satisfied. Near-ratio
+targets keep the source topology and use extra room (geometric-mean scale) unless
+that would create new collisions. Reflow places imagery beside copy for wide
+targets (or adds a right-hand button column on banners) and stacks content for
+tall targets. Images and button/badge groups wrap into rows at one shared scale,
+so a large CTA stays larger than a small badge; shape corner radii scale with
+them. Copy keeps its hierarchy while small text holds a 10px floor below the
+headline. An image whose asset file is missing is treated as secondary, not
+hero. Explicit groups move together, ordinary images retain their box
+proportions, and text uses brand-font measurements with bounded size fitting. No runtime
 model or network access is required by the layout algorithm.
 
 This is an initial heuristic, not a finished solution: dense extreme banners
@@ -69,6 +75,7 @@ python -m evaluation.baseline --output artifacts/current
 python -m evaluation.regressions --output artifacts/regressions
 python -m evaluation.profile --output artifacts/profile
 python -m evaluation.parity --output artifacts/parity
+python -m evaluation.catalogue --output artifacts/catalogue  # 10 platform formats, contact sheets
 ```
 
 The evaluation command calls the real renderer directly, writes source/output

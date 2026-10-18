@@ -5,7 +5,7 @@ from engine.layout import bounds
 from engine.typography import text_extent
 from engine.relationships import contains, support_pairs
 
-MUTABLE = {'x', 'y', 'width', 'height', 'font_size'}
+MUTABLE = {'x', 'y', 'width', 'height', 'font_size', 'corner_radius', 'stroke_width'}
 READABLE_FONT_PX = 12.0  # local diagnostic threshold, not a contest requirement
 
 

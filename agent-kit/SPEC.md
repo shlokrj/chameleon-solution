@@ -23,7 +23,7 @@ Validate against [schema v0.9](../chameleon_design_schema_v0.9.json), a provisio
 | C7 | Work offline in the supplied container interface | Clean linux/amd64 build and network-disabled run producing JSON and PNG per task |
 | C8 | Generalize beyond known samples | Unseen design-family and target-family evaluation; no sample-specific branches |
 
-Engineering preservation policy: also retain colors, font weight/style, style runs, grouping, opacity, stacking order, and unrelated metadata by default. Change position, dimensions, and text font size first. Any broader property change needs source support, a documented rationale, and visual regression evidence. The schema permits fields that are not blanket permission to change brand styling.
+Engineering preservation policy: also retain colors, font weight/style, style runs, grouping, opacity, stacking order, and unrelated metadata by default. Change position, dimensions, and text font size first. Any broader property change needs source support, a documented rationale, and visual regression evidence. The schema permits fields that are not blanket permission to change brand styling. Accepted exception (M5, [evidence](runs/m5-composition.md)): `corner_radius` and `stroke_width` scale by the same factor as their unit, so the rendered shape (e.g. a pill button) is preserved rather than changed.
 
 A zero-area source element is schema-valid and needs deliberate handling; do not divide by its aspect ratio. A 1px font is schema-valid but is not proof of readable typography. Some extreme combinations cannot preserve every readability preference. Keep hard constraints, report the quality shortfall, and do not pretend the case is fully solved.
 

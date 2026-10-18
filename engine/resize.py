@@ -10,17 +10,20 @@ def resize_with_diagnostics(source, target_canvas, *, max_candidates=MAX_CANDIDA
     if not isinstance(max_candidates, int) or isinstance(max_candidates, bool) or not 1 <= max_candidates <= MAX_CANDIDATES:
         raise ValueError(f'max_candidates must be an integer from 1 to {MAX_CANDIDATES}')
     wide = target_canvas['width'] >= target_canvas['height']
-    allocations = [(None, None, False), *[(image, group, True) for image, group in
-        ([(0.12, 0.26), (0.18, 0.26), (0.25, 0.30), (0.18, 0.36), (0.32, 0.30)] if wide else
-         [(0.25, 0.30), (0.36, 0.30), (0.25, 0.40), (0.45, 0.30), (0.36, 0.40)])]]
+    # (image share, group share, group side column); side columns suit banners.
+    allocations = [(None, None, False, False), *[(image, group, True, side) for image, group, side in
+        ([(0.18, 0.26, False), (0.15, 0.22, True), (0.25, 0.30, False), (0.20, 0.28, True), (0.32, 0.30, False)] if wide else
+         [(0.25, 0.30, False), (0.36, 0.30, False), (0.25, 0.40, False), (0.45, 0.30, False), (0.36, 0.40, False)])]]
     seen, records = set(), []
     baseline = best = None
     baseline_quality = None
     best_key = None
     selected = None
-    for index, (image, group, force) in enumerate(allocations[:max_candidates]):
-        design = build_layout(source, target_canvas, image_share=image, group_share=group, force_reflow=force, text_grid=index == MAX_CANDIDATES-1)
-        record = {'index': index, 'image_share': image, 'group_share': group, 'force_reflow': force, 'text_grid': index == MAX_CANDIDATES-1}
+    for index, (image, group, force, side) in enumerate(allocations[:max_candidates]):
+        design = build_layout(source, target_canvas, image_share=image, group_share=group, force_reflow=force,
+                              text_grid=index == MAX_CANDIDATES-1, group_side=side)
+        record = {'index': index, 'image_share': image, 'group_share': group, 'force_reflow': force,
+                  'group_side': side, 'text_grid': index == MAX_CANDIDATES-1}
         records.append(record)
         issues = hard_issues(source, target_canvas, design)
         if issues:

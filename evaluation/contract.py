@@ -44,8 +44,9 @@ def check_contract(source, target, output, schema):
             continue
         if el["type"] != original["type"]:
             add("C1", f"{eid}: type changed")
-        # Engineering policy: geometry/font size only, preserving absent fields too.
-        mutable = {"x", "y", "width", "height", "font_size"}
+        # Engineering policy: geometry, font size, and shape lengths that scale with
+        # their unit (rendered shape preserved); absent fields stay absent.
+        mutable = {"x", "y", "width", "height", "font_size", "corner_radius", "stroke_width"}
         for key in (set(original) | set(el)) - mutable:
             if key not in original or key not in el or original[key] != el[key]:
                 code = "C4" if key in {"content", "font_family"} else "C5" if key == "asset_id" else "policy"
