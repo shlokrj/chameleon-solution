@@ -1,0 +1,58 @@
+{
+  "runtime": "Colima 0.10.3 / Lima 2.2.1 / macOS Virtualization.Framework / Rosetta amd64 emulation",
+  "vm_cpu": 4,
+  "vm_memory_gib": 4,
+  "vm_disk_gib": 20,
+  "docker_version": "29.9.1 / 29.5.2",
+  "buildx": "github.com/docker/buildx v0.38.0 Homebrew",
+  "docker_image_ls": [
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-18 15:39:53 -0500 CDT",
+      "CreatedSince": "2 minutes ago",
+      "Digest": "<none>",
+      "ID": "11d34e2bceb9",
+      "Repository": "chameleon-verify",
+      "SharedSize": "N/A",
+      "Size": "1.24GB",
+      "Tag": "latest",
+      "UniqueSize": "N/A"
+    },
+    {
+      "Containers": "0",
+      "CreatedAt": "2026-10-18 15:39:34 -0500 CDT",
+      "CreatedSince": "3 minutes ago",
+      "Digest": "<none>",
+      "ID": "a485e27bf178",
+      "Repository": "chameleon-engine",
+      "SharedSize": "N/A",
+      "Size": "1.23GB",
+      "Tag": "latest",
+      "UniqueSize": "N/A"
+    }
+  ],
+  "images": [
+    {
+      "id": "sha256:a485e27bf178855aca3d057da1094998a413b564fd7965ab2d9a76ebcccca9f8",
+      "tags": [
+        "chameleon-engine:latest"
+      ],
+      "os": "linux",
+      "architecture": "amd64",
+      "inspect_size_bytes": 300249811
+    },
+    {
+      "id": "sha256:11d34e2bceb96b066a24898e17e393db444c201117d996909e137e9427e4b935",
+      "tags": [
+        "chameleon-verify:latest"
+      ],
+      "os": "linux",
+      "architecture": "amd64",
+      "inspect_size_bytes": 300970824
+    }
+  ],
+  "offline_network_mode_verified": "none",
+  "tests_passed": 55,
+  "production_pairs_passed": 3,
+  "script_sha256": "590c54664d1d3014baac8d5578016803f1aa1a7a2f3416612991991b6bc38a84"
+}

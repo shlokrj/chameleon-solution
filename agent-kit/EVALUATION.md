@@ -40,13 +40,13 @@ Default iteration: run focused regressions per change, full development suite pe
 ## Release checklist
 
 - [ ] C1–C8 verified; every exception documented, with unresolved hard failures blocking a passing claim.
-- [ ] Supplied examples and development suite pass independent checks; relevant real PNGs inspected.
-- [ ] Holdout summary includes family counts, worst cases, and failures; exposed holdouts retired.
-- [ ] Runtime, memory, and fallback behavior measured; search/repair bounded.
-- [ ] No sample-specific branches, regenerated assets, runtime network calls, or concealed elements.
-- [ ] Clean `docker build --platform linux/amd64 -t my-chameleon-engine .` succeeds.
-- [ ] From repository root, `docker run --rm --network none -v "$(pwd)/input:/app/input" -v "$(pwd)/output:/app/output" my-chameleon-engine` produces independently checked JSON/PNG pairs with the real renderer.
-- [ ] Required dependencies/weights are available at build time; dependency revisions recorded.
+- [x] Supplied examples and development suite pass independent checks; relevant real PNGs inspected.
+- [x] Holdout summary includes family counts, worst cases, and failures; exposed holdouts retired.
+- [x] Runtime, memory, and fallback behavior measured; search/repair bounded.
+- [x] No sample-specific branches, regenerated assets, runtime network calls, or concealed elements.
+- [x] Clean `docker build --platform linux/amd64 -t my-chameleon-engine .` succeeds.
+- [x] From repository root, `docker run --rm --network none -v "$(pwd)/input:/app/input" -v "$(pwd)/output:/app/output" my-chameleon-engine` produces independently checked JSON/PNG pairs with the real renderer.
+- [x] Required dependencies/weights are available at build time; dependency revisions recorded.
 - [ ] Submission requirements in SOURCES resolved where applicable; README states verified instructions and limitations.
 
-This checklist is a plan until evidence is recorded. No boxes were checked while creating the documentation kit.
+Checked items have evidence in the M0–M4 run records, including [offline container verification](runs/m4-container.md). The aggregate C1–C8/release claim and submission requirements remain unchecked pending final review; Linux dense-label readability is explicitly unresolved.

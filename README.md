@@ -57,8 +57,8 @@ and text uses brand-font measurements with bounded size fitting. No runtime
 model or network access is required by the layout algorithm.
 
 This is an initial heuristic, not a finished solution: dense extreme banners
-can still have very small text, and generalization and Docker validation are
-not yet established. See [PROGRESS.md](PROGRESS.md) for the current milestone.
+can still have very small text, and broader generalization remains limited. Offline Linux amd64 container
+execution is verified. See [PROGRESS.md](PROGRESS.md) for the current milestone.
 
 ## Development checks
 
@@ -133,8 +133,12 @@ disabled:
 This saves each run in a fresh `artifacts/container-check.*` directory. The
 verification image adds tests and evaluation dependencies; the production image
 does not include them. The base image is pinned by digest; Debian packages and
-build tooling are not fully locked. Docker validation is still unrun locally
-because Docker is unavailable; clean native installation is separate evidence.
+build tooling are not fully locked. Offline Linux amd64 validation passed under Colima/Rosetta on Apple Silicon;
+see [container evidence](agent-kit/runs/m4-container.md). Native macOS and Linux
+font rendering can differ; use the container for final visual checks.
+
+On this Mac, Docker is configured through Colima. Run `colima start` after a
+restart, or `colima stop` to release its VM resources.
 
 ## See also
 

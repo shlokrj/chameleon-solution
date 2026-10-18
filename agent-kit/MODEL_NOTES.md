@@ -94,3 +94,7 @@ The [font optimization](runs/m4-font-reuse.md) removed repeated typeface constru
 ## Packaging evidence boundaries
 
 The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependency requirements, pins runtime versions/source/image digest, and removes a success-looking whole-render fallback. Keep native clean install, cross-platform wheel resolution, and actual network-disabled container execution as separate evidence. A resolved wheel does not prove shared-library compatibility; a static Dockerfile review does not prove a build. Fail output-pair validation on missing or incorrect pixels and retain the intentional single missing-asset placeholder as its own case.
+
+## Validate in the target container
+
+[Offline container testing](runs/m4-container.md) passed but strict macOS/Linux parity did not: font metrics and pixels differ, and one dense group-label case shrinks materially under Linux. Preserve failed cross-platform comparisons as evidence; repeat within the fixed container to distinguish determinism from portability. Use Linux renders for final quality decisions rather than treating host-native speed/parity results as target-platform guarantees.
