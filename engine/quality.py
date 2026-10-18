@@ -1,7 +1,7 @@
 """Cheap candidate gates and explicit local quality proxies, not official scores."""
 import math
 from collections import Counter
-from engine.layout import bounds
+from engine.layout import bounds, visual_bounds
 from engine.typography import text_extent
 from engine.relationships import contains, support_pairs
 
@@ -78,8 +78,9 @@ def quality(source, design):
                 (e['type'] == 'image' and e.get('fit', 'contain') != 'cover')]
     # Per-evaluation storage: geometry changes across candidates and calls.
     # Reuse each rotated extent instead of recomputing it for every pair.
-    current_bounds = {e['id']: bounds([e]) for e in relevant}
-    source_bounds = {e['id']: bounds([old[e['id']]]) for e in relevant}
+    # Visible extents: transparent image margins overlapping copy is not a collision.
+    current_bounds = {e['id']: visual_bounds([e]) for e in relevant}
+    source_bounds = {e['id']: visual_bounds([old[e['id']]]) for e in relevant}
     collisions = 0.0
     for i, a in enumerate(relevant):
         for b in relevant[i+1:]:

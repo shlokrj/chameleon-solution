@@ -1,7 +1,9 @@
 """Deterministic retargeting with explicit groups and font-aware text fitting."""
 from copy import deepcopy
+from functools import lru_cache
 import math
 from pathlib import Path
+from PIL import Image
 from renderer.converter.assets import asset_path
 from engine.typography import fit_text, text_extent
 from engine.relationships import support_pairs
@@ -28,20 +30,86 @@ def bounds(elements):
             max(b[2] for b in boxes), max(b[3] for b in boxes))
 
 
+@lru_cache(maxsize=64)
+def ink(asset_id):
+    """Asset pixel size and opaque-pixel bbox, or None (missing/unreadable)."""
+    path = asset_path(ASSETS_DIR, asset_id)
+    if path is None:
+        return None
+    try:
+        with Image.open(path) as image:
+            box = image.getchannel('A').getbbox() if 'A' in image.getbands() else None
+            return image.size, box or (0, 0, *image.size)
+    except OSError:
+        return None
+
+
+def visual_bounds(elements):
+    """Like bounds(), but contain images count only their visible pixels.
+
+    Logos and cut-out products carry wide transparent margins; packing and
+    collision checks on the ink, not the box, use that space. The box itself
+    still governs on-canvas checks (see keep_on_canvas).
+    """
+    boxes = []
+    for el in elements:
+        found = (ink(el.get('asset_id')) if el['type'] == 'image' and el.get('fit', 'contain') == 'contain'
+                 and not el.get('rotation', 0) and el['width'] > 0 and el['height'] > 0 else None)
+        if found is None:
+            boxes.append(bounds([el]))
+            continue
+        (iw, ih), (l, t, r, b) = found
+        scale = min(el['width']/iw, el['height']/ih)
+        ox, oy = el['x']+(el['width']-iw*scale)/2, el['y']+(el['height']-ih*scale)/2
+        boxes.append((ox+l*scale, oy+t*scale, ox+r*scale, oy+b*scale))
+    return (min(b[0] for b in boxes), min(b[1] for b in boxes),
+            max(b[2] for b in boxes), max(b[3] for b in boxes))
+
+
+def keep_on_canvas(units, width, height):
+    """Shrink a packed zone about its visible center until its boxes fit.
+
+    Scaling about the ink center keeps visible pixels inside their slot (a
+    shift could push a logo's ink into the copy column); the zone transforms
+    as one rigid unit so the packed arrangement survives.
+    """
+    elements = [el for unit in units for el in unit]
+    if not elements:
+        return
+    def inside(box):
+        return box[0] >= -1e-9 and box[1] >= -1e-9 and box[2] <= width+1e-9 and box[3] <= height+1e-9
+    a, b, c, d = bounds(elements)
+    if inside((a, b, c, d)):
+        return
+    va, vb, vc, vd = visual_bounds(elements)
+    cx, cy = (va+vc)/2, (vb+vd)/2
+    def scaled(s):  # box extent after scaling the zone by s about (cx, cy)
+        return (cx+(a-cx)*s, cy+(b-cy)*s, cx+(c-cx)*s, cy+(d-cy)*s)
+    low, high = 0.0, 1.0
+    for _ in range(30):
+        mid = (low+high)/2
+        low, high = (mid, high) if inside(scaled(mid)) else (low, mid)
+    left, top, right, bottom = scaled(low)
+    place(elements, (left, top, right-left, bottom-top))
+
+
 def box_overlap(a, b):
     return max(0, min(a[2], b[2])-max(a[0], b[0]))*max(0, min(a[3], b[3])-max(a[1], b[1]))
 
 
 def new_collision(before, after):
     """True if any pair of units overlaps where the source pair did not."""
-    old, new = [bounds(u) for u in before], [bounds(u) for u in after]
+    old, new = [visual_bounds(u) for u in before], [visual_bounds(u) for u in after]
     return any(box_overlap(new[i], new[j]) > 1e-6 and box_overlap(old[i], old[j]) <= 1e-6
                for i in range(len(new)) for j in range(i+1, len(new)))
 
 
-def place(unit, slot):
-    """Uniformly transform the whole unit so relationships/ratios survive."""
-    left, top, right, bottom = bounds(unit)
+def place(unit, slot, measure=bounds):
+    """Uniformly transform the whole unit so relationships/ratios survive.
+
+    `measure` picks which extent is fitted into the slot (box or visible ink).
+    """
+    left, top, right, bottom = measure(unit)
     x, y, w, h = slot
     ratios = [slot_size/source_size for slot_size, source_size in
               ((w, right-left), (h, bottom-top)) if source_size > 0]
@@ -68,7 +136,7 @@ def flow(units, slot, gap, upper_scale):
     if not units:
         return
     x, y, w, h = slot
-    sizes = [(c-a, d-b) for a, b, c, d in map(bounds, units)]
+    sizes = [(c-a, d-b) for a, b, c, d in map(visual_bounds, units)]
     def rows(scale):
         result, row, row_width = [], [], 0.0
         for i, (uw, _) in enumerate(sizes):
@@ -98,7 +166,7 @@ def flow(units, slot, gap, upper_scale):
         left = x+max(0, w-row_width)/2
         for i in row:
             uw, uh = sizes[i][0]*low, sizes[i][1]*low
-            place(units[i], (left, top+(row_height-uh)/2, uw, uh))
+            place(units[i], (left, top+(row_height-uh)/2, uw, uh), visual_bounds)
             left += uw+gap
         top += row_height+gap
 
@@ -275,6 +343,7 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
     if tw >= th:
         image_width = w*(0.25 if image_share is None else image_share) if images and (text or groups) else w if images else 0
         flow(images, (x, y, image_width, h), gap, upper)
+        keep_on_canvas(images, tw, th)
         if image_width and (text or groups):
             x += image_width+gap
             w -= image_width+gap
@@ -282,18 +351,22 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
             # Banner archetype: buttons/badges get a full-height right column.
             group_width = w*(0.22 if group_share is None else group_share)
             flow(groups, (x+w-group_width, y, group_width, h), gap, upper)
+            keep_on_canvas(groups, tw, th)
             arrange_text(text, (x, y, w-group_width-gap, h), gap, upper, text_grid)
             return result
         group_height = h*(0.22 if group_share is None else group_share) if groups and text else h if groups else 0
         flow(groups, (x, y+h-group_height, w, group_height), gap, upper)
+        keep_on_canvas(groups, tw, th)
         arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, upper, text_grid)
     else:
         image_height = h*(0.36 if image_share is None else image_share) if images and (text or groups) else h if images else 0
         flow(images, (x, y, w, image_height), gap, upper)
+        keep_on_canvas(images, tw, th)
         if image_height and (text or groups):
             y += image_height+gap
             h -= image_height+gap
         group_height = h*(0.25 if group_share is None else group_share) if groups and text else h if groups else 0
         flow(groups, (x, y+h-group_height, w, group_height), gap, upper)
+        keep_on_canvas(groups, tw, th)
         arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, upper, text_grid)
     return result

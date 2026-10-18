@@ -77,3 +77,36 @@ Regressions (accepted tradeoffs, recorded rather than hidden):
 - Render-in-the-loop contrast as a tiebreaker.
 
 Decision: accept.
+
+# M5.2 alpha-aware image bounds
+
+Change `feat: pack contain images by visible pixels`. Parent: the M5.1 commit. Same owner and environment as above.
+
+Hypothesis: contain-image boxes carry large transparent margins. Measured ink covers 40% of the logo file's width and 43% of the bottle's. Packing and collision checks on boxes therefore shrink imagery and waste banner space.
+
+Changes:
+- `engine/layout.py`:
+  - `ink()` caches each asset's alpha bounding box.
+  - `visual_bounds()` maps that box into the contain-fitted element.
+  - `flow` packs by visual bounds.
+  - `new_collision` compares visual bounds.
+  - `keep_on_canvas` shrinks a packed zone about its visible center until every box is on canvas. The zone stays one rigid unit, so ink stays inside its slot and boxes stay inside the canvas.
+- `engine/quality.py`: the overlap proxy uses visual bounds, so transparent margin over copy is not a collision.
+
+Two rejected intermediate designs, recorded so they are not retried:
+- Clamping each unit independently pushed neighbouring images together (ink overlap, catalog@twitter-header loss 0 → 0.445).
+- Shifting the whole zone inward pushed bottle ink into the copy column (loss 0 → 0.257).
+
+Results against the M5.1 report:
+- Only 3 of 70 cases changed, all improvements:
+  - catalog@leaderboard: min text 5.7 → 10.3px, loss 0.138 → 0.010; button labels readable in the side column.
+  - Level 2 → 300x250: min text 4.2 → 5.0px, loss 0.263 → 0.195.
+  - Level 3 skyscraper: min text 3.6 → 5.3px, loss 0.323 → 0.200.
+- Against the original `d97405c` baseline: zero contract issues; mean loss 0.0532 → 0.0286; cases under 6px 11 → 5; under 9px 18 → 12.
+- 61 tests pass. All 15 regression fixtures have zero contract issues. The supplied-sample evaluation exits 0. Changed renders were inspected side by side.
+
+Limitation: at one shared scale the logo stays small beside a tall product (Level 2 leaderboard logo ink ≈ 31x19px). This needs role-aware minimum sizing.
+
+Linux container rerun: unrun.
+
+Decision: accept.

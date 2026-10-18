@@ -56,7 +56,8 @@ that would create new collisions. Reflow places imagery beside copy for wide
 targets (or adds a right-hand button column on banners) and stacks content for
 tall targets. Images and button/badge groups wrap into rows at one shared scale,
 so a large CTA stays larger than a small badge; shape corner radii scale with
-them. Copy keeps its hierarchy while small text holds a 10px floor below the
+them. Contain images are packed by their visible (non-transparent) pixels, with
+boxes kept on canvas. Copy keeps its hierarchy while small text holds a 10px floor below the
 headline. An image whose asset file is missing is treated as secondary, not
 hero. Explicit groups move together, ordinary images retain their box
 proportions, and text uses brand-font measurements with bounded size fitting. No runtime

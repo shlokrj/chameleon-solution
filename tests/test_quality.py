@@ -3,7 +3,7 @@ import copy
 import random
 import unittest
 from unittest.mock import patch
-from engine.layout import bounds
+from engine.layout import bounds, visual_bounds
 from engine.quality import overlap, quality
 
 
@@ -40,7 +40,7 @@ class QualityTests(unittest.TestCase):
 
     def test_bounds_work_is_linear_per_quality_evaluation(self):
         source = design()
-        with patch('engine.quality.bounds', wraps=bounds) as measured:
+        with patch('engine.quality.visual_bounds', wraps=visual_bounds) as measured:
             quality(source, source)
         self.assertEqual(measured.call_count, 2 * len(source['elements']))
 

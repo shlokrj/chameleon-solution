@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import unittest
-from engine.layout import build_layout, flow, place, text_stack
+from engine.layout import bounds, build_layout, flow, keep_on_canvas, place, text_stack, visual_bounds
 from engine.resize import resize
 
 
@@ -47,6 +47,18 @@ class CompositionTests(unittest.TestCase):
         task = json.loads(Path('input/chameleon_sample_level1_warmup.json').read_text())
         out = {e['id']: e for e in build_layout(task['source'], {'width': 1080, 'height': 1350})['elements']}
         self.assertGreater(out['headline']['font_size'], 60)
+
+    def test_ink_packing_keeps_boxes_on_canvas_and_ink_in_slot(self):
+        logo = dict(id='logo', type='image', x=0, y=0, width=320, height=100, asset_id='solstice_logo_lockup.png', fit='contain')
+        a, _, c, _ = visual_bounds([logo])
+        self.assertLess(c-a, 0.6*logo['width'])  # transparent margins excluded
+        slot = (10, 10, 200, 60)
+        flow([[logo]], slot, 0, 10)
+        keep_on_canvas([[logo]], 220, 80)
+        a, b, c, d = bounds([logo])
+        self.assertTrue(a >= -1e-9 and b >= -1e-9 and c <= 220+1e-9 and d <= 80+1e-9)
+        va, vb, vc, vd = visual_bounds([logo])
+        self.assertTrue(va >= 10-1e-6 and vc <= 210+1e-6 and vb >= 10-1e-6 and vd <= 70+1e-6)
 
 
 if __name__ == '__main__':
