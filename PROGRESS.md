@@ -98,6 +98,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 
 | `docs: record rejected contrast tiebreak and release m5 claim` (containing commit) | Probed rendered-contrast tiebreak; recorded rejection, deferrals, lessons | 85-case probe: 0 selection changes; no production code changed | Linux container rerun; logo minimum; anchoring |
 
+| `docs: explain the resize method in plain language` (containing commit) | Rewrote README around a six-step plain-language explanation, worked Level 3 example, code map, limits; removed starter-template wording | Worked example checked against engine output; README links resolved; no code changed | None new |
+
 | `docs: record post-restart docker verification` (containing commit) | Confirmed Docker/Colima recovery and complete container workflow after Mac restart | Both images built; 55 offline tests; 3 production JSON/PNG pairs independently validated | Docker work complete; Linux readability and final release review remain separate follow-ups |
 
 ## How to update this file
