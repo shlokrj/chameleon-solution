@@ -110,3 +110,20 @@ Limitation: at one shared scale the logo stays small beside a tall product (Leve
 Linux container rerun: unrun.
 
 Decision: accept.
+
+# M5.3 rendered-contrast tiebreak: rejected on evidence
+
+Probe, not shipped:
+- Render every eligible candidate with text removed, using the real renderer.
+- Sample each text box's background (10th-percentile WCAG ratio against the text colour).
+- Ask whether preferring higher contrast would change any selection.
+
+Ran over 85 cases (70 catalogue cases plus 15 regression fixtures). Result: **0 cases** where a contrast tiebreak would rescue a below-3:1 selection. Worst-case contrast is a constant ≈3.2:1 in every candidate: the source's own white-on-orange CTA label, which layout cannot change. The tiebreak would add about 3 renders per task for no measured benefit, so it is not implemented.
+
+Revisit if fixtures appear where copy can land on mixed backgrounds without inferred backing; `contrast-layer` is already handled by support relationships.
+
+# Deferred
+
+- **Corner/edge anchoring.** Pinning source-corner badges to target corners collides with the copy column in most banner archetypes. It needs a collision-aware reservation pass, not a quick add. Visually, reflowed badges currently read as secondary buttons beside the CTA.
+- **Logo minimum size.** At one shared scale, a wordmark next to a tall product stays small (Level 2 leaderboard). Needs role-aware sizing.
+- **Linux container rerun** for M5.1–M5.2. This machine has no Docker/Colima. Run `./scripts/verify-container.sh` before release.

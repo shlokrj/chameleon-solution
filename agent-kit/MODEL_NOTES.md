@@ -98,3 +98,12 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 ## Validate in the target container
 
 [Offline container testing](runs/m4-container.md) passed but strict macOS/Linux parity did not: font metrics and pixels differ, and one dense group-label case shrinks materially under Linux. Preserve failed cross-platform comparisons as evidence; repeat within the fixed container to distinguish determinism from portability. Use Linux renders for final quality decisions rather than treating host-native speed/parity results as target-platform guarantees.
+
+## M5 composition lessons
+
+[M5 composition](runs/m5-composition.md):
+- Sweep the real format catalogue instead of only the three samples. Most quality debt appeared in 728x90, 300x250 and 160x600, and per-unit scaling had silently inverted button hierarchy.
+- Packing units at one shared scale preserves designer intent better than filling each slot independently.
+- A readable type floor must stay below the headline, or it flattens hierarchy.
+- When clamping packed content back on canvas, move the zone rigidly and scale about the visible center. Per-unit clamps and inward shifts each created new overlaps, and only the overlap proxy caught them.
+- Probe an expensive component before building it: a rendered-contrast tiebreak changed 0 of 85 selections and was dropped.
