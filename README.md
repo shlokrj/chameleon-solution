@@ -36,6 +36,9 @@ RULES.md
 
 ## Quick start (no Docker needed for iterating on `resize()`)
 
+Requires Python 3.12 (the container pins 3.12.13). Runtime package versions and
+the renderer Git revision are pinned to the tested environment.
+
 ```bash
 pip install -r requirements.txt
 python -m engine.main
@@ -99,12 +102,10 @@ circle, an expected one.
 `main.py` calls `renderer/converter/convert.py`'s `render_design_to_png()`
 (a vendored copy of `transformer-convertor`, wrapping `cr-renderer`) to
 produce each task's PNG — already wired in, no setup needed. It reads
-fonts/assets from `brand_kit/` and writes a real rendered preview, not a
-placeholder. If you ever see plain labeled boxes instead of real text and
-images in `output/*.png`, that means the import in `main.py` failed (e.g.
-`cr-renderer` didn't install — check `requirements.txt` installed cleanly)
-and it silently fell back to the box-and-label placeholder; don't judge
-your layout quality by that fallback.
+fonts/assets from `brand_kit/` and requires the real renderer. Missing renderer
+imports or backend errors fail the process; no whole-design placeholder is
+generated. The supplied Level 3 missing badge still uses its intentional
+per-asset placeholder.
 
 ## Docker (how you'll actually be run)
 
@@ -120,6 +121,20 @@ docker run --rm --network none \
 engine needs must be installed at **build** time (add it to
 `requirements.txt`), not fetched at run time. If you're using a locally
 hosted model, bake its weights into the image during the build step.
+
+To build production and verification images, run tests, execute the production
+entrypoint, and independently validate its JSON/PNG pairs with runtime networking
+disabled:
+
+```bash
+./scripts/verify-container.sh
+```
+
+This saves each run in a fresh `artifacts/container-check.*` directory. The
+verification image adds tests and evaluation dependencies; the production image
+does not include them. The base image is pinned by digest; Debian packages and
+build tooling are not fully locked. Docker validation is still unrun locally
+because Docker is unavailable; clean native installation is separate evidence.
 
 ## See also
 

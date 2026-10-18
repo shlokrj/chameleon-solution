@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 python:3.11-slim
+FROM --platform=linux/amd64 python:3.12.13-slim@sha256:229a2c5bfa27522db7815ea81f9bed70af17ccb9de9fc7ad142b1877b5830d36 AS runtime
 
 WORKDIR /app
 
@@ -32,3 +32,13 @@ COPY engine/ ./engine/
 RUN mkdir -p /app/input /app/output
 
 ENTRYPOINT ["python", "-m", "engine.main"]
+
+# Optional validation image; production does not carry tests/evaluation tooling.
+FROM runtime AS verification
+COPY requirements-dev.txt .
+RUN pip install --no-cache-dir -r requirements-dev.txt && pip check
+COPY evaluation/ ./evaluation/
+COPY tests/ ./tests/
+COPY input/ ./input/
+
+FROM runtime AS production

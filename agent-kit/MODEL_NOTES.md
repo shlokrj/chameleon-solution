@@ -90,3 +90,7 @@ The [font optimization](runs/m4-font-reuse.md) removed repeated typeface constru
 ## Measured overlap reuse
 
 [Overlap geometry reuse](runs/m4-overlap-reuse.md) keeps per-candidate bounds local and preserves formula and summation order. Verify exact numerical scores as well as selected layouts/pixels; shared-helper unit references alone cannot catch a shared formula change. Linear geometry storage does not make pairwise scoring linear. After two measured optimization steps, prioritize reproducible packaging and the remaining release checks instead of extending optimization without evidence.
+
+## Packaging evidence boundaries
+
+The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependency requirements, pins runtime versions/source/image digest, and removes a success-looking whole-render fallback. Keep native clean install, cross-platform wheel resolution, and actual network-disabled container execution as separate evidence. A resolved wheel does not prove shared-library compatibility; a static Dockerfile review does not prove a build. Fail output-pair validation on missing or incorrect pixels and retain the intentional single missing-asset placeholder as its own case.

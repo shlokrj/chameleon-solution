@@ -4,12 +4,12 @@ Read this first when joining or resuming work. This is the shared current-state 
 
 ## Current state
 
-- **Phase:** M3 bounded hardening cycle complete; M4 efficiency and delivery in progress.
-- **Implementation progress:** 4 of 5 milestones complete. Next: M4 measured optimization and offline delivery validation. This count is not a percentage of effort or an estimate of time remaining.
-- **Engine:** bounded candidate search plus inferred backing relationships. 50 tests pass. Font and overlap optimizations preserve exact layouts, selected quality scores and rendered pixels across 42 cases. Latest overlap change improves 120-label warm engine medians about 23–32% against 88ab64f. See [M4 overlap evidence](agent-kit/runs/m4-overlap-reuse.md) and [M3 limitations](agent-kit/runs/m3-layer-repairs.md).
-- **Latest verified predecessor:** `88ab64f` on `main`, pushed to `origin`. The M3 repairs and evidence are recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
+- **Phase:** M3 complete; M4 optimizations and native packaging verified, container validation blocked.
+- **Implementation progress:** 4 of 5 milestones complete. Next: offline Docker verification on a Docker-capable environment. This count is not a percentage of effort or an estimate of time remaining.
+- **Engine:** bounded candidate search plus inferred backing relationships. 55 tests pass in a fresh pinned Python 3.12 environment; 42-case score/layout/pixel parity and three production output pairs verified. Renderer failures now stop instead of generating fallback previews. See [packaging evidence](agent-kit/runs/m4-packaging.md).
+- **Latest verified predecessor:** `f43272e` on `main`, pushed to `origin`. The M3 repairs and evidence are recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
 - **Active implementation owners:** none; challenger/judge passes ended and all claims released.
-- **Next concrete action:** claim reproducible dependency pinning and packaging checks; retain the measured optimization baseline. Docker is unavailable locally, so explicitly track clean linux/amd64 build/network-disabled validation as outstanding.
+- **Next concrete action:** run scripts/verify-container.sh where Docker is available; inspect saved outputs/report, measure image/container resources, and finish release checks. Local Docker is unavailable; do not substitute native tests for container validation.
 
 ## Milestone board
 
@@ -22,7 +22,7 @@ The definitions and exit criteria live in [IMPLEMENTATION.md](agent-kit/IMPLEMEN
 | M1 | Deterministic reflow | complete | [Reflow evidence](agent-kit/runs/m1-reflow.md); sample checks pass; dense-banner readability remains limited |
 | M2 | Bounded selection and repair | complete | [Selection evidence](agent-kit/runs/m2-selection.md); 15 paired cases, bounded/failure behavior verified |
 | M3 | Adversarial hardening | complete | [Bounded-cycle closure](agent-kit/runs/m3-layer-repairs.md); accepted defects repaired, fresh interactions pass, quality limits recorded |
-| M4 | Efficiency and delivery | in progress | [Font and overlap reuse measured](agent-kit/runs/m4-overlap-reuse.md); reproducible dependencies and offline Docker validation remain |
+| M4 | Efficiency and delivery | blocked | [Pinned native packaging verified](agent-kit/runs/m4-packaging.md); Docker unavailable, linux/amd64 build/offline execution still unrun |
 
 ## Completed steps within M0
 
@@ -49,11 +49,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims; root completed overlap optimization and paired validation; judge completed static review.
+No active claims; root completed local packaging checks and judge completed static review. Container execution awaits Docker.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | — | Next: M4 dependencies and offline packaging |
+| — | — | — | — | unassigned | — | Next: Docker-capable container validation |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -86,6 +86,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `perf: reuse cached typefaces during text fitting` (containing commit) | Reused bounded typefaces/base metrics; added isolated parity harness and notes | 47 tests; 42 identical JSON/pixel results; 36 sequential profile workers; independent static review | M4 overlap costs and offline packaging remain; no readability change |
 
 | `perf: reuse bounds during overlap scoring` (containing commit) | Reused per-call rotated bounds; added exact quality parity and tests | 50 tests; 42 identical selected scores/JSON/pixels; 36 sequential profile workers; static review | Dependency reproducibility and offline Docker validation next; quality limitations unchanged |
+
+| `build: pin tested dependencies and require real rendering` (containing commit) | Pinned runtime/dev versions and Python image; removed whole-render fallback; added delivery validator/container script | Clean native install + pip check; 55 tests; 42 parity cases; 3 entrypoint pairs; Linux wheel dry-run; static review | Docker build/offline run blocked; image/container resource and release checks unrun |
 
 ## How to update this file
 
