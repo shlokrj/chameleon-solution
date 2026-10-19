@@ -107,3 +107,7 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 - A readable type floor must stay below the headline, or it flattens hierarchy.
 - When clamping packed content back on canvas, move the zone rigidly and scale about the visible center. Per-unit clamps and inward shifts each created new overlaps, and only the overlap proxy caught them.
 - Probe an expensive component before building it: a rendered-contrast tiebreak changed 0 of 85 selections and was dropped.
+
+## M5 integration on Linux
+
+[Linux verification](runs/m5-linux.md) confirms the composition changes pass offline tests and deterministic repeats, but native font sizes still overpredict some dense-layout results. Record per-case typography, not only average loss. When a change modifies the overlap proxy itself, do not treat before/after aggregate loss as an unchanged-metric quality comparison. Keep previous performance numbers tied to their measured engine revision.

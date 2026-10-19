@@ -4,12 +4,12 @@ Read this first when joining or resuming work. This is the shared current-state 
 
 ## Current state
 
-- **Phase:** M3 complete; M4 offline containers verified, final Linux quality/release review remains; M5 composition quality: M5.1–M5.2 accepted, M5.3 contrast tiebreak rejected on evidence; Linux container rerun pending.
-- **Implementation progress:** 4 of 5 milestones complete. Next: Linux quality follow-up and final release review. This count is not a percentage of effort or an estimate of time remaining.
-- **Engine:** bounded candidate search, shared-scale flow packing, hierarchy-preserving type floor, alpha-aware image packing, plus inferred backing relationships. 61 tests pass natively (M5.2; Linux rerun pending); the M4 record shows 55 tests passing inside Linux amd64 with networking disabled; all three production output pairs validate; 42 Linux cases repeat exactly. Docker/Colima is running. Cross-platform font differences include a dense-label readability regression; see [container evidence](agent-kit/runs/m4-container.md).
-- **Latest verified predecessor:** `b2a484a` on `main`, pushed to `origin`. M5.2 alpha-aware packing is recorded in this containing commit; use `git log -1 -- PROGRESS.md` to resolve that revision without a self-referential hash.
-- **Active implementation owners:** none; M5 claim released after M5.2.
-- **Next concrete action:** rerun `./scripts/verify-container.sh` for the M5 engine (Docker unavailable on the M5 machine); review dense-labels-compact under Linux (group labels 6.325px vs macOS 9.569px), retain Linux-based quality evidence, and resolve applicable organizer/release questions. Docker setup and offline verification are complete.
+- **Phase:** M3 complete; M4 final quality/release review remains; M5.1–M5.2 verified in Linux, M5.3 contrast tiebreak rejected on evidence.
+- **Implementation progress:** 4 of 6 implementation milestones complete (M0–M5; M4 and M5 remain in progress). This count is not an effort estimate.
+- **Engine:** bounded candidate search, shared-scale flow packing, hierarchy-preserving type floor, alpha-aware image packing, plus inferred backing relationships. 61 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [M5 Linux evidence](agent-kit/runs/m5-linux.md).
+- **Latest verified predecessor:** `5d5d09c` on `main`, pulled from origin. This containing commit records the Linux integration checks; use Git history to resolve its revision.
+- **Active implementation owners:** none; Linux verification claim released.
+- **Next concrete action:** improve logo sizing and dense secondary groups using Linux baselines, then collision-aware anchoring and final release review. Dense-labels-compact improved from 6.325px to 8.625px labels, but five catalogue cases still have text below 6px. Docker validation for M5 is complete.
 
 ## Milestone board
 
@@ -23,7 +23,7 @@ The definitions and exit criteria live in [IMPLEMENTATION.md](agent-kit/IMPLEMEN
 | M2 | Bounded selection and repair | complete | [Selection evidence](agent-kit/runs/m2-selection.md); 15 paired cases, bounded/failure behavior verified |
 | M3 | Adversarial hardening | complete | [Bounded-cycle closure](agent-kit/runs/m3-layer-repairs.md); accepted defects repaired, fresh interactions pass, quality limits recorded |
 | M4 | Efficiency and delivery | in progress | [Offline container verification passed](agent-kit/runs/m4-container.md); Linux dense-layout quality and final release questions remain |
-| M5 | Composition quality on catalogue formats | in progress | [M5.1 shared-scale packing/type floor, M5.2 alpha-aware bounds](agent-kit/runs/m5-composition.md); M5.3 contrast tiebreak rejected (0/85 selections changed); remaining: Linux container rerun, logo minimum, anchoring |
+| M5 | Composition quality on catalogue formats | in progress | [M5.1 shared-scale packing/type floor, M5.2 alpha-aware bounds](agent-kit/runs/m5-composition.md); M5.3 contrast tiebreak rejected (0/85 selections changed); [Linux validation passed](agent-kit/runs/m5-linux.md); remaining: logo minimum, dense secondary groups, anchoring |
 
 ## Completed steps within M0
 
@@ -50,11 +50,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims. M5.1–M5.2 accepted; Linux container rerun is the next verification step.
+No active claims. M5 Linux validation completed; next bounded task is logo/dense-group readability using Linux evidence.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | 2026-10-18 America/Chicago | M5 claim released. Next: `./scripts/verify-container.sh` on a Docker host for M5.1–M5.2, then logo minimum / corner anchoring |
+| — | — | — | — | unassigned | 2026-10-18 America/Chicago | Linux verification claim released. Next: logo minimum / dense groups, then collision-aware anchoring |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -101,6 +101,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `docs: explain the resize method in plain language` (containing commit) | Rewrote README around a six-step plain-language explanation, worked Level 3 example, code map, limits; removed starter-template wording | Worked example checked against engine output; README links resolved; no code changed | None new |
 
 | `docs: record post-restart docker verification` (containing commit) | Confirmed Docker/Colima recovery and complete container workflow after Mac restart | Both images built; 55 offline tests; 3 production JSON/PNG pairs independently validated | Docker work complete; Linux readability and final release review remain separate follow-ups |
+
+| `test: verify teammate composition changes in linux` (containing commit) | Reviewed four teammate commits; rebuilt and verified M5 offline; refreshed Linux quality evidence and milestone count | 61 tests; 3 delivery pairs; 70 catalogue cases; 42 exact repeated parity cases; five renders inspected | No engine changes; tiny text/logo sizing, fresh review and final release questions remain |
 
 ## How to update this file
 

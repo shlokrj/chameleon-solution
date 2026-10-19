@@ -49,4 +49,4 @@ Default iteration: run focused regressions per change, full development suite pe
 - [x] Required dependencies/weights are available at build time; dependency revisions recorded.
 - [ ] Submission requirements in SOURCES resolved where applicable; README states verified instructions and limitations.
 
-Checked items have evidence in the M0–M4 run records, including [offline container verification](runs/m4-container.md). The aggregate C1–C8/release claim and submission requirements remain unchecked pending final review; Linux dense-label readability is explicitly unresolved.
+Checked items have evidence in the M0–M5 run records, including [offline container verification](runs/m4-container.md). The aggregate C1–C8/release claim and submission requirements remain unchecked pending final review; [M5 Linux verification](runs/m5-linux.md) confirms 61 tests and the broader catalogue; dense-label readability improved but tiny secondary text remains unresolved.

@@ -1,0 +1,90 @@
+{
+  "revision": "5d5d09c",
+  "platform": "linux/amd64 via Colima/Rosetta on Apple Silicon",
+  "network": "none",
+  "tests_passed": 61,
+  "catalogue": {
+    "cases": 70,
+    "issues": 0,
+    "overflow_cases": 0,
+    "mean_local_loss": 0.029918989227009644,
+    "cases_under_6px": 5,
+    "cases_under_9px": 12
+  },
+  "parity": {
+    "cases": 42,
+    "issues": 0,
+    "repeat_differences": []
+  },
+  "engine_hashes": {
+    "engine/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "engine/layout.py": "0474d9e3370f4d9f631bc4b05c9d1ea8ca7a026d8639c6dbe7abd057b05a5a19",
+    "engine/main.py": "9de8f1a21b438be535df3a416afcb2f2422e5142482ecc06b240f3ca7c7a8ab9",
+    "engine/quality.py": "1858d1ec0b4dbfc6de0403ced4b98d1159b957e93fc1d629ef3f6cc26e568ae1",
+    "engine/relationships.py": "9f7b9f17dbc4513a78f77eef84fd9a3f9450610b07e17268518959c36e3083bf",
+    "engine/resize.py": "e64cfbef1aa74bda6f6e75503d5a38c9bc0b3491b3c1cfc134c024bd70a0c725",
+    "engine/typography.py": "7d1f47e1af11451f98372c1afade281f603b0434d7ff55f2142aba908c58c9d2"
+  },
+  "dense_labels": {
+    "m4": {
+      "quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "t1",
+          "g0-label",
+          "g1-label",
+          "g2-label",
+          "g3-label",
+          "g4-label",
+          "t2"
+        ],
+        "minimum_font_size": 6.324999999999999,
+        "readability_deficit": 0.16489399634702814,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.16489399634702814
+      },
+      "fonts": {
+        "t0": 18.061235894097223,
+        "t1": 11.407096354166667,
+        "g0-label": 6.324999999999999,
+        "g1-label": 6.324999999999999,
+        "g2-label": 6.324999999999999,
+        "g3-label": 6.324999999999999,
+        "g4-label": 6.324999999999999,
+        "t2": 6.654139539930556
+      }
+    },
+    "m5": {
+      "quality": {
+        "support_violations": [],
+        "overflow_ids": [],
+        "small_text_ids": [
+          "t1",
+          "g0-label",
+          "g1-label",
+          "g2-label",
+          "g3-label",
+          "g4-label",
+          "t2"
+        ],
+        "minimum_font_size": 8.625,
+        "readability_deficit": 0.054598061665994804,
+        "hierarchy_inversion": 0.0,
+        "new_overlap": 0.0,
+        "loss": 0.054598061665994804
+      },
+      "fonts": {
+        "t0": 16.897032335069444,
+        "t1": 10.671809895833333,
+        "g0-label": 8.625,
+        "g1-label": 8.625,
+        "g2-label": 8.625,
+        "g3-label": 8.625,
+        "g4-label": 8.625,
+        "t2": 9.955555555555556
+      }
+    }
+  }
+}

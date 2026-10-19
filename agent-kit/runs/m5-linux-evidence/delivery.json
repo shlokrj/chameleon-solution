@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "case": "chameleon_sample_level1_warmup",
+      "issues": [],
+      "warnings": []
+    },
+    {
+      "case": "chameleon_sample_level2_core",
+      "issues": [],
+      "warnings": []
+    },
+    {
+      "case": "chameleon_sample_level3_advanced",
+      "issues": [],
+      "warnings": [
+        "Missing asset 'solstice_holiday_badge_2025.png' for element 'holiday_watermark' - rendered a placeholder."
+      ]
+    }
+  ],
+  "issues": []
+}
