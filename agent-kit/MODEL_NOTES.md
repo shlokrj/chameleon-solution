@@ -111,3 +111,7 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 ## M5 integration on Linux
 
 [Linux verification](runs/m5-linux.md) confirms the composition changes pass offline tests and deterministic repeats, but native font sizes still overpredict some dense-layout results. Record per-case typography, not only average loss. When a change modifies the overlap proxy itself, do not treat before/after aggregate loss as an unchanged-metric quality comparison. Keep previous performance numbers tied to their measured engine revision.
+
+## Packing direction before semantic roles
+
+[Row/column packing](runs/m5-flow.md) improves three Linux catalogue cases without inventing logo labels or changing unit hierarchy. Test a known feasible arrangement independently of the layout helper. Keep the extra search bounded and skip it when the existing arrangement reaches its scale cap. Report both the quality benefit and the measured runtime cost; improved average loss does not make remaining 3px labels readable.

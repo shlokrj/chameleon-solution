@@ -128,47 +128,64 @@ def place(unit, slot, measure=bounds):
 
 
 def flow(units, slot, gap, upper_scale):
-    """Wrap units into centered rows at one shared scale, like flex-wrap.
+    """Pack units into centered rows or columns at one shared scale.
 
     A shared scale keeps relative sizes (a large button stays larger than a
-    small badge); rows let wide and tall zones both fill naturally.
+    small badge). Try both directions without rotating the units; retain
+    rows on ties. This adds at most one bounded 24-step packing search.
     """
     if not units:
         return
     x, y, w, h = slot
     sizes = [(c-a, d-b) for a, b, c, d in map(visual_bounds, units)]
-    def rows(scale):
-        result, row, row_width = [], [], 0.0
-        for i, (uw, _) in enumerate(sizes):
-            if row and row_width+gap+uw*scale > w:
-                result.append(row)
-                row, row_width = [], 0.0
-            row_width += (gap if row else 0)+uw*scale
-            row.append(i)
-        return result+[row]
-    def fits(scale):
-        laid = rows(scale)
-        heights = [max(sizes[i][1] for i in row)*scale for row in laid]
-        return (all(sum(sizes[i][0] for i in row)*scale+gap*(len(row)-1) <= w+1e-9 for row in laid)
-                and sum(heights)+gap*(len(laid)-1) <= h+1e-9)
-    low, high = 0.0, upper_scale
-    if fits(high):
-        low = high
-    else:
-        for _ in range(24):
-            mid = (low+high)/2
-            low, high = (mid, high) if fits(mid) else (low, mid)
-    laid = rows(low)
-    heights = [max(sizes[i][1] for i in row)*low for row in laid]
-    top = y+max(0, h-sum(heights)-gap*(len(laid)-1))/2
-    for row, row_height in zip(laid, heights):
-        row_width = sum(sizes[i][0] for i in row)*low+gap*(len(row)-1)
-        left = x+max(0, w-row_width)/2
-        for i in row:
-            uw, uh = sizes[i][0]*low, sizes[i][1]*low
-            place(units[i], (left, top+(row_height-uh)/2, uw, uh), visual_bounds)
-            left += uw+gap
-        top += row_height+gap
+    def packing(transpose):
+        # Evaluate both reading directions: narrow zones often fit larger
+        # units in columns. Keep each unit rigid and preserve source order.
+        dims = [(uh, uw) for uw, uh in sizes] if transpose else sizes
+        major, minor = (h, w) if transpose else (w, h)
+        def rows(scale):
+            result, row, row_width = [], [], 0.0
+            for i, (uw, _) in enumerate(dims):
+                if row and row_width+gap+uw*scale > major:
+                    result.append(row)
+                    row, row_width = [], 0.0
+                row_width += (gap if row else 0)+uw*scale
+                row.append(i)
+            return result+[row]
+        def fits(scale):
+            laid = rows(scale)
+            heights = [max(dims[i][1] for i in row)*scale for row in laid]
+            return (all(sum(dims[i][0] for i in row)*scale+gap*(len(row)-1) <= major+1e-9 for row in laid)
+                    and sum(heights)+gap*(len(laid)-1) <= minor+1e-9)
+        low, high = 0.0, upper_scale
+        if fits(high):
+            low = high
+        else:
+            for _ in range(24):
+                mid = (low+high)/2
+                low, high = (mid, high) if fits(mid) else (low, mid)
+        laid = rows(low)
+        heights = [max(dims[i][1] for i in row)*low for row in laid]
+        top = max(0, minor-sum(heights)-gap*(len(laid)-1))/2
+        slots = {}
+        for row, row_height in zip(laid, heights):
+            row_width = sum(dims[i][0] for i in row)*low+gap*(len(row)-1)
+            left = max(0, major-row_width)/2
+            for i in row:
+                uw, uh = dims[i][0]*low, dims[i][1]*low
+                cross = top+(row_height-uh)/2
+                slots[i] = ((x+cross, y+left, uh, uw) if transpose
+                            else (x+left, y+cross, uw, uh))
+                left += uw+gap
+            top += row_height+gap
+        return low, slots
+    scale, slots = packing(False)
+    if len(units) > 1 and scale < upper_scale - 1e-6:
+        column_scale, column_slots = packing(True)
+        if column_scale > scale + 1e-6:
+            slots = column_slots
+    for i, unit in enumerate(units):
+        place(unit, slots[i], visual_bounds)
 
 
 def text_stack(units, slot, gap, upper_scale):

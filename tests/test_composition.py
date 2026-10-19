@@ -21,6 +21,25 @@ class CompositionTests(unittest.TestCase):
         self.assertGreater(button[0]['height'], badge[0]['height'])
         self.assertAlmostEqual(button[0]['height']/badge[0]['height'], 90/40, places=6)
 
+    def test_flow_uses_columns_when_rows_would_shrink_units(self):
+        # A feasible column layout fits at full scale, whereas greedy rows
+        # require 85px of height in this 80px slot.
+        units = [[dict(id=str(i), type='shape', shape_type='rectangle',
+                       x=0, y=0, width=w, height=h)]
+                 for i, (w, h) in enumerate([(100, 20), (20, 40), (20, 40)])]
+        flow(units, (10, 15, 140, 80), 5, 1)
+        self.assertAlmostEqual(units[0][0]['width'], 100)
+        boxes = [bounds(unit) for unit in units]
+        for a, b, c, d in boxes:
+            self.assertGreaterEqual(a, 10)
+            self.assertGreaterEqual(b, 15)
+            self.assertLessEqual(c, 150)
+            self.assertLessEqual(d, 95)
+        for i, a in enumerate(boxes):
+            for b in boxes[i+1:]:
+                self.assertTrue(a[2] <= b[0] or b[2] <= a[0]
+                                or a[3] <= b[1] or b[3] <= a[1])
+
     def test_place_scales_corner_radius(self):
         unit = pill('cta', 0, 0, 400, 90, 'Shop now')
         place(unit, (0, 0, 800, 180))

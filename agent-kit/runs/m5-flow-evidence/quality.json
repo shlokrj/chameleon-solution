@@ -1,0 +1,73 @@
+{
+  "baseline": "1fc9998",
+  "platform": "linux/amd64 via Rosetta/Colima",
+  "catalogue_cases": 70,
+  "contract_issues": 0,
+  "overflow_cases": 0,
+  "mean_loss_before": 0.029918989227009644,
+  "mean_loss_after": 0.029281819359216532,
+  "changed_catalogue": [
+    {
+      "before": {
+        "case": "level3_advanced@twitter-header",
+        "issues": [],
+        "selected": 4,
+        "max_font": 46.82286580403645,
+        "min_font": 11.554999897877375,
+        "overflow": [],
+        "loss": 0.0005156903408571515
+      },
+      "after": {
+        "case": "level3_advanced@twitter-header",
+        "issues": [],
+        "selected": 3,
+        "max_font": 45.96116807725694,
+        "min_font": 12.59368409713109,
+        "overflow": [],
+        "loss": 0.0
+      }
+    },
+    {
+      "before": {
+        "case": "level3_advanced@wide-banner",
+        "issues": [],
+        "selected": 4,
+        "max_font": 46.062328197337976,
+        "min_font": 10.960641172197128,
+        "overflow": [],
+        "loss": 0.0028131947211764543
+      },
+      "after": {
+        "case": "level3_advanced@wide-banner",
+        "issues": [],
+        "selected": 1,
+        "max_font": 43.81894712094906,
+        "min_font": 12.319233682420517,
+        "overflow": [],
+        "loss": 0.0
+      }
+    },
+    {
+      "before": {
+        "case": "level3_advanced@med-rect",
+        "issues": [],
+        "selected": 3,
+        "max_font": 11.11111111111111,
+        "min_font": 3.3210096259911857,
+        "overflow": [],
+        "loss": 0.3860374562678257
+      },
+      "after": {
+        "case": "level3_advanced@med-rect",
+        "issues": [],
+        "selected": 3,
+        "max_font": 11.11111111111111,
+        "min_font": 3.3333333333333335,
+        "overflow": [],
+        "loss": 0.34476445058434163
+      }
+    }
+  ],
+  "parity_cases": 42,
+  "repeat_differences": []
+}

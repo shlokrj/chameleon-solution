@@ -55,7 +55,7 @@ A small margin is kept around the edges and between zones.
 
 ### 4. Fill each zone sensibly
 
-**Pictures and buttons** are laid out like words in a paragraph: side by side, wrapping onto a new row when the zone runs out of width. All the items in a zone shrink or grow **by the same amount**, so a big "Shop now" button stays bigger than a small "NEW" badge. The engine picks the largest size at which everything still fits.
+**Pictures and buttons** are laid out like words in a paragraph: side by side, wrapping onto a new row when the zone runs out of width. The engine also tries columns and uses them when they let the items stay larger. All the items in a zone shrink or grow **by the same amount**, so a big "Shop now" button stays bigger than a small "NEW" badge. The engine picks the largest size at which everything still fits.
 
 Two details make this look right:
 - **Pictures are measured by what you can actually see.** A logo file is often mostly see-through padding; ours is about 60% empty. The engine sizes pictures by their visible part, so logos and products don't look needlessly tiny.
@@ -104,7 +104,7 @@ This is the hardest kind of case. Seven secondary items crammed into a 90px-tall
 | Step | File |
 |---|---|
 | Finding text-on-panel units | `engine/relationships.py` |
-| Zones, wrapping rows, keeping layouts, visible-pixel sizing | `engine/layout.py` |
+| Zones, row/column packing, keeping layouts, visible-pixel sizing | `engine/layout.py` |
 | Fitting text with real font measurements | `engine/typography.py` |
 | Rule checks, safety checks, quality score | `engine/quality.py` |
 | Building candidates and picking the winner | `engine/resize.py` |
