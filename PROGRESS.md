@@ -4,12 +4,12 @@ Read this first when joining or resuming work. This is the shared current-state 
 
 ## Current state
 
-- **Phase:** M3 complete; M4 final quality/release review remains; M5 row/column packing improves three catalogue layouts; M5.3 contrast tiebreak remains rejected.
+- **Phase:** M3 complete; M4 final quality/release review remains; M5 packing and post-selection image expansion verified; M5.3 contrast tiebreak remains rejected.
 - **Implementation progress:** 4 of 6 implementation milestones complete (M0–M5; M4 and M5 remain in progress). This count is not an effort estimate.
-- **Engine:** bounded candidate search, shared-scale row/column packing, hierarchy-preserving type floor, alpha-aware image packing, plus inferred backing relationships. 62 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [M5 packing evidence](agent-kit/runs/m5-flow.md).
-- **Latest verified predecessor:** `1fc9998` on `main`, pulled from origin. This containing commit records row/column packing and Linux checks; use Git history to resolve its revision.
-- **Active implementation owners:** none; packing claim released.
-- **Next concrete action:** improve logo sizing and dense secondary groups using Linux baselines, then collision-aware anchoring and final release review. Dense-labels-compact improved from 6.325px to 8.625px labels, but five catalogue cases still have text below 6px. Docker validation for M5 is complete.
+- **Engine:** bounded candidate search, shared-scale row/column packing, hierarchy-preserving type floor, alpha-aware image packing, post-selection image expansion, plus inferred backing relationships. 66 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [image expansion evidence](agent-kit/runs/m5-image-expansion.md).
+- **Latest verified predecessor:** `56e30ba` on `main`, pulled from origin. This containing commit records image expansion and Linux checks; use Git history to resolve its revision.
+- **Active implementation owners:** none; image expansion claim released.
+- **Next concrete action:** address dense small-format text and crowded logo/product allocation using Linux baselines, then collision-aware anchoring and final release review. Dense-labels-compact improved from 6.325px to 8.625px labels, but five catalogue cases still have text below 6px. Image expansion improves 15 catalogue layouts without changing copy; crowded Level 2 logos remain small. Docker validation for M5 is complete.
 
 ## Milestone board
 
@@ -50,11 +50,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims. Row/column packing accepted with a measured 4.8% engine-time cost; logo sizing and dense small-format text remain.
+No active claims. Bounded image expansion accepted: 15 catalogue layouts gain larger images; no copy or selection changes.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | 2026-10-18 America/Chicago | Packing claim released. Next: logo sizing / dense small-format text, then collision-aware anchoring |
+| — | — | — | — | unassigned | 2026-10-18 America/Chicago | Image claim released. Next: dense small-format text / crowded logo allocation, then anchoring |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -105,6 +105,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `test: verify teammate composition changes in linux` (containing commit) | Reviewed four teammate commits; rebuilt and verified M5 offline; refreshed Linux quality evidence and milestone count | 61 tests; 3 delivery pairs; 70 catalogue cases; 42 exact repeated parity cases; five renders inspected | No engine changes; tiny text/logo sizing, fresh review and final release questions remain |
 
 | `feat: compare row and column packing for larger groups` (containing commit) | Added bounded alternate packing direction, retained common scale and row tie-break; README/model notes updated | 62 offline tests; 3 validated production pairs; 70 catalogue cases with 3 improvements; 42 repeated parity cases; renders inspected; five timed sweeps per revision | Five sub-6px cases remain; logo sizing/anchoring and release questions remain; ~4.8% warm engine cost accepted |
+
+| `feat: enlarge standalone images within spare zone space` (containing commit) | Added bounded post-selection image growth; preserved gaps/canvas bounds and candidate selection; updated README/model notes | 66 offline tests; 3 production pairs; 70 cases with unchanged metrics/non-image fields and no shrunk images; 42 exact repeat cases; 15 changed renders inspected; five timing sweeps per revision | Crowded Level 2 logo and five sub-6px cases remain; ~1.4% warm engine cost; no fresh holdout |
 
 ## How to update this file
 

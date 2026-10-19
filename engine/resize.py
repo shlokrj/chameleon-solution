@@ -1,6 +1,6 @@
 """Bounded deterministic candidate selection; diagnostics stay out of output."""
 import json
-from engine.layout import build_layout
+from engine.layout import build_layout, expand_images
 from engine.quality import hard_issues, quality, regression_reasons
 
 MAX_CANDIDATES = 6
@@ -19,9 +19,11 @@ def resize_with_diagnostics(source, target_canvas, *, max_candidates=MAX_CANDIDA
     baseline_quality = None
     best_key = None
     selected = None
+    best_image_zones = []
     for index, (image, group, force, side) in enumerate(allocations[:max_candidates]):
+        image_zones = []
         design = build_layout(source, target_canvas, image_share=image, group_share=group, force_reflow=force,
-                              text_grid=index == MAX_CANDIDATES-1, group_side=side)
+                              text_grid=index == MAX_CANDIDATES-1, group_side=side, image_zones=image_zones)
         record = {'index': index, 'image_share': image, 'group_share': group, 'force_reflow': force,
                   'group_side': side, 'text_grid': index == MAX_CANDIDATES-1}
         records.append(record)
@@ -50,11 +52,17 @@ def resize_with_diagnostics(source, target_canvas, *, max_candidates=MAX_CANDIDA
         record['status'] = 'eligible'
         if best_key is None or key < best_key:
             best, best_key, selected = design, key, index
+            best_image_zones = image_zones
         # An already readable, collision-free baseline does not need extra work.
         if index == 0 and key == (0, 0):
             break
     if best is None:
         raise ValueError('No structurally valid layout candidate; refusing invalid output')
+    # A post-selection pass cannot change the winning layout or shrink a
+    # product through the candidate regression guard. Zones hold references
+    # into the selected design only; no internal metadata enters the output.
+    for zone in best_image_zones:
+        expand_images(*zone)
     return best, {'selected': selected, 'candidate_count': len(records), 'candidates': records}
 
 

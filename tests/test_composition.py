@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import unittest
-from engine.layout import bounds, build_layout, flow, keep_on_canvas, place, text_stack, visual_bounds
+from engine.layout import bounds, build_layout, expand_images, flow, keep_on_canvas, place, text_stack, visual_bounds
 from engine.resize import resize
 
 
@@ -39,6 +39,60 @@ class CompositionTests(unittest.TestCase):
             for b in boxes[i+1:]:
                 self.assertTrue(a[2] <= b[0] or b[2] <= a[0]
                                 or a[3] <= b[1] or b[3] <= a[1])
+
+    def test_image_expansion_uses_spare_space_without_touching_neighbor(self):
+        small = dict(id='small', type='image', asset_id='absent.png', fit='contain',
+                     x=10, y=30, width=20, height=10)
+        neighbor = dict(id='large', type='image', asset_id='absent.png', fit='contain',
+                        x=45, y=5, width=50, height=60)
+        expand_images([[small], [neighbor]], (0, 0, 100, 70), (100, 70), 5)
+        self.assertAlmostEqual(small['width'], 30)
+        self.assertAlmostEqual(small['width']/small['height'], 2)
+        self.assertGreaterEqual(neighbor['x']-(small['x']+small['width']), 5)
+        for el in [small, neighbor]:
+            self.assertGreaterEqual(el['x'], 0)
+            self.assertGreaterEqual(el['y'], 0)
+            self.assertLessEqual(el['x']+el['width'], 100)
+            self.assertLessEqual(el['y']+el['height'], 70)
+
+    def test_transparent_image_can_shift_inward_but_full_box_stays_on_canvas(self):
+        logo = dict(id='opaque-id', type='image', asset_id='solstice_logo_lockup.png',
+                    fit='contain', x=0, y=0, width=100, height=40)
+        expand_images([[logo]], (0, 0, 150, 100), (150, 100), 5)
+        self.assertAlmostEqual(logo['width'], 150)
+        self.assertAlmostEqual(logo['height'], 60)
+        self.assertGreaterEqual(logo['x'], 0)
+        self.assertGreaterEqual(logo['y'], 0)
+        self.assertLessEqual(logo['x']+logo['width'], 150)
+        a, b, c, d = visual_bounds([logo])
+        self.assertTrue(0 <= a <= c <= 150 and 0 <= b <= d <= 100)
+
+    def test_image_expansion_preserves_groups_cover_and_rotated_images(self):
+        from copy import deepcopy
+        base = dict(id='a', type='image', asset_id='absent.png', fit='contain',
+                    x=20, y=20, width=10, height=10)
+        for unit in [[dict(base, fit='cover')], [dict(base, rotation=15)],
+                     [dict(base, group_id='g'), dict(base, id='b', group_id='g')]]:
+            original = deepcopy(unit)
+            expand_images([unit], (0, 0, 100, 100), (100, 100), 5)
+            self.assertEqual(unit, original)
+
+    def test_expansion_does_not_change_selection_or_shrink_any_image(self):
+        from unittest.mock import patch
+        from evaluation.development import families
+        from engine.resize import resize_with_diagnostics
+        source = dict(families())['event']
+        target = {'width': 300, 'height': 250}
+        with patch('engine.resize.expand_images'):
+            baseline, old_diagnostics = resize_with_diagnostics(source, target)
+        result, diagnostics = resize_with_diagnostics(source, target)
+        self.assertEqual(diagnostics['selected'], old_diagnostics['selected'])
+        for before, after in zip(baseline['elements'], result['elements']):
+            if before['type'] == 'image':
+                self.assertGreaterEqual(after['width'], before['width']-1e-9)
+                self.assertGreaterEqual(after['height'], before['height']-1e-9)
+            else:
+                self.assertEqual(after, before)
 
     def test_place_scales_corner_radius(self):
         unit = pill('cta', 0, 0, 400, 90, 'Shop now')

@@ -93,6 +93,68 @@ def keep_on_canvas(units, width, height):
     place(elements, (left, top, right-left, bottom-top))
 
 
+def expand_images(units, slot, canvas, gap):
+    """Use spare image-zone space without shrinking or pushing neighbors.
+
+    Only standalone, unrotated contain images qualify. Smaller visible images
+    get first use of free space; each can grow at most 50%, shifting only as needed to stay in its
+    existing free-space compartment.
+    No semantic role or asset-name inference is needed.
+    """
+    x, y, w, h = slot
+    cw, ch = canvas
+    def area(unit):
+        a, b, c, d = visual_bounds(unit)
+        return (c-a)*(d-b)
+    ordered = sorted(units, key=area)
+    for unit in ordered:
+        if len(unit) != 1:
+            continue
+        el = unit[0]
+        if (el['type'] != 'image' or el.get('fit', 'contain') != 'contain'
+                or el.get('rotation', 0) or el['width'] <= 0 or el['height'] <= 0):
+            continue
+        ink_box = visual_bounds(unit)
+        others = [visual_bounds(other) for other in units if other is not unit]
+        cx, cy = el['x']+el['width']/2, el['y']+el['height']/2
+        offsets = (ink_box[0]-cx, ink_box[1]-cy, ink_box[2]-cx, ink_box[3]-cy)
+        def placement(scale):
+            l, t, r, b = (v*scale for v in offsets)
+            hw, hh = el['width']*scale/2, el['height']*scale/2
+            xmin, xmax = max(hw, x-l), min(cw-hw, x+w-r)
+            ymin, ymax = max(hh, y-t), min(ch-hh, y+h-b)
+            for other in others:
+                # Retain an existing separating direction rather than jumping
+                # over a neighbor to reach unrelated free space.
+                if ink_box[2]+gap <= other[0]+1e-9:
+                    xmax = min(xmax, other[0]-gap-r)
+                elif ink_box[0]-gap >= other[2]-1e-9:
+                    xmin = max(xmin, other[2]+gap-l)
+                elif ink_box[3]+gap <= other[1]+1e-9:
+                    ymax = min(ymax, other[1]-gap-b)
+                elif ink_box[1]-gap >= other[3]-1e-9:
+                    ymin = max(ymin, other[3]+gap-t)
+                else:
+                    return None
+            if xmin > xmax or ymin > ymax:
+                return None
+            nx, ny = min(max(cx, xmin), xmax), min(max(cy, ymin), ymax)
+            return nx-hw, ny-hh, 2*hw, 2*hh
+        if placement(1) is None:
+            continue
+        low, high = 1.0, 1.5
+        if placement(high) is not None:
+            low = high
+        else:
+            for _ in range(20):
+                mid = (low+high)/2
+                low, high = (mid, high) if placement(mid) is not None else (low, mid)
+        if low <= 1+1e-6:
+            continue
+        a, b, width, height = placement(low)
+        el.update(x=a, y=b, width=width, height=height)
+
+
 def box_overlap(a, b):
     return max(0, min(a[2], b[2])-max(a[0], b[0]))*max(0, min(a[3], b[3])-max(a[1], b[1]))
 
@@ -286,7 +348,7 @@ def arrange_text(units, slot, gap, upper_scale, use_grid):
             text_stack([unit], (x+c*(cw+gap), y+r*(ch+gap), cw, ch), 0, upper_scale)
 
 
-def build_layout(source, target_canvas, *, image_share=None, group_share=None, force_reflow=False, text_grid=False, group_side=False):
+def build_layout(source, target_canvas, *, image_share=None, group_share=None, force_reflow=False, text_grid=False, group_side=False, image_zones=None):
     result = deepcopy(source)
     result['canvas'] = deepcopy(target_canvas)
     sw, sh = source['canvas']['width'], source['canvas']['height']
@@ -361,6 +423,8 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
         image_width = w*(0.25 if image_share is None else image_share) if images and (text or groups) else w if images else 0
         flow(images, (x, y, image_width, h), gap, upper)
         keep_on_canvas(images, tw, th)
+        if image_zones is not None:
+            image_zones.append((images, (x, y, image_width, h), (tw, th), gap))
         if image_width and (text or groups):
             x += image_width+gap
             w -= image_width+gap
@@ -379,6 +443,8 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
         image_height = h*(0.36 if image_share is None else image_share) if images and (text or groups) else h if images else 0
         flow(images, (x, y, w, image_height), gap, upper)
         keep_on_canvas(images, tw, th)
+        if image_zones is not None:
+            image_zones.append((images, (x, y, w, image_height), (tw, th), gap))
         if image_height and (text or groups):
             y += image_height+gap
             h -= image_height+gap

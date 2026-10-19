@@ -1,0 +1,228 @@
+{
+  "baseline": "56e30ba",
+  "tests_passed": 66,
+  "catalogue_cases": 70,
+  "catalogue_metrics_exactly_unchanged": true,
+  "non_image_elements_exactly_unchanged": true,
+  "no_images_shrunk": true,
+  "image_changes": [
+    {
+      "case": "level1_warmup@story",
+      "id": "logo",
+      "before_visible_size": [
+        215.7037037037037,
+        128.0
+      ],
+      "after_visible_size": [
+        323.5555555555556,
+        192.0
+      ]
+    },
+    {
+      "case": "level1_warmup@fb-link",
+      "id": "logo",
+      "before_visible_size": [
+        128.036999899756,
+        75.97799994051456
+      ],
+      "after_visible_size": [
+        171.86076020184413,
+        101.98330825164379
+      ]
+    },
+    {
+      "case": "level1_warmup@yt-thumb",
+      "id": "logo",
+      "before_visible_size": [
+        137.7133332476204,
+        81.71999994913739
+      ],
+      "after_visible_size": [
+        183.8694348621372,
+        109.10933497313636
+      ]
+    },
+    {
+      "case": "level1_warmup@twitter-header",
+      "id": "logo",
+      "before_visible_size": [
+        153.56249998116658,
+        91.12499998882413
+      ],
+      "after_visible_size": [
+        211.69183504965417,
+        125.61933068880577
+      ]
+    },
+    {
+      "case": "level1_warmup@wide-banner",
+      "id": "logo",
+      "before_visible_size": [
+        160.76666652604388,
+        95.39999991655347
+      ],
+      "after_visible_size": [
+        224.33833698676963,
+        133.12384832181937
+      ]
+    },
+    {
+      "case": "level1_warmup@leaderboard",
+      "id": "logo",
+      "before_visible_size": [
+        71.05583328746351,
+        42.16499997278055
+      ],
+      "after_visible_size": [
+        101.06222752365163,
+        59.97099215689218
+      ]
+    },
+    {
+      "case": "level1_warmup@med-rect",
+      "id": "logo",
+      "before_visible_size": [
+        26.693333314248807,
+        15.839999988675117
+      ],
+      "after_visible_size": [
+        33.210871354836456,
+        19.70755003473812
+      ]
+    },
+    {
+      "case": "catalog@story",
+      "id": "visual-a",
+      "before_visible_size": [
+        272.8,
+        440.80000000000007
+      ],
+      "after_visible_size": [
+        314.42467575073243,
+        508.0586402893067
+      ]
+    },
+    {
+      "case": "catalog@story",
+      "id": "visual-b",
+      "before_visible_size": [
+        272.79999999999995,
+        440.80000000000007
+      ],
+      "after_visible_size": [
+        314.9762199401856,
+        508.9498451232911
+      ]
+    },
+    {
+      "case": "event@story",
+      "id": "mark",
+      "before_visible_size": [
+        258.84444444444443,
+        153.60000000000002
+      ],
+      "after_visible_size": [
+        388.26666666666665,
+        230.40000000000003
+      ]
+    },
+    {
+      "case": "event@fb-link",
+      "id": "mark",
+      "before_visible_size": [
+        136.57279987633223,
+        81.0431999266147
+      ],
+      "after_visible_size": [
+        180.01868811824164,
+        106.82427646576974
+      ]
+    },
+    {
+      "case": "event@yt-thumb",
+      "id": "mark",
+      "before_visible_size": [
+        146.89422211293822,
+        87.16799993515014
+      ],
+      "after_visible_size": [
+        192.59742832012049,
+        114.28858383831323
+      ]
+    },
+    {
+      "case": "event@twitter-header",
+      "id": "mark",
+      "before_visible_size": [
+        163.799999917133,
+        97.19999995082617
+      ],
+      "after_visible_size": [
+        221.7404601882662,
+        131.58225110072942
+      ]
+    },
+    {
+      "case": "event@wide-banner",
+      "id": "mark",
+      "before_visible_size": [
+        171.48444442837325,
+        101.75999999046326
+      ],
+      "after_visible_size": [
+        234.98731046381727,
+        139.4430193961113
+      ]
+    },
+    {
+      "case": "event@leaderboard",
+      "id": "mark",
+      "before_visible_size": [
+        61.21671106366094,
+        36.32639997184276
+      ],
+      "after_visible_size": [
+        85.10225417733542,
+        50.50023874259465
+      ]
+    },
+    {
+      "case": "event@med-rect",
+      "id": "mark",
+      "before_visible_size": [
+        36.3999999773999,
+        21.599999986588955
+      ],
+      "after_visible_size": [
+        46.07593571663155,
+        27.341764051627507
+      ]
+    }
+  ],
+  "parity_cases": 42,
+  "repeat_differences": [],
+  "engine_hashes": {
+    "engine/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "engine/layout.py": "021128ed73129a7b68205c133ee17749e8c908f789546f062f5781181c422a37",
+    "engine/main.py": "9de8f1a21b438be535df3a416afcb2f2422e5142482ecc06b240f3ca7c7a8ab9",
+    "engine/quality.py": "1858d1ec0b4dbfc6de0403ced4b98d1159b957e93fc1d629ef3f6cc26e568ae1",
+    "engine/relationships.py": "9f7b9f17dbc4513a78f77eef84fd9a3f9450610b07e17268518959c36e3083bf",
+    "engine/resize.py": "e01d00eda509bac7d4d7d58b8ee43ccce8df9eb050bec2d0b9de0ec30596ab19",
+    "engine/typography.py": "7d1f47e1af11451f98372c1afade281f603b0434d7ff55f2142aba908c58c9d2"
+  },
+  "before_warm_sweep_seconds": [
+    0.5157490919991687,
+    0.4832033489983587,
+    0.48555422199933673,
+    0.486281969002448,
+    0.4864382590021705
+  ],
+  "after_warm_sweep_seconds": [
+    0.4797581659986463,
+    0.4872323290001077,
+    0.49708661399927223,
+    0.49292278100256226,
+    0.5339479709982697
+  ],
+  "measurement_script": "import json,time\nfrom engine.resize import resize\nfrom engine.layout import visual_bounds\nfrom evaluation.catalogue import sources,FORMATS\ncases=[(name+'@'+fmt,s,dict(width=w,height=h)) for name,s in sources() for fmt,(w,h) in FORMATS.items()]\nrecords={}\nfor name,s,t in cases:\n d=resize(s,t)\n records[name]={'design':d,'images':{e['id']:visual_bounds([e]) for e in d['elements'] if e['type']=='image'}}\ntimes=[]\nfor _ in range(5):\n start=time.perf_counter()\n for _,s,t in cases:resize(s,t)\n times.append(time.perf_counter()-start)\nprint(json.dumps({'records':records,'warm_sweep_seconds':times}))\n"
+}

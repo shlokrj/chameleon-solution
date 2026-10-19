@@ -81,7 +81,9 @@ There is rarely one obvious answer, so the engine builds **up to six candidate l
    - elements newly covering each other;
    - text that lost its backing panel.
 
-The best-scoring candidate wins. If the very first layout is already perfect, the engine stops there.
+The best-scoring candidate wins. If the very first layout has zero measured loss, the engine stops searching there.
+
+Finally, standalone pictures can grow by up to 50% into spare room in their image zone. They keep their proportions and a gap from neighbors; their full boxes stay on canvas. This pass leaves text, grouped elements, and the chosen layout unchanged. It helps small logos where room is available, but cannot guarantee a minimum logo size.
 
 ### 6. Write the result
 

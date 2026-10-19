@@ -115,3 +115,7 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 ## Packing direction before semantic roles
 
 [Row/column packing](runs/m5-flow.md) improves three Linux catalogue cases without inventing logo labels or changing unit hierarchy. Test a known feasible arrangement independently of the layout helper. Keep the extra search bounded and skip it when the existing arrangement reaches its scale cap. Report both the quality benefit and the measured runtime cost; improved average loss does not make remaining 3px labels readable.
+
+## Image growth after candidate selection
+
+[Spare-space image expansion](runs/m5-image-expansion.md) enlarged images in 15 Linux catalogue layouts without changing text or winning candidates. Applying growth before selection changed the baseline regression guard and could shrink a final logo; test the integrated output, not just the local growth helper. A post-selection pass keeps that decision stable. Check full transparent boxes against the canvas, visible bounds against the zone, and preserve gaps. Unchanged text-oriented scores need image measurements and visual evidence to establish a benefit.
