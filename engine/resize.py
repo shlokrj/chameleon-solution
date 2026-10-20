@@ -14,6 +14,11 @@ def resize_with_diagnostics(source, target_canvas, *, max_candidates=MAX_CANDIDA
     allocations = [(None, None, False, False), *[(image, group, True, side) for image, group, side in
         ([(0.18, 0.26, False), (0.15, 0.22, True), (0.25, 0.30, False), (0.20, 0.28, True), (0.32, 0.30, False)] if wide else
          [(0.25, 0.30, False), (0.36, 0.30, False), (0.25, 0.40, False), (0.45, 0.30, False), (0.36, 0.40, False)])]]
+    # Side columns squeeze secondary groups on nearly square canvases.
+    # Spend the same budget on deeper bottom zones for these shapes.
+    if wide and target_canvas['width'] / target_canvas['height'] < 2:
+        allocations[2] = (0.25, 0.40, True, False)
+        allocations[4] = (0.25, 0.50, True, False)
     seen, records = set(), []
     baseline = best = None
     baseline_quality = None

@@ -119,3 +119,7 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 ## Image growth after candidate selection
 
 [Spare-space image expansion](runs/m5-image-expansion.md) enlarged images in 15 Linux catalogue layouts without changing text or winning candidates. Applying growth before selection changed the baseline regression guard and could shrink a final logo; test the integrated output, not just the local growth helper. A post-selection pass keeps that decision stable. Check full transparent boxes against the canvas, visible bounds against the zone, and preserve gaps. Unchanged text-oriented scores need image measurements and visual evidence to establish a benefit.
+
+## Allocate candidate budget by canvas shape
+
+[Compact-layout allocation](runs/m5-compact.md) spends the same six-candidate budget on deeper bottom sections when side columns squeeze groups on near-square canvases. Keep regression guards unchanged and test neighboring aspect ratios on both sides of the decision boundary. Larger grouped labels do not imply the smallest legal copy is readable; retain per-element limits alongside aggregate loss improvements.

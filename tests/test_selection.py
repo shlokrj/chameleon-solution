@@ -29,6 +29,25 @@ class SelectionTests(unittest.TestCase):
                 self.assertLessEqual(d['candidate_count'], MAX_CANDIDATES)
                 self.assertEqual((out, d), resize_with_diagnostics(source, task['target_canvas']))
 
+    def test_compact_dense_groups_use_available_bottom_space(self):
+        task = json.loads(Path('input/chameleon_sample_level3_advanced.json').read_text())
+        target = {'width': 300, 'height': 250}
+        source = copy.deepcopy(task['source'])
+        # Opaque IDs prevent the regression fixture from depending on semantic
+        # names. The three short badge labels should retain their scaled size.
+        badge_ids = {'badge1_label', 'badge2_label', 'badge3_label'}
+        renamed_badges = []
+        for i, el in enumerate(source['elements']):
+            if el['id'] in badge_ids:
+                renamed_badges.append(str(i))
+            el['id'] = str(i)
+        result, diagnostics = resize_with_diagnostics(source, target)
+        elements = {el['id']: el for el in result['elements']}
+        for eid in renamed_badges:
+            self.assertGreaterEqual(elements[eid]['font_size'], 4.16)
+        self.assertEqual(check_contract(source, target, result, SCHEMA), [])
+        self.assertLessEqual(diagnostics['candidate_count'], MAX_CANDIDATES)
+
     def test_bad_candidates_cannot_win(self):
         source = simple()
         invalid = copy.deepcopy(source)

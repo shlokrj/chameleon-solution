@@ -70,7 +70,7 @@ An image whose file is missing still appears as a placeholder, but it goes in th
 
 ### 5. Try a few layouts and keep the best
 
-There is rarely one obvious answer, so the engine builds **up to six candidate layouts**. They differ in how much room goes to pictures versus buttons, and in whether buttons sit along the bottom or in a side column. Each candidate then goes through three checks, in order:
+There is rarely one obvious answer, so the engine builds **up to six candidate layouts**. They differ in how much room goes to pictures versus buttons, and in whether buttons sit along the bottom or in a side column. For nearly square canvases, the engine uses deeper bottom sections instead of the two side-column alternatives, so badges and buttons have more room. Each candidate then goes through three checks, in order:
 
 1. **Rule check.** Any candidate that breaks a ground rule is thrown out.
 2. **Safety check.** A candidate is rejected if it makes things worse than the first layout. That means shrinking any text by more than 5%, shrinking a picture's shorter side by more than 20%, or creating new overlaps.
