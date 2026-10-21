@@ -123,3 +123,7 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 ## Allocate candidate budget by canvas shape
 
 [Compact-layout allocation](runs/m5-compact.md) spends the same six-candidate budget on deeper bottom sections when side columns squeeze groups on near-square canvases. Keep regression guards unchanged and test neighboring aspect ratios on both sides of the decision boundary. Larger grouped labels do not imply the smallest legal copy is readable; retain per-element limits alongside aggregate loss improvements.
+
+## Floors, candidate selection and final hierarchy
+
+[Text-floor refinement](runs/m5-text-floor.md) shows that an earlier proportional cap can silently undo a readable minimum. Fixing it during candidate generation changed the winner and shrank grouped labels, so refine only the selected copy area and reject any text shrink. Local fit is still insufficient: compare hierarchy against grouped text too, and rollback when final quality worsens. Preserve discovered regression tests and disclose pre-refinement diagnostic scores separately from final output quality.

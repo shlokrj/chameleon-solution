@@ -250,9 +250,12 @@ def flow(units, slot, gap, upper_scale):
         place(unit, slots[i], visual_bounds)
 
 
-def text_stack(units, slot, gap, upper_scale):
+def text_stack(units, slot, gap, upper_scale, *, readable_floor=False, refinements=None):
     if not units:
         return
+    if (refinements is not None and len(units) > 1 and upper_scale < 1
+            and any(u[0]['font_size']*upper_scale < MIN_READABLE_PX for u in units)):
+        refinements.append((units, deepcopy(units), slot, gap, upper_scale))
     x, y, width, height = slot
     # These units are singleton text boxes. Preserve their relative type sizes.
     elements = [u[0] for u in units]
@@ -262,7 +265,9 @@ def text_stack(units, slot, gap, upper_scale):
         # Shrink proportionally, but let small copy hold a readable floor
         # below the (shrunk) largest copy: order and dominance are preserved.
         floor = min(MIN_READABLE_PX, largest*scale*HIERARCHY_RATIO)
-        return [max(1, min(el['font_size']*upper_scale, max(el['font_size']*scale, floor))) for el in elements]
+        # During downscaling, the floor may exceed proportional sizing,
+        # but never the source size. Otherwise the cap would erase the floor.
+        return [max(1, min(el['font_size']*(max(1, upper_scale) if readable_floor else upper_scale), max(el['font_size']*scale, floor))) for el in elements]
     def measurements(scale):
         measured = []
         for el, size in zip(elements, sizes(scale)):
@@ -304,6 +309,36 @@ def text_stack(units, slot, gap, upper_scale):
         offset += bh*compression+gap
 
 
+def refine_text(refinements):
+    """Restore the readable floor only when the chosen copy never shrinks."""
+    changed = []
+    for current, original, slot, gap, upper_scale in refinements:
+        proposed = deepcopy(original)
+        text_stack(proposed, slot, gap, upper_scale, readable_floor=True)
+        pairs = [(old[0], new[0]) for old, new in zip(current, proposed)]
+        if any(new['font_size'] < old['font_size']-1e-6 for old, new in pairs):
+            continue
+        if not any(new['font_size'] > old['font_size']+1e-6 for old, new in pairs):
+            continue
+        # Exact renderer measurements: do not accept overflowing minimum-font
+        # fallbacks on an infeasibly small zone.
+        fits = True
+        for _, new in pairs:
+            ew, eh, lines = text_extent(new, new['font_size'], new['width'])
+            if (ew > new['width']+1e-6 or eh > new['height']+1e-6
+                    or (new.get('max_lines') is not None and lines > new['max_lines'])):
+                fits = False
+        a, b, c, d = bounds([new for _, new in pairs])
+        x, y, w, h = slot
+        if not fits or a < x-1e-6 or b < y-1e-6 or c > x+w+1e-6 or d > y+h+1e-6:
+            continue
+        for old, new in pairs:
+            if new['font_size'] > old['font_size']+1e-6:
+                changed.append(old['id'])
+            old.update(new)
+    return changed
+
+
 def source_grid(units):
     """Recognize complete aligned rows, without inferring columns from prose."""
     rows = []
@@ -334,10 +369,10 @@ def source_grid(units):
     return rows
 
 
-def arrange_text(units, slot, gap, upper_scale, use_grid):
+def arrange_text(units, slot, gap, upper_scale, use_grid, refinements=None):
     rows = source_grid(units) if use_grid else None
     if rows is None:
-        text_stack(units, slot, gap, upper_scale)
+        text_stack(units, slot, gap, upper_scale, refinements=refinements)
         return
     x, y, w, h = slot
     columns = len(rows[0])
@@ -348,7 +383,7 @@ def arrange_text(units, slot, gap, upper_scale, use_grid):
             text_stack([unit], (x+c*(cw+gap), y+r*(ch+gap), cw, ch), 0, upper_scale)
 
 
-def build_layout(source, target_canvas, *, image_share=None, group_share=None, force_reflow=False, text_grid=False, group_side=False, image_zones=None):
+def build_layout(source, target_canvas, *, image_share=None, group_share=None, force_reflow=False, text_grid=False, group_side=False, image_zones=None, text_refinements=None):
     result = deepcopy(source)
     result['canvas'] = deepcopy(target_canvas)
     sw, sh = source['canvas']['width'], source['canvas']['height']
@@ -433,12 +468,12 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
             group_width = w*(0.22 if group_share is None else group_share)
             flow(groups, (x+w-group_width, y, group_width, h), gap, upper)
             keep_on_canvas(groups, tw, th)
-            arrange_text(text, (x, y, w-group_width-gap, h), gap, upper, text_grid)
+            arrange_text(text, (x, y, w-group_width-gap, h), gap, upper, text_grid, text_refinements)
             return result
         group_height = h*(0.22 if group_share is None else group_share) if groups and text else h if groups else 0
         flow(groups, (x, y+h-group_height, w, group_height), gap, upper)
         keep_on_canvas(groups, tw, th)
-        arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, upper, text_grid)
+        arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, upper, text_grid, text_refinements)
     else:
         image_height = h*(0.36 if image_share is None else image_share) if images and (text or groups) else h if images else 0
         flow(images, (x, y, w, image_height), gap, upper)
@@ -451,5 +486,5 @@ def build_layout(source, target_canvas, *, image_share=None, group_share=None, f
         group_height = h*(0.25 if group_share is None else group_share) if groups and text else h if groups else 0
         flow(groups, (x, y+h-group_height, w, group_height), gap, upper)
         keep_on_canvas(groups, tw, th)
-        arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, upper, text_grid)
+        arrange_text(text, (x, y, w, max(0, h-group_height-(gap if groups else 0))), gap, upper, text_grid, text_refinements)
     return result

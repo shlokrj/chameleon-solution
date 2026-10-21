@@ -109,6 +109,57 @@ class CompositionTests(unittest.TestCase):
         self.assertGreaterEqual(legal['font_size'], min(10.0, head['font_size']*0.7)-1e-6)
         self.assertGreater(legal['font_size'], 12*head['font_size']/40)  # better than proportional
 
+    def test_type_floor_survives_canvas_downscaling(self):
+        head = dict(id='h', type='text', x=0, y=0, width=400, height=60,
+                    content='News', font_family='Solstice Sans', font_size=40)
+        legal = dict(id='l', type='text', x=0, y=70, width=400, height=30,
+                     content='Terms apply', font_family='Solstice Sans', font_size=12)
+        text_stack([[head], [legal]], (0, 0, 200, 100), 2, 0.25, readable_floor=True)
+        self.assertAlmostEqual(head['font_size'], 10)
+        self.assertAlmostEqual(legal['font_size'], 7)
+        self.assertLessEqual(legal['font_size'], 12)
+
+    def test_type_floor_does_not_enlarge_copy_beyond_source_when_downscaling(self):
+        head = dict(id='h', type='text', x=0, y=0, width=400, height=60,
+                    content='News', font_family='Solstice Sans', font_size=40)
+        tiny = dict(id='t', type='text', x=0, y=70, width=400, height=30,
+                    content='Note', font_family='Solstice Sans', font_size=2)
+        text_stack([[head], [tiny]], (0, 0, 200, 100), 2, 0.25, readable_floor=True)
+        self.assertEqual(tiny['font_size'], 2)
+        self.assertLess(tiny['font_size'], head['font_size'])
+
+    def test_final_text_refinement_keeps_layout_selection_and_never_shrinks_copy(self):
+        from unittest.mock import patch
+        from evaluation.development import families
+        from engine.resize import resize_with_diagnostics
+        source = dict(families())['editorial']
+        target = {'width': 300, 'height': 250}
+        with patch('engine.resize.refine_text', return_value=[]):
+            baseline, old = resize_with_diagnostics(source, target)
+        result, diagnostics = resize_with_diagnostics(source, target)
+        self.assertEqual(diagnostics['selected'], old['selected'])
+        self.assertTrue(diagnostics['refined_text'])
+        for before, after in zip(baseline['elements'], result['elements']):
+            if before['type'] == 'text':
+                self.assertGreaterEqual(after['font_size'], before['font_size']-1e-6)
+            else:
+                self.assertEqual(after, before)
+        self.assertGreaterEqual(min(e['font_size'] for e in result['elements']
+                                    if e['type'] == 'text'), 10)
+
+    def test_text_refinement_preserves_hierarchy_against_group_labels(self):
+        from unittest.mock import patch
+        from engine.resize import resize_with_diagnostics
+        from engine.quality import quality
+        task = json.loads(Path('input/chameleon_sample_level3_advanced.json').read_text())
+        target = {'width': 320, 'height': 320}
+        with patch('engine.resize.refine_text', return_value=[]):
+            baseline, _ = resize_with_diagnostics(task['source'], target)
+        result, _ = resize_with_diagnostics(task['source'], target)
+        old, new = quality(task['source'], baseline), quality(task['source'], result)
+        self.assertLessEqual(new['loss'], old['loss']+1e-9)
+        self.assertLessEqual(new['hierarchy_inversion'], old['hierarchy_inversion']+1e-9)
+
     def test_missing_asset_leaves_hero_slot(self):
         task = json.loads(Path('input/chameleon_sample_level3_advanced.json').read_text())
         out = {e['id']: e for e in resize(task['source'], {'width': 1200, 'height': 628})['elements']}
