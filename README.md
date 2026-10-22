@@ -167,6 +167,12 @@ These call the real renderer, write previews and a report, and exit with an erro
 
 `engine/main.py` also runs a quick self-check after each task (same IDs, required fields, nothing off-canvas). This is a safety net, not the official scorer. The Level 2 sample's corner-bleeding decorative circle is an expected warning case. The Level 3 sample's missing `holiday_watermark` image is intentional and renders as a labelled placeholder.
 
+## Verification status
+
+Local efficiency and delivery checks pass: 73 offline tests, three validated JSON/PNG output pairs, and cold/warm profiling through 120-element designs. On the recorded emulated amd64 environment, median warm engine times range from roughly 0.5ms to 270ms; these are local measurements, not competition hardware guarantees. See [M4 evidence](agent-kit/runs/m4-final-review.md).
+
+Competition submission readiness remains unconfirmed: supplied documents disagree on viewer timing, and exact submission/execution instructions are unresolved. No runtime model is required. Dense-layout readability limitations above remain open.
+
 ## See also
 
 - `chameleon_design_schema_v0.9.json`: the field-by-field design format

@@ -35,3 +35,11 @@ Approved models and maximum weight/model size; final schema version; exact targe
 - Runtime package versions and the renderer Git commit are now pinned in requirements.txt; the Python base image is pinned by digest. Native clean installation is verified separately from Docker. Debian package versions and build tooling remain unlocked.
 
 When new organizer evidence arrives, record date, exact source, affected requirement, and decision here. Do not rewrite history to imply the question was always settled.
+
+## 2026-10-22 release clarification search
+
+Re-read supplied PDF pages 7, 8 and 14. It explicitly describes stage one as engine/container/README and the full Express add-on as finale work; submission location/form is to be announced separately. FAQ Q5 still says stage one includes a required viewer. No dated authoritative superseding instruction was found, so this conflict remains unresolved.
+
+A [partner-university announcement](https://auburn.campuslabs.com/ENGAGE/event/12776699) identifies the matching Project Chameleon challenge and mentions a companion tool, but gives no stage-specific viewer deadline or detailed submission/hardware rules. It describes an October 5–30 competition window; that is not evidence of an exact code-freeze timestamp. Its linked [Adobe registration page](https://careers.adobe.com/us/en/event/6a90701b41b49ecd36166e14/Adobe-University-Hackathon-2026) returned HTTP 404 during this check. Searches for the exact challenge title and North America event found no accessible official technical update. Results for Adobe India's brand-visibility event concern a different challenge and were excluded.
+
+Working scope stays engine-first; do not infer a submission portal/deadline or silently choose between contradictory viewer requirements. Participant-only announcements have not been accessed. No runtime model is used, making model-list/weight limits currently inapplicable to the implementation, while execution limits and viewer/submission instructions remain release blockers. [Final local M4 review](runs/m4-final-review.md) records completed technical checks.

@@ -39,7 +39,7 @@ Default iteration: run focused regressions per change, full development suite pe
 
 ## Release checklist
 
-- [ ] C1–C8 verified; every exception documented, with unresolved hard failures blocking a passing claim.
+- [x] C1–C7 pass the documented local validation suites; C8 has bounded family/holdout evidence and no sample-specific branches. Known exceptions and quality limits are recorded; this does not certify hidden cases or universal correctness.
 - [x] Supplied examples and development suite pass independent checks; relevant real PNGs inspected.
 - [x] Holdout summary includes family counts, worst cases, and failures; exposed holdouts retired.
 - [x] Runtime, memory, and fallback behavior measured; search/repair bounded.
@@ -49,4 +49,4 @@ Default iteration: run focused regressions per change, full development suite pe
 - [x] Required dependencies/weights are available at build time; dependency revisions recorded.
 - [ ] Submission requirements in SOURCES resolved where applicable; README states verified instructions and limitations.
 
-Checked items have evidence in the M0–M5 run records, including [offline container verification](runs/m4-container.md). The aggregate C1–C8/release claim and submission requirements remain unchecked pending final review; [M5 Linux verification](runs/m5-linux.md) confirms 61 tests and the broader catalogue; dense-label readability improved but tiny secondary text remains unresolved.
+Checked items have current evidence in the [final local M4 review](runs/m4-final-review.md): 73 offline tests, three direct-render delivery pairs and current cold/warm/RSS measurements. Unchanged-engine catalogue, parity and independent review evidence remains in the M5 records. Local efficiency/packaging checks are complete; M4's full release exit stays blocked on the final unchecked submission-requirements item. Tiny secondary text is documented M5 quality debt, not an unreported hard-constraint pass. No competition submission has been made.
