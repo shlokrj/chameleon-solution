@@ -131,3 +131,7 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 ## Separate font fit from group geometry
 
 [The fresh M5 review](runs/m5-group-refit.md) found unused room inside grouped label boxes. Require a feasible same-box witness before treating small copy as irreducible density. A bounded final font-only pass improved 16 catalogue layouts while preserving all geometry; skip overlapping text boxes and guard final hierarchy and overflow. Retain the measured runtime cost alongside quality gains. Inspect source renders before blaming an engine for unsupported shape styling. Isolated challenger/judge roles are useful, but do not claim cross-model evidence without known model identities; retire disclosed holdouts.
+
+## Wider search is evidence, not automatically a runtime feature
+
+[Dense allocation probing](runs/m5-dense-probe.md) found banner/tall improvements beyond the six-candidate budget, but no compact-rectangle gain and no fully readable result. Record per-element tradeoffs: a lower average loss can hide small main-copy reductions. Preserve the best baseline, log rejected allocations, and test a candidate-slot replacement across families before increasing search cost. A bounded negative result does not prove infeasibility.

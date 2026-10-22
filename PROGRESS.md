@@ -7,9 +7,9 @@ Read this first when joining or resuming work. This is the shared current-state 
 - **Phase:** M3 complete; M4 final quality/release review remains; M5 grouped-label repair and bounded fresh review verified; M5.3 contrast tiebreak remains rejected.
 - **Implementation progress:** 4 of 6 implementation milestones complete (M0–M5; M4 and M5 remain in progress). This count is not an effort estimate.
 - **Engine:** bounded candidate search, shared-scale row/column packing, hierarchy-preserving type floor, alpha-aware image packing, post-selection image expansion, plus inferred backing relationships. 73 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [grouped-label review evidence](agent-kit/runs/m5-group-refit.md).
-- **Latest verified predecessor:** `34edde9` on `main`, pulled from origin. This containing commit records grouped-label fitting, independent review and Linux checks; use Git history to resolve its revision.
+- **Latest verified predecessor:** `a411461` on `main`, pulled from origin. This containing commit records the dense-layout feasibility study; production is unchanged; use Git history to resolve its revision.
 - **Active implementation owners:** none; bounded review and repair claims released.
-- **Next concrete action:** establish a feasible layout witness for remaining dense Level 3 copy before another allocation change; resolve organizer release questions separately. The bounded M5 review is complete. Sixteen catalogue cases improved; three still contain sub-6px text. Tight or overlapping groups and small/low-contrast logos remain limitations. Docker validation is complete.
+- **Next concrete action:** compare a 0.15 image-share candidate-slot replacement across the full catalogue and nearby ratios, preserving the six-candidate runtime budget. [Dense feasibility study](agent-kit/runs/m5-dense-probe.md) found improved banner/tall witnesses, but all three dense targets still have sub-6px copy and compact rectangle did not improve. Production remains at a411461; organizer release questions remain open.
 
 ## Milestone board
 
@@ -50,11 +50,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims. Root integrated the accepted grouped-label repair; challenger and judge completed one bounded review cycle. All exposed review and holdout cases are now development regressions.
+No active claims. Root completed the dense-layout feasibility study; evaluation helper and evidence are saved. Production engine remains unchanged.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | 2026-10-22 America/Chicago | Review claims released. Next: feasible dense Level 3 witness and remaining release questions |
+| — | — | — | — | unassigned | 2026-10-22 America/Chicago | Study claim released. Next: broad candidate-slot comparison and compact legal-copy investigation |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -113,6 +113,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `fix: preserve readable text floors when downscaling` (containing commit) | Added guarded post-selection text refit; preserved layout selection, source-size cap and hierarchy; refined model notes | 71 offline tests; 3 validated pairs; 70 catalogue + 49 boundary cases with seven improvements each and no measured regressions; 42 repeated cases; changed renders inspected | Four sub-6px cases remain; next fresh M5 review; no official scoring or submission claim |
 
 | `fix: fit grouped labels within their existing boxes` (containing commit) | Completed six-case challenger round, accepted one repair, verified three fresh judge-held cases; saved fixtures and model notes | 73 offline tests; 3 delivery pairs; 70 catalogue cases (16 improvements, none worse); 42 exact repeat cases; 15 M3 + 9 M5 cases; paired renders inspected; warm sweep median 0.549→0.703s | Review closed; three sub-6px catalogue cases remain; M4/M5 quality and organizer release questions open |
+
+| `test: add bounded dense layout feasibility probe` (containing commit) | Added offline allocation probe; saved two feasible improvements and compact negative result; updated model notes | 125 alternatives × two exact-repeat runs; six paired renders inspected; 73 offline Linux tests pass; source immutability and candidate contracts checked | Engine unchanged; compare candidate-slot replacement broadly before integration; three dense cases still below 6px |
 
 ## How to update this file
 

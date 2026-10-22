@@ -1,0 +1,4132 @@
+{
+  "leaderboard": {
+    "baseline": {
+      "support_violations": [],
+      "overflow_ids": [],
+      "small_text_ids": [
+        "headline",
+        "subhead",
+        "badge1_label",
+        "badge2_label",
+        "badge3_label",
+        "cta_label",
+        "ribbon_label",
+        "legal_text"
+      ],
+      "minimum_font_size": 4.908393859863281,
+      "readability_deficit": 0.20442471018912783,
+      "hierarchy_inversion": 0.18550037302980643,
+      "new_overlap": 0.0,
+      "loss": 0.22297474749210847
+    },
+    "best": {
+      "support_violations": [],
+      "overflow_ids": [],
+      "small_text_ids": [
+        "headline",
+        "subhead",
+        "badge1_label",
+        "badge2_label",
+        "badge3_label",
+        "cta_label",
+        "ribbon_label",
+        "legal_text"
+      ],
+      "minimum_font_size": 5.6981964111328125,
+      "readability_deficit": 0.16302358506672718,
+      "hierarchy_inversion": 0.004856286923656698,
+      "new_overlap": 0.0,
+      "loss": 0.16350921375909286
+    },
+    "best_allocation": {
+      "image_share": 0.15,
+      "group_share": 0.35,
+      "group_side": true
+    },
+    "candidates": [
+      {
+        "image_share": 0.15,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.669780731201172,
+          "readability_deficit": 0.3679763108220662,
+          "hierarchy_inversion": 2.0046588630600115,
+          "new_overlap": 0.0,
+          "loss": 0.5684421971280673
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.2,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.7091712951660156,
+          "readability_deficit": 0.2748811689783406,
+          "hierarchy_inversion": 0.9562795563328771,
+          "new_overlap": 0.0,
+          "loss": 0.3705091246116283
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.672107696533203,
+          "readability_deficit": 0.23985102698189367,
+          "hierarchy_inversion": 0.08689212518535853,
+          "new_overlap": 0.0,
+          "loss": 0.24854023950042953
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.35,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.6981964111328125,
+          "readability_deficit": 0.16302358506672718,
+          "hierarchy_inversion": 0.004856286923656698,
+          "new_overlap": 0.0,
+          "loss": 0.16350921375909286
+        },
+        "issues": [],
+        "regression_reasons": []
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.390930109553867,
+          "readability_deficit": 0.23234553041855335,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.23234553041855335
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.5,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.338635901610057,
+          "readability_deficit": 0.20481546555819266,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.20481546555819266
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.8027572066695585,
+          "readability_deficit": 0.2295957698461676,
+          "hierarchy_inversion": 0.44680898035783906,
+          "new_overlap": 0.0,
+          "loss": 0.27427666788195154
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.65,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.855740808557581,
+          "readability_deficit": 0.18490012122663743,
+          "hierarchy_inversion": 0.0837946458761114,
+          "new_overlap": 0.0,
+          "loss": 0.19327958581424856
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.1194309941044556,
+          "readability_deficit": 0.3186498653724438,
+          "hierarchy_inversion": 8.133548433412882,
+          "new_overlap": 0.0,
+          "loss": 1.132004708713732
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.8,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.477898265697337,
+          "readability_deficit": 0.20628100470860564,
+          "hierarchy_inversion": 1.180630209254509,
+          "new_overlap": 0.0,
+          "loss": 0.3243440256340565
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.669780731201172,
+          "readability_deficit": 0.3679763108220662,
+          "hierarchy_inversion": 2.0046588630600115,
+          "new_overlap": 0.0,
+          "loss": 0.5684421971280673
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.2,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.2921981811523438,
+          "readability_deficit": 0.31676179732393117,
+          "hierarchy_inversion": 1.1930758326919015,
+          "new_overlap": 0.0,
+          "loss": 0.43606938059312134
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.672107696533203,
+          "readability_deficit": 0.2503580172755887,
+          "hierarchy_inversion": 0.02137126240421319,
+          "new_overlap": 0.0,
+          "loss": 0.25249514351601005
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.35,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.6981964111328125,
+          "readability_deficit": 0.16302358506672718,
+          "hierarchy_inversion": 0.004856286923656698,
+          "new_overlap": 0.0,
+          "loss": 0.16350921375909286
+        },
+        "issues": [],
+        "regression_reasons": []
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.2770654095543765,
+          "readability_deficit": 0.24432435921783305,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.24432435921783305
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.5,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.268256194061702,
+          "readability_deficit": 0.20882967623342893,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.20882967623342893
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.724998417607059,
+          "readability_deficit": 0.256788319290283,
+          "hierarchy_inversion": 0.2920005742769638,
+          "new_overlap": 0.0,
+          "loss": 0.2859883767179794
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.65,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.640608158817998,
+          "readability_deficit": 0.21393946566616157,
+          "hierarchy_inversion": 0.04246324057350345,
+          "new_overlap": 0.0,
+          "loss": 0.2181857897235119
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.1194309941044556,
+          "readability_deficit": 0.3371104280665754,
+          "hierarchy_inversion": 7.2723631054242945,
+          "new_overlap": 0.0,
+          "loss": 1.0643467386090049
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.8,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.190334743923611,
+          "readability_deficit": 0.2451718724442406,
+          "hierarchy_inversion": 0.9893087346971655,
+          "new_overlap": 0.0,
+          "loss": 0.3441027459139572
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.669780731201172,
+          "readability_deficit": 0.3679763108220662,
+          "hierarchy_inversion": 2.0046588630600115,
+          "new_overlap": 0.0,
+          "loss": 0.5684421971280673
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.2,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.0533103942871094,
+          "readability_deficit": 0.341453349239006,
+          "hierarchy_inversion": 1.3243930989806303,
+          "new_overlap": 0.0,
+          "loss": 0.473892659137069
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.672107696533203,
+          "readability_deficit": 0.2503580172755887,
+          "hierarchy_inversion": 0.02137126240421319,
+          "new_overlap": 0.0,
+          "loss": 0.25249514351601005
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.35,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.981575012207031,
+          "readability_deficit": 0.21893559506358307,
+          "hierarchy_inversion": 0.031078037560523804,
+          "new_overlap": 0.0,
+          "loss": 0.22204339881963545
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.558502939012315,
+          "readability_deficit": 0.29105122972519937,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.29105122972519937
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.5,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.6981964111328125,
+          "readability_deficit": 0.18519465960252646,
+          "hierarchy_inversion": 0.03899585758066404,
+          "new_overlap": 0.0,
+          "loss": 0.18909424536059286
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.429659016927083,
+          "readability_deficit": 0.268400240307729,
+          "hierarchy_inversion": 0.44481551406768116,
+          "new_overlap": 0.0,
+          "loss": 0.31288179171449715
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.65,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.2389984130859375,
+          "readability_deficit": 0.24839961482785,
+          "hierarchy_inversion": 0.04619224773242623,
+          "new_overlap": 0.0,
+          "loss": 0.2530188396010926
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.1194309941044556,
+          "readability_deficit": 0.3738653171100199,
+          "hierarchy_inversion": 5.815863008288889,
+          "new_overlap": 0.0,
+          "loss": 0.9554516179389089
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.8,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.9218509250217,
+          "readability_deficit": 0.2600566446666168,
+          "hierarchy_inversion": 1.3254529287946808,
+          "new_overlap": 0.0,
+          "loss": 0.3926019375460849
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.669780731201172,
+          "readability_deficit": 0.38466740342488426,
+          "hierarchy_inversion": 1.5622314693594022,
+          "new_overlap": 0.0,
+          "loss": 0.5408905503608245
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.2,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.0533103942871094,
+          "readability_deficit": 0.35810619193968984,
+          "hierarchy_inversion": 0.9821625296595293,
+          "new_overlap": 0.0,
+          "loss": 0.4563224449056428
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.672107696533203,
+          "readability_deficit": 0.2503580172755887,
+          "hierarchy_inversion": 0.02137126240421319,
+          "new_overlap": 0.0,
+          "loss": 0.25249514351601005
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.35,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.200710296630859,
+          "readability_deficit": 0.272278744375748,
+          "hierarchy_inversion": 0.2227443740135196,
+          "new_overlap": 0.0,
+          "loss": 0.2945531817771
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.194642623265584,
+          "readability_deficit": 0.3448710647488382,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.3448710647488382
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.5,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.6023899118105565,
+          "readability_deficit": 0.2732895535593283,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.2732895535593283
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.813924605758102,
+          "readability_deficit": 0.34553345177716965,
+          "hierarchy_inversion": 0.39952308235954764,
+          "new_overlap": 0.0,
+          "loss": 0.3854857600131244
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.65,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.477898265697337,
+          "readability_deficit": 0.2959181344252314,
+          "hierarchy_inversion": 0.1940569779641133,
+          "new_overlap": 0.0,
+          "loss": 0.31532383222164273
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.1194309941044556,
+          "readability_deficit": 0.3822602627542036,
+          "hierarchy_inversion": 5.517236439260115,
+          "new_overlap": 0.0,
+          "loss": 0.9339839066802151
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.8,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.434346516927082,
+          "readability_deficit": 0.322400243853908,
+          "hierarchy_inversion": 1.3112040831367942,
+          "new_overlap": 0.0,
+          "loss": 0.4535206521675874
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.669780731201172,
+          "readability_deficit": 0.41966569921977037,
+          "hierarchy_inversion": 0.8989925190605694,
+          "new_overlap": 0.0,
+          "loss": 0.5095649511258273
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.2,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.8485794067382812,
+          "readability_deficit": 0.3757534398874473,
+          "hierarchy_inversion": 1.1964926415541757,
+          "new_overlap": 0.0,
+          "loss": 0.4954027040428649
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.8645553588867188,
+          "readability_deficit": 0.32382186390650314,
+          "hierarchy_inversion": 0.11615131088868942,
+          "new_overlap": 0.0,
+          "loss": 0.3354369949953721
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.35,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.450519561767578,
+          "readability_deficit": 0.34897286769125113,
+          "hierarchy_inversion": 0.3005729619243843,
+          "new_overlap": 0.0,
+          "loss": 0.37903016388368954
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.8005204796791068,
+          "readability_deficit": 0.37354153592182215,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.37354153592182215
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.5,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.9701248473591266,
+          "readability_deficit": 0.33883575691344314,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.33883575691344314
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.2483734130859374,
+          "readability_deficit": 0.384720069759904,
+          "hierarchy_inversion": 0.699975947951991,
+          "new_overlap": 0.0,
+          "loss": 0.45471766455510315
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.65,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.462490505642361,
+          "readability_deficit": 0.322381836693374,
+          "hierarchy_inversion": 0.058852742316069524,
+          "new_overlap": 0.0,
+          "loss": 0.32826711092498095
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.1194309941044556,
+          "readability_deficit": 0.4182972071772982,
+          "hierarchy_inversion": 4.33707801831029,
+          "new_overlap": 0.0,
+          "loss": 0.8520050090083272
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.8,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.1562148482711225,
+          "readability_deficit": 0.3531875834420567,
+          "hierarchy_inversion": 1.4851888904492785,
+          "new_overlap": 0.0,
+          "loss": 0.5017064724869845
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      }
+    ],
+    "input_unchanged": true
+  },
+  "med-rect": {
+    "baseline": {
+      "support_violations": [],
+      "overflow_ids": [],
+      "small_text_ids": [
+        "headline",
+        "subhead",
+        "badge1_label",
+        "badge2_label",
+        "badge3_label",
+        "cta_label",
+        "ribbon_label",
+        "legal_text"
+      ],
+      "minimum_font_size": 3.3333333333333335,
+      "readability_deficit": 0.25200019581930205,
+      "hierarchy_inversion": 0.0,
+      "new_overlap": 0.0,
+      "loss": 0.25200019581930205
+    },
+    "best": {
+      "support_violations": [],
+      "overflow_ids": [],
+      "small_text_ids": [
+        "headline",
+        "subhead",
+        "badge1_label",
+        "badge2_label",
+        "badge3_label",
+        "cta_label",
+        "ribbon_label",
+        "legal_text"
+      ],
+      "minimum_font_size": 3.3333333333333335,
+      "readability_deficit": 0.25200019581930205,
+      "hierarchy_inversion": 0.0,
+      "new_overlap": 0.0,
+      "loss": 0.25200019581930205
+    },
+    "best_allocation": null,
+    "candidates": [
+      {
+        "image_share": 0.15,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.33909762230556717,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.33909762230556717
+        },
+        "issues": [],
+        "regression_reasons": [
+          "logo: image short edge shrank over 20%",
+          "product: image short edge shrank over 20%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.2,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.0494613647460938,
+          "readability_deficit": 0.4924220111361,
+          "hierarchy_inversion": 0.24375262728888464,
+          "new_overlap": 0.0,
+          "loss": 0.5167972738649885
+        },
+        "issues": [],
+        "regression_reasons": [
+          "logo: image short edge shrank over 20%",
+          "product: image short edge shrank over 20%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.25200019581930205,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.25200019581930205
+        },
+        "issues": [],
+        "regression_reasons": [
+          "logo: image short edge shrank over 20%",
+          "product: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.35,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.3572388263142874,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.3572388263142874
+        },
+        "issues": [],
+        "regression_reasons": [
+          "logo: image short edge shrank over 20%",
+          "product: image short edge shrank over 20%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.25200019581930205,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.25200019581930205
+        },
+        "issues": [],
+        "regression_reasons": [
+          "logo: image short edge shrank over 20%",
+          "product: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.5,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.253721660058371,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.253721660058371
+        },
+        "issues": [],
+        "regression_reasons": [
+          "logo: image short edge shrank over 20%",
+          "product: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.2581133363900003,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.2581133363900003
+        },
+        "issues": [],
+        "regression_reasons": [
+          "logo: image short edge shrank over 20%",
+          "product: image short edge shrank over 20%",
+          "headline: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.65,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.26067072017018983,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.26067072017018983
+        },
+        "issues": [],
+        "regression_reasons": [
+          "logo: image short edge shrank over 20%",
+          "product: image short edge shrank over 20%",
+          "headline: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.39081989122575295,
+          "hierarchy_inversion": 0.2214158892081223,
+          "new_overlap": 0.0,
+          "loss": 0.4129614801465652
+        },
+        "issues": [],
+        "regression_reasons": [
+          "logo: image short edge shrank over 20%",
+          "product: image short edge shrank over 20%",
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.8,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.3789880932403675,
+          "hierarchy_inversion": 0.051374567940846175,
+          "new_overlap": 0.0,
+          "loss": 0.3841255500344521
+        },
+        "issues": [],
+        "regression_reasons": [
+          "logo: image short edge shrank over 20%",
+          "product: image short edge shrank over 20%",
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.35638059519912124,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.35638059519912124
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.2,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 1.8018455505371094,
+          "readability_deficit": 0.5171040781205964,
+          "hierarchy_inversion": 0.5078096935531772,
+          "new_overlap": 0.0,
+          "loss": 0.5678850474759142
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.2634182527675763,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.2634182527675763
+        },
+        "issues": [],
+        "regression_reasons": []
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.35,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.1532630920410156,
+          "readability_deficit": 0.3922039514347175,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.3922039514347175
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.2530506477587207,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.2530506477587207
+        },
+        "issues": [],
+        "regression_reasons": []
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.5,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.2972132041024966,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.2972132041024966
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.34036450881999786,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.34036450881999786
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.65,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.33640531643935523,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.33640531643935523
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.1168195936414937,
+          "readability_deficit": 0.4123943174158695,
+          "hierarchy_inversion": 0.6201922893860061,
+          "new_overlap": 0.0,
+          "loss": 0.47441354635447014
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.8,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.156221177842882,
+          "readability_deficit": 0.41044689723876787,
+          "hierarchy_inversion": 0.587482374175111,
+          "new_overlap": 0.0,
+          "loss": 0.469195134656279
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.2744064331054688,
+          "readability_deficit": 0.38217948162602716,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.38217948162602716
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.2,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 1.554229736328125,
+          "readability_deficit": 0.5457604891309847,
+          "hierarchy_inversion": 1.0075751866862437,
+          "new_overlap": 0.0,
+          "loss": 0.6465180077996091
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.2634182527675763,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.2634182527675763
+        },
+        "issues": [],
+        "regression_reasons": []
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.35,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.7199249267578125,
+          "readability_deficit": 0.4297812997915691,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.4297812997915691
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.25727511946769355,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.25727511946769355
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.5,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.34053901791721913,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.34053901791721913
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.3559160353946972,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.3559160353946972
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.65,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.3557181840598199,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.3557181840598199
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.1168195936414937,
+          "readability_deficit": 0.4123943174158695,
+          "hierarchy_inversion": 0.6201922893860061,
+          "new_overlap": 0.0,
+          "loss": 0.47441354635447014
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.8,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.4687406751844616,
+          "readability_deficit": 0.4459883720384476,
+          "hierarchy_inversion": 1.8523465573809899,
+          "new_overlap": 0.0,
+          "loss": 0.6312230277765466
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.827892303466797,
+          "readability_deficit": 0.42007936600963136,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.42007936600963136
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.2,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 1.3066139221191406,
+          "readability_deficit": 0.568886996239231,
+          "hierarchy_inversion": 1.4583203907465583,
+          "new_overlap": 0.0,
+          "loss": 0.7147190353138868
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.30346941694489177,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.30346941694489177
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.35,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.2865867614746094,
+          "readability_deficit": 0.47229322501709126,
+          "hierarchy_inversion": 0.11476826407706221,
+          "new_overlap": 0.0,
+          "loss": 0.48377005142479745
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.31469877451211214,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.31469877451211214
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.5,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.266559600830078,
+          "readability_deficit": 0.3963551425000446,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.3963551425000446
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.36749497931011865,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.36749497931011865
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.65,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.4299105405807504,
+          "readability_deficit": 0.4105049714229076,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.4105049714229076
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.7406353420681415,
+          "readability_deficit": 0.43153556966082185,
+          "hierarchy_inversion": 1.1725346699721788,
+          "new_overlap": 0.0,
+          "loss": 0.5487890366580397
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.8,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.4218622843424478,
+          "readability_deficit": 0.4485326513693542,
+          "hierarchy_inversion": 1.984982910066522,
+          "new_overlap": 0.0,
+          "loss": 0.6470309423760064
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.773468017578125,
+          "readability_deficit": 0.42689586328292883,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.42689586328292883
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.2,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [
+            "badge1_label"
+          ],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 1.0,
+          "readability_deficit": 0.599864151802163,
+          "hierarchy_inversion": 2.2669943546697278,
+          "new_overlap": 0.0,
+          "loss": 0.8265635872691358
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.3697946678088575,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.3697946678088575
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.35,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 1.8532485961914062,
+          "readability_deficit": 0.5205844810119448,
+          "hierarchy_inversion": 0.43825099062852046,
+          "new_overlap": 0.0,
+          "loss": 0.5644095800747968
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.38140082725320734,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.38140082725320734
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.5,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.6474990844726562,
+          "readability_deficit": 0.4699974298344417,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.4699974298344417
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.3333333333333335,
+          "readability_deficit": 0.3789171064160592,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.3789171064160592
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.65,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.779910713434218,
+          "readability_deficit": 0.5200727687893963,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.5200727687893963
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 2.3437415228949647,
+          "readability_deficit": 0.45280683248678844,
+          "hierarchy_inversion": 2.2178038838392804,
+          "new_overlap": 0.0,
+          "loss": 0.6745872208707164
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.8,
+        "group_side": true,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 1.4531114366319442,
+          "readability_deficit": 0.5605988922686926,
+          "hierarchy_inversion": 4.559487020747408,
+          "new_overlap": 0.0,
+          "loss": 1.0165475943434334
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      }
+    ],
+    "input_unchanged": true
+  },
+  "skyscraper": {
+    "baseline": {
+      "support_violations": [],
+      "overflow_ids": [],
+      "small_text_ids": [
+        "subhead",
+        "badge1_label",
+        "badge2_label",
+        "badge3_label",
+        "cta_label",
+        "ribbon_label",
+        "legal_text"
+      ],
+      "minimum_font_size": 4.733371734619141,
+      "readability_deficit": 0.2234983246444251,
+      "hierarchy_inversion": 0.0,
+      "new_overlap": 0.0,
+      "loss": 0.2234983246444251
+    },
+    "best": {
+      "support_violations": [],
+      "overflow_ids": [],
+      "small_text_ids": [
+        "subhead",
+        "badge1_label",
+        "badge2_label",
+        "badge3_label",
+        "cta_label",
+        "ribbon_label",
+        "legal_text"
+      ],
+      "minimum_font_size": 5.333333333333333,
+      "readability_deficit": 0.13279661666513284,
+      "hierarchy_inversion": 0.0,
+      "new_overlap": 0.0,
+      "loss": 0.13279661666513284
+    },
+    "best_allocation": {
+      "image_share": 0.15,
+      "group_share": 0.35,
+      "group_side": false
+    },
+    "candidates": [
+      {
+        "image_share": 0.15,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.432380676269531,
+          "readability_deficit": 0.24671048024691233,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.24671048024691233
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.333333333333333,
+          "readability_deficit": 0.13279661666513284,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.13279661666513284
+        },
+        "issues": [],
+        "regression_reasons": []
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.333333333333333,
+          "readability_deficit": 0.13689408710235057,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.13689408710235057
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.257142782211303,
+          "readability_deficit": 0.21209127838199254,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.21209127838199254
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.15,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.257142782211303,
+          "readability_deficit": 0.24954033725914473,
+          "hierarchy_inversion": 0.009694114718393418,
+          "new_overlap": 0.0,
+          "loss": 0.2505097487309841
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.432380676269531,
+          "readability_deficit": 0.24671048024691233,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.24671048024691233
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.333333333333333,
+          "readability_deficit": 0.17117932871791633,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.17117932871791633
+        },
+        "issues": [],
+        "regression_reasons": []
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.333333333333333,
+          "readability_deficit": 0.13882347210700863,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.13882347210700863
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.257142782211303,
+          "readability_deficit": 0.21379323431020966,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.21379323431020966
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.25,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.781216091579862,
+          "readability_deficit": 0.2696620050221758,
+          "hierarchy_inversion": 0.15510022048164573,
+          "new_overlap": 0.0,
+          "loss": 0.2851720270703404
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.432380676269531,
+          "readability_deficit": 0.24671048024691233,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.24671048024691233
+        },
+        "issues": [],
+        "regression_reasons": [
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.787502288818359,
+          "readability_deficit": 0.22421825168668927,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.22421825168668927
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.333333333333333,
+          "readability_deficit": 0.1409347826857789,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.1409347826857789
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.257142782211303,
+          "readability_deficit": 0.22879884089562028,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.22879884089562028
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.35,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.724962022569445,
+          "readability_deficit": 0.2718043960496273,
+          "hierarchy_inversion": 0.18075823761453524,
+          "new_overlap": 0.0,
+          "loss": 0.2898802198110808
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.0601806640625,
+          "readability_deficit": 0.27363200031097523,
+          "hierarchy_inversion": 0.0044957145580490744,
+          "new_overlap": 0.0,
+          "loss": 0.27408157176678016
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.472076416015625,
+          "readability_deficit": 0.250651515262477,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.250651515262477
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.333333333333333,
+          "readability_deficit": 0.171708548762004,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.171708548762004
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 5.257142782211303,
+          "readability_deficit": 0.23740097293331622,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.23740097293331622
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.45,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.298428005642362,
+          "readability_deficit": 0.28877091679143346,
+          "hierarchy_inversion": 0.3971553878786697,
+          "new_overlap": 0.0,
+          "loss": 0.32848645557930045
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.2,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.499237060546875,
+          "readability_deficit": 0.3169932808120129,
+          "hierarchy_inversion": 0.1655186001229902,
+          "new_overlap": 0.0,
+          "loss": 0.3335451408243119
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%",
+          "holiday_watermark: image short edge shrank over 20%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.35,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.432380676269531,
+          "readability_deficit": 0.2599424222677609,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.2599424222677609
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "badge1_label: type shrank over 5%",
+          "badge2_label: type shrank over 5%",
+          "badge3_label: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "ribbon_label: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.5,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.699214935302734,
+          "readability_deficit": 0.257720839649428,
+          "hierarchy_inversion": 0.0,
+          "new_overlap": 0.0,
+          "loss": 0.257720839649428
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.65,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 4.856031629774305,
+          "readability_deficit": 0.27361593041797644,
+          "hierarchy_inversion": 0.0869198879077748,
+          "new_overlap": 0.0,
+          "loss": 0.2823079192087539
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "cta_label: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      },
+      {
+        "image_share": 0.55,
+        "group_share": 0.8,
+        "group_side": false,
+        "quality": {
+          "support_violations": [],
+          "overflow_ids": [],
+          "small_text_ids": [
+            "headline",
+            "subhead",
+            "badge1_label",
+            "badge2_label",
+            "badge3_label",
+            "cta_label",
+            "ribbon_label",
+            "legal_text"
+          ],
+          "minimum_font_size": 3.4354858398437504,
+          "readability_deficit": 0.32699984572502044,
+          "hierarchy_inversion": 1.2128038626259148,
+          "new_overlap": 0.0,
+          "loss": 0.4482802319876119
+        },
+        "issues": [],
+        "regression_reasons": [
+          "headline: type shrank over 5%",
+          "subhead: type shrank over 5%",
+          "legal_text: type shrank over 5%"
+        ]
+      }
+    ],
+    "input_unchanged": true
+  }
+}
