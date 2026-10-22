@@ -135,3 +135,7 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 ## Wider search is evidence, not automatically a runtime feature
 
 [Dense allocation probing](runs/m5-dense-probe.md) found banner/tall improvements beyond the six-candidate budget, but no compact-rectangle gain and no fully readable result. Record per-element tradeoffs: a lower average loss can hide small main-copy reductions. Preserve the best baseline, log rejected allocations, and test a candidate-slot replacement across families before increasing search cost. A bounded negative result does not prove infeasibility.
+
+## Compare final outputs when changing candidate sets
+
+[Slot replacement testing](runs/m5-slot-probe.md) found five apparent improvements and zero worse aggregate losses for its best variant, yet CTA/ribbon text shrank about 11% elsewhere. A saturated zero-loss proxy and a guard against candidate zero cannot protect the previous release's selected result. Keep per-element final-output comparisons and reject a candidate-set change that only looks safe in aggregate. Preserve negative results to avoid repeating broad allocation tuning.
