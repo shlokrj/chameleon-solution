@@ -147,6 +147,8 @@ docker run --rm --network none \
 
 Everything is installed at build time, so the engine runs with networking disabled. `./scripts/verify-container.sh` builds the images, runs the tests and validates every output inside the container. Font rendering differs slightly between macOS and Linux, so use the container for final visual checks.
 
+Grouped labels can use spare space inside their existing boxes, up to 12px or their original font size. Overlapping text boxes are left alone, and changes that worsen fit or hierarchy are rejected.
+
 ## Development checks
 
 ```bash
@@ -158,6 +160,8 @@ python -m evaluation.baseline --output artifacts/current         # supplied samp
 python -m evaluation.profile --output artifacts/profile          # speed and memory
 python -m evaluation.parity --output artifacts/parity            # exact repeatability
 ```
+
+Use `evaluation.regressions --fixtures tests/fixtures/m5-review` or `--fixtures tests/fixtures/m5-holdout` for the saved M5 review cases.
 
 These call the real renderer, write previews and a report, and exit with an error on any rule violation. The quality numbers are local estimates, not the official score, so look at the PNGs too. `evaluation.catalogue --reference <old report.json>` prints before/after changes per case.
 

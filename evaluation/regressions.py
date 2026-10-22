@@ -11,11 +11,15 @@ from renderer.converter.convert import render_design_to_png
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=Path('artifacts/regressions'))
+    parser.add_argument('--fixtures', type=Path, default=Path('tests/fixtures/m3'),
+                        help='Directory of saved task JSON files (default: M3 cases)')
     args = parser.parse_args()
+    if not args.fixtures.is_dir():
+        parser.error(f'Fixture directory does not exist: {args.fixtures}')
     args.output.mkdir(parents=True, exist_ok=True)
     schema = json.loads(Path('chameleon_design_schema_v0.9.json').read_text())
     report = []
-    for path in sorted(Path('tests/fixtures/m3').glob('*.json')):
+    for path in sorted(args.fixtures.glob('*.json')):
         task = json.loads(path.read_text())
         if 'source' not in task:  # manually constructed comparison witness
             continue
@@ -26,6 +30,8 @@ def main():
             render_design_to_png(design, Path('brand_kit/assets'), args.output/f'{path.stem}-{name}.png')
         (args.output/f'{path.stem}-output.json').write_text(json.dumps(output, indent=2)+'\n')
         report.append({'case': path.stem, 'contract_issues': issues, 'diagnostics': diagnostics})
+    if not report:
+        parser.error(f'No task fixtures found in {args.fixtures}')
     (args.output/'report.json').write_text(json.dumps(report, indent=2)+'\n')
     print([(r['case'], len(r['contract_issues'])) for r in report])
     return int(any(r['contract_issues'] for r in report))

@@ -127,3 +127,7 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 ## Floors, candidate selection and final hierarchy
 
 [Text-floor refinement](runs/m5-text-floor.md) shows that an earlier proportional cap can silently undo a readable minimum. Fixing it during candidate generation changed the winner and shrank grouped labels, so refine only the selected copy area and reject any text shrink. Local fit is still insufficient: compare hierarchy against grouped text too, and rollback when final quality worsens. Preserve discovered regression tests and disclose pre-refinement diagnostic scores separately from final output quality.
+
+## Separate font fit from group geometry
+
+[The fresh M5 review](runs/m5-group-refit.md) found unused room inside grouped label boxes. Require a feasible same-box witness before treating small copy as irreducible density. A bounded final font-only pass improved 16 catalogue layouts while preserving all geometry; skip overlapping text boxes and guard final hierarchy and overflow. Retain the measured runtime cost alongside quality gains. Inspect source renders before blaming an engine for unsupported shape styling. Isolated challenger/judge roles are useful, but do not claim cross-model evidence without known model identities; retire disclosed holdouts.

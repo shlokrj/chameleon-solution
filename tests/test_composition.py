@@ -160,6 +160,37 @@ class CompositionTests(unittest.TestCase):
         self.assertLessEqual(new['loss'], old['loss']+1e-9)
         self.assertLessEqual(new['hierarchy_inversion'], old['hierarchy_inversion']+1e-9)
 
+    def test_fresh_pill_labels_use_existing_box_space(self):
+        from unittest.mock import patch
+        from engine.resize import resize_with_diagnostics
+        task = json.loads(Path('tests/fixtures/m5-review/02-pill-labels.json').read_text())
+        with patch('engine.resize.refine_group_labels', return_value=[]):
+            before, old = resize_with_diagnostics(task['source'], task['target_canvas'])
+        result, diagnostics = resize_with_diagnostics(task['source'], task['target_canvas'])
+        self.assertEqual(diagnostics['selected'], old['selected'])
+        self.assertEqual(len(diagnostics['refined_group_text']), 3)
+        for a, b in zip(before['elements'], result['elements']):
+            if a['id'] in diagnostics['refined_group_text']:
+                self.assertGreaterEqual(b['font_size'], 9)
+                self.assertEqual({k:v for k,v in a.items() if k != 'font_size'},
+                                 {k:v for k,v in b.items() if k != 'font_size'})
+            else:
+                self.assertEqual(a, b)
+
+    def test_group_refit_leaves_overlapping_label_boxes_unchanged(self):
+        from copy import deepcopy
+        from engine.resize import refine_group_labels
+        source = {'canvas': {'width': 200, 'height': 100}, 'elements': [
+            dict(id=str(i), type='text', group_id='layered', x=20, y=20,
+                 width=120, height=40, content='Layer', font_family='Solstice Sans',
+                 font_size=20) for i in range(2)]}
+        design = deepcopy(source)
+        for el in design['elements']:
+            el['font_size'] = 5
+        original = deepcopy(design)
+        self.assertEqual(refine_group_labels(source, design), [])
+        self.assertEqual(design, original)
+
     def test_missing_asset_leaves_hero_slot(self):
         task = json.loads(Path('input/chameleon_sample_level3_advanced.json').read_text())
         out = {e['id']: e for e in resize(task['source'], {'width': 1200, 'height': 628})['elements']}

@@ -1,0 +1,83 @@
+{
+  "source": {
+    "canvas": {
+      "width": 800,
+      "height": 800
+    },
+    "elements": [
+      {
+        "id": "title",
+        "type": "text",
+        "x": 60,
+        "y": 40,
+        "width": 680,
+        "height": 80,
+        "font_size": 48,
+        "content": "Find your balance",
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      },
+      {
+        "id": "bottle",
+        "type": "image",
+        "x": 40,
+        "y": 170,
+        "width": 220,
+        "height": 460,
+        "asset_id": "solstice_bottle.png",
+        "fit": "contain"
+      },
+      {
+        "id": "mark",
+        "type": "image",
+        "x": 330,
+        "y": 180,
+        "width": 390,
+        "height": 140,
+        "asset_id": "solstice_logo_lockup.png",
+        "fit": "contain"
+      },
+      {
+        "id": "pill",
+        "type": "shape",
+        "x": 340,
+        "y": 420,
+        "width": 360,
+        "height": 100,
+        "shape_type": "rectangle",
+        "fill_color": "#e4eee7",
+        "group_id": "cta",
+        "corner_radius": 50
+      },
+      {
+        "id": "label",
+        "type": "text",
+        "x": 370,
+        "y": 445,
+        "width": 300,
+        "height": 50,
+        "font_size": 24,
+        "content": "Explore the collection",
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "group_id": "cta"
+      },
+      {
+        "id": "legal",
+        "type": "text",
+        "x": 330,
+        "y": 580,
+        "width": 400,
+        "height": 80,
+        "font_size": 16,
+        "content": "Made for everyday moments.\nTerms and conditions apply.",
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 160,
+    "height": 600
+  }
+}

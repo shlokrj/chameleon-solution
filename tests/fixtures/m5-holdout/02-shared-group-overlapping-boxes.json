@@ -1,0 +1,66 @@
+{
+  "source": {
+    "canvas": {
+      "width": 800,
+      "height": 800
+    },
+    "elements": [
+      {
+        "id": "hero",
+        "type": "text",
+        "content": "A simple daily routine",
+        "x": 50,
+        "y": 40,
+        "width": 700,
+        "height": 90,
+        "font_size": 44,
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      },
+      {
+        "id": "panel",
+        "type": "shape",
+        "shape_type": "rectangle",
+        "x": 100,
+        "y": 230,
+        "width": 600,
+        "height": 270,
+        "fill_color": "#e4eee7",
+        "group_id": "pair",
+        "corner_radius": 30
+      },
+      {
+        "id": "left",
+        "type": "text",
+        "content": "Morning",
+        "x": 125,
+        "y": 250,
+        "width": 310,
+        "height": 150,
+        "font_size": 25,
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "group_id": "pair",
+        "z_index": 1
+      },
+      {
+        "id": "right",
+        "type": "text",
+        "content": "Evening",
+        "x": 385,
+        "y": 325,
+        "width": 260,
+        "height": 150,
+        "font_size": 25,
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "group_id": "pair",
+        "z_index": 1
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 480,
+    "height": 120
+  }
+}

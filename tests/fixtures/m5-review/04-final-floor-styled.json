@@ -1,0 +1,68 @@
+{
+  "source": {
+    "canvas": {
+      "width": 800,
+      "height": 800
+    },
+    "elements": [
+      {
+        "id": "title",
+        "type": "text",
+        "x": 60,
+        "y": 50,
+        "width": 680,
+        "height": 100,
+        "font_size": 52,
+        "content": "Create a daily ritual",
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "style_runs": [
+          {
+            "start": 0,
+            "end": 5,
+            "font_weight": "bold"
+          }
+        ]
+      },
+      {
+        "id": "subtitle",
+        "type": "text",
+        "x": 60,
+        "y": 200,
+        "width": 680,
+        "height": 100,
+        "font_size": 28,
+        "content": "Small moments. Lasting balance.",
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "letter_spacing": 2
+      },
+      {
+        "id": "detail",
+        "type": "text",
+        "x": 60,
+        "y": 360,
+        "width": 680,
+        "height": 120,
+        "font_size": 20,
+        "content": "Discover the collection\nand find your favorite.",
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      },
+      {
+        "id": "mark",
+        "type": "image",
+        "x": 80,
+        "y": 580,
+        "width": 400,
+        "height": 140,
+        "asset_id": "solstice_logo_lockup.png",
+        "fit": "contain"
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 320,
+    "height": 100
+  }
+}

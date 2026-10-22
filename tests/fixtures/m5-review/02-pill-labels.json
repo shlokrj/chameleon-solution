@@ -1,0 +1,113 @@
+{
+  "source": {
+    "canvas": {
+      "width": 800,
+      "height": 800
+    },
+    "elements": [
+      {
+        "id": "title",
+        "type": "text",
+        "x": 60,
+        "y": 60,
+        "width": 680,
+        "height": 90,
+        "font_size": 48,
+        "content": "Choose your ritual",
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      },
+      {
+        "id": "pill0",
+        "type": "shape",
+        "x": 80,
+        "y": 220,
+        "width": 640,
+        "height": 100,
+        "shape_type": "rectangle",
+        "fill_color": "#e4eee7",
+        "group_id": "g0",
+        "corner_radius": 50,
+        "stroke_color": "#18352c",
+        "stroke_width": 8
+      },
+      {
+        "id": "label0",
+        "type": "text",
+        "x": 110,
+        "y": 245,
+        "width": 580,
+        "height": 50,
+        "font_size": 24,
+        "content": "Morning balance",
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "group_id": "g0",
+        "text_align": "center",
+        "z_index": 1
+      },
+      {
+        "id": "pill1",
+        "type": "shape",
+        "x": 80,
+        "y": 360,
+        "width": 640,
+        "height": 100,
+        "shape_type": "rectangle",
+        "fill_color": "#e4eee7",
+        "group_id": "g1",
+        "corner_radius": 50,
+        "stroke_color": "#18352c",
+        "stroke_width": 8
+      },
+      {
+        "id": "label1",
+        "type": "text",
+        "x": 110,
+        "y": 385,
+        "width": 580,
+        "height": 50,
+        "font_size": 24,
+        "content": "Afternoon energy",
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "group_id": "g1",
+        "text_align": "center",
+        "z_index": 1
+      },
+      {
+        "id": "pill2",
+        "type": "shape",
+        "x": 80,
+        "y": 500,
+        "width": 640,
+        "height": 100,
+        "shape_type": "rectangle",
+        "fill_color": "#e4eee7",
+        "group_id": "g2",
+        "corner_radius": 50,
+        "stroke_color": "#18352c",
+        "stroke_width": 8
+      },
+      {
+        "id": "label2",
+        "type": "text",
+        "x": 110,
+        "y": 525,
+        "width": 580,
+        "height": 50,
+        "font_size": 24,
+        "content": "Evening calm",
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "group_id": "g2",
+        "text_align": "center",
+        "z_index": 1
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 728,
+    "height": 90
+  }
+}

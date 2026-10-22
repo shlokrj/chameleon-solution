@@ -1,0 +1,90 @@
+{
+  "source": {
+    "canvas": {
+      "width": 800,
+      "height": 800
+    },
+    "elements": [
+      {
+        "id": "title",
+        "type": "text",
+        "x": 60,
+        "y": 40,
+        "width": 680,
+        "height": 90,
+        "font_size": 48,
+        "content": "Make time for yourself",
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      },
+      {
+        "id": "mark",
+        "type": "image",
+        "x": 70,
+        "y": 180,
+        "width": 660,
+        "height": 180,
+        "asset_id": "solstice_logo_lockup.png",
+        "fit": "contain"
+      },
+      {
+        "id": "first",
+        "type": "shape",
+        "x": 60,
+        "y": 470,
+        "width": 320,
+        "height": 110,
+        "shape_type": "rectangle",
+        "fill_color": "#e4eee7",
+        "corner_radius": 55,
+        "stroke_width": 6,
+        "stroke_color": "#18352c",
+        "group_id": "a"
+      },
+      {
+        "id": "first-label",
+        "type": "text",
+        "x": 90,
+        "y": 500,
+        "width": 260,
+        "height": 50,
+        "font_size": 26,
+        "content": "Shop now",
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "group_id": "a"
+      },
+      {
+        "id": "second",
+        "type": "shape",
+        "x": 420,
+        "y": 470,
+        "width": 320,
+        "height": 110,
+        "shape_type": "rectangle",
+        "fill_color": "#e4eee7",
+        "corner_radius": 55,
+        "stroke_width": 6,
+        "stroke_color": "#18352c",
+        "group_id": "b"
+      },
+      {
+        "id": "second-label",
+        "type": "text",
+        "x": 450,
+        "y": 500,
+        "width": 260,
+        "height": 50,
+        "font_size": 26,
+        "content": "Learn more",
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "group_id": "b"
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 250,
+    "height": 300
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "source": {
+    "canvas": {
+      "width": 800,
+      "height": 800
+    },
+    "elements": [
+      {
+        "id": "mark",
+        "type": "image",
+        "x": 110,
+        "y": 100,
+        "width": 300,
+        "height": 160,
+        "asset_id": "solstice_logo_lockup.png",
+        "fit": "contain",
+        "rotation": 30
+      },
+      {
+        "id": "title",
+        "type": "text",
+        "x": 80,
+        "y": 340,
+        "width": 640,
+        "height": 80,
+        "font_size": 48,
+        "content": "A brighter morning",
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      },
+      {
+        "id": "detail",
+        "type": "text",
+        "x": 80,
+        "y": 450,
+        "width": 640,
+        "height": 50,
+        "font_size": 20,
+        "content": "Discover your daily ritual",
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 300,
+    "height": 250
+  }
+}

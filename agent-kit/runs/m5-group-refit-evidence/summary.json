@@ -1,0 +1,35 @@
+{
+  "baseline": "34edde9",
+  "engine_sha256": "a14aeaea00f1d0a0b9453bccfc7019cbcb42a2e536a05f61f8387d54bd43183f",
+  "tests": 73,
+  "delivery_pairs": 3,
+  "catalogue_cases": 70,
+  "parity_cases": 42,
+  "review_cases": 6,
+  "judge_holdout_cases": 3,
+  "m3_cases": 15,
+  "catalogue_improved": 16,
+  "catalogue_worse": 0,
+  "under_6px_before": 4,
+  "under_6px_after": 3,
+  "warm_70_case_sweeps_before_seconds": [
+    0.5492048439919017,
+    0.6478214250237215,
+    0.5469497170124669,
+    0.5426569170085713,
+    0.678160430979915
+  ],
+  "warm_70_case_sweeps_after_seconds": [
+    0.5711417350103147,
+    0.5827674040046986,
+    1.3002531450183596,
+    1.0866831640014425,
+    0.7027328859840054
+  ],
+  "median_before_seconds": 0.5492048439919017,
+  "median_after_seconds": 0.7027328859840054,
+  "only_font_sizes_changed": true,
+  "no_font_decreases": true,
+  "catalogue_contract_issues": 0,
+  "catalogue_overflows": 0
+}

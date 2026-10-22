@@ -4,12 +4,12 @@ Read this first when joining or resuming work. This is the shared current-state 
 
 ## Current state
 
-- **Phase:** M3 complete; M4 final quality/release review remains; M5 text-floor refinement, compact allocation and image expansion verified; M5.3 contrast tiebreak remains rejected.
+- **Phase:** M3 complete; M4 final quality/release review remains; M5 grouped-label repair and bounded fresh review verified; M5.3 contrast tiebreak remains rejected.
 - **Implementation progress:** 4 of 6 implementation milestones complete (M0–M5; M4 and M5 remain in progress). This count is not an effort estimate.
-- **Engine:** bounded candidate search, shared-scale row/column packing, hierarchy-preserving type floor, alpha-aware image packing, post-selection image expansion, plus inferred backing relationships. 71 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [text-floor evidence](agent-kit/runs/m5-text-floor.md).
-- **Latest verified predecessor:** `0f8cfe2` on `main`, pulled from origin. This containing commit records text-floor refinement and Linux checks; use Git history to resolve its revision.
-- **Active implementation owners:** none; text-floor claim released.
-- **Next concrete action:** perform a bounded fresh review of the accumulated M5 changes, then address remaining dense copy/crowded logos and release questions. Dense-labels-compact improved from 6.325px to 8.625px labels, but four catalogue cases still have text below 6px. Image expansion improves 15 catalogue layouts without changing copy; crowded Level 2 logos remain small. Docker validation for M5 is complete.
+- **Engine:** bounded candidate search, shared-scale row/column packing, hierarchy-preserving type floor, alpha-aware image packing, post-selection image expansion, plus inferred backing relationships. 73 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [grouped-label review evidence](agent-kit/runs/m5-group-refit.md).
+- **Latest verified predecessor:** `34edde9` on `main`, pulled from origin. This containing commit records grouped-label fitting, independent review and Linux checks; use Git history to resolve its revision.
+- **Active implementation owners:** none; bounded review and repair claims released.
+- **Next concrete action:** establish a feasible layout witness for remaining dense Level 3 copy before another allocation change; resolve organizer release questions separately. The bounded M5 review is complete. Sixteen catalogue cases improved; three still contain sub-6px text. Tight or overlapping groups and small/low-contrast logos remain limitations. Docker validation is complete.
 
 ## Milestone board
 
@@ -50,11 +50,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims. Final text-floor refinement accepted: seven catalogue improvements with no text shrinking; four sub-6px cases remain.
+No active claims. Root integrated the accepted grouped-label repair; challenger and judge completed one bounded review cycle. All exposed review and holdout cases are now development regressions.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | 2026-10-21 America/Chicago | Text-floor claim released. Next: bounded fresh M5 review, then remaining quality/release questions |
+| — | — | — | — | unassigned | 2026-10-22 America/Chicago | Review claims released. Next: feasible dense Level 3 witness and remaining release questions |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -111,6 +111,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `feat: allocate more group space on compact canvases` (containing commit) | Replaced near-square side-column candidates with deeper bottom sections; retained regression guards and six-candidate cap | 67 offline tests; 3 production pairs; 70 catalogue cases; 49 boundary cases without measured regressions; 42 unchanged and repeated regression cases; changed renders inspected | Five sub-6px catalogue cases remain; no fresh holdout; dense fine print and crowded logos still open |
 
 | `fix: preserve readable text floors when downscaling` (containing commit) | Added guarded post-selection text refit; preserved layout selection, source-size cap and hierarchy; refined model notes | 71 offline tests; 3 validated pairs; 70 catalogue + 49 boundary cases with seven improvements each and no measured regressions; 42 repeated cases; changed renders inspected | Four sub-6px cases remain; next fresh M5 review; no official scoring or submission claim |
+
+| `fix: fit grouped labels within their existing boxes` (containing commit) | Completed six-case challenger round, accepted one repair, verified three fresh judge-held cases; saved fixtures and model notes | 73 offline tests; 3 delivery pairs; 70 catalogue cases (16 improvements, none worse); 42 exact repeat cases; 15 M3 + 9 M5 cases; paired renders inspected; warm sweep median 0.549→0.703s | Review closed; three sub-6px catalogue cases remain; M4/M5 quality and organizer release questions open |
 
 ## How to update this file
 

@@ -2,7 +2,8 @@
 import json
 from copy import deepcopy
 from engine.layout import build_layout, expand_images, refine_text
-from engine.quality import hard_issues, quality, regression_reasons
+from engine.quality import hard_issues, quality, regression_reasons, overlap
+from engine.typography import fit_text
 
 MAX_CANDIDATES = 6
 
@@ -88,7 +89,44 @@ def resize_with_diagnostics(source, target_canvas, *, max_candidates=MAX_CANDIDA
                 el.clear()
                 el.update(saved)
             refined_text = []
-    return best, {'refined_text': refined_text, 'selected': selected, 'candidate_count': len(records), 'candidates': records}
+    refined_group_text = refine_group_labels(source, best)
+    return best, {'refined_group_text': refined_group_text, 'refined_text': refined_text, 'selected': selected, 'candidate_count': len(records), 'candidates': records}
+
+
+def refine_group_labels(source, design):
+    """Enlarge explicit group labels in their existing boxes, with rollback."""
+    originals = {el['id']: el for el in source['elements']}
+    saved, changed = {}, []
+    labels = [el for el in design['elements']
+              if el['type'] == 'text' and el.get('group_id') is not None and el['content']]
+    for el in labels:
+        # Overlapping text boxes may encode intentional layering; do not fill
+        # that shared space with larger glyphs based on box fit alone.
+        if any(other is not el and other['group_id'] == el['group_id']
+               and overlap(el, other) > 1e-9 for other in labels):
+            continue
+        upper = min(12.0, originals[el['id']]['font_size'])
+        if upper <= el['font_size']+1e-6:
+            continue
+        prior = deepcopy(el)
+        fit_text(el, upper)
+        if el['font_size'] <= prior['font_size']+1e-6:
+            el.update(prior)
+            continue
+        saved[el['id']] = prior
+        changed.append(el['id'])
+    if not changed:
+        return []
+    before = dict(design, elements=[saved.get(el['id'], el) for el in design['elements']])
+    old, new = quality(source, before), quality(source, design)
+    if (new['loss'] > old['loss']+1e-9
+            or new['hierarchy_inversion'] > old['hierarchy_inversion']+1e-9
+            or len(new['overflow_ids']) > len(old['overflow_ids'])):
+        for el in labels:
+            if el['id'] in saved:
+                el.update(saved[el['id']])
+        return []
+    return changed
 
 
 def resize(source, target_canvas):
