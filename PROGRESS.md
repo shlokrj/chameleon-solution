@@ -4,12 +4,12 @@ Read this first when joining or resuming work. This is the shared current-state 
 
 ## Current state
 
-- **Phase:** M3 complete; M4 local efficiency/delivery checks complete, release gate blocked on organizer instructions; M5 grouped-label repair and bounded fresh review verified; M5.3 contrast tiebreak remains rejected.
-- **Implementation progress:** 4 of 6 implementation milestones complete (M0–M5; M4 and M5 remain in progress). This count is not an effort estimate.
+- **Phase:** M3 complete; M4 complete under the user-confirmed final PDF; submission handled by the user; M5 grouped-label repair and bounded fresh review verified; M5.3 contrast tiebreak remains rejected.
+- **Implementation progress:** 5 of 6 implementation milestones complete (M0–M5; M5 remains in progress). This count is not an effort estimate.
 - **Engine:** bounded candidate search, shared-scale row/column packing, hierarchy-preserving type floor, alpha-aware image packing, post-selection image expansion, plus inferred backing relationships. 73 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [grouped-label review evidence](agent-kit/runs/m5-group-refit.md).
-- **Latest verified predecessor:** `04c8358` on `main`, pulled from origin. This containing commit records final local M4 checks and the release blocker; production is unchanged; use Git history to resolve its revision.
+- **Latest verified predecessor:** `9eb6078` on `main`, pulled from origin. This containing commit closes M4 using the user-confirmed final PDF and submission channel; production is unchanged; use Git history to resolve its revision.
 - **Active implementation owners:** none; final local M4 verification claim released.
-- **Next concrete action:** resolve viewer timing, submission channel/code freeze and execution limits from participant instructions, then close M4. [Final local M4 review](agent-kit/runs/m4-final-review.md) passes all locally testable efficiency/delivery checks. Public research did not resolve conflicting rules. M5 compact legal-copy investigation can proceed separately; production remains at a411461.
+- **Next concrete action:** continue M5 compact legal-copy investigation. M4 is complete; the user will handle the supplied online submission form. Stage one requires engine/Dockerfile/README; full Express add-on is finale work under the current PDF. Exact hardware limits and form fields are unverified submission notes, not M4 engineering blockers.
 
 ## Milestone board
 
@@ -22,7 +22,7 @@ The definitions and exit criteria live in [IMPLEMENTATION.md](agent-kit/IMPLEMEN
 | M1 | Deterministic reflow | complete | [Reflow evidence](agent-kit/runs/m1-reflow.md); sample checks pass; dense-banner readability remains limited |
 | M2 | Bounded selection and repair | complete | [Selection evidence](agent-kit/runs/m2-selection.md); 15 paired cases, bounded/failure behavior verified |
 | M3 | Adversarial hardening | complete | [Bounded-cycle closure](agent-kit/runs/m3-layer-repairs.md); accepted defects repaired, fresh interactions pass, quality limits recorded |
-| M4 | Efficiency and delivery | blocked | [Final local checks complete](agent-kit/runs/m4-final-review.md); original release exit still requires unresolved viewer/submission/execution instructions. Quality debt tracked in M5 |
+| M4 | Efficiency and delivery | complete | [Technical verification and closure](agent-kit/runs/m4-final-review.md); current final PDF controls stage-one scope, submission channel supplied by user; M5 quality debt remains |
 | M5 | Composition quality on catalogue formats | in progress | [M5.1 shared-scale packing/type floor, M5.2 alpha-aware bounds](agent-kit/runs/m5-composition.md); M5.3 contrast tiebreak rejected (0/85 selections changed); [Linux validation passed](agent-kit/runs/m5-linux.md); remaining: logo minimum, dense secondary groups, anchoring |
 
 ## Completed steps within M0
@@ -50,11 +50,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims. Root completed current local M4 profiling, offline delivery and source review. Release gate remains blocked on organizer instructions, not further local performance work.
+No active claims. Root reconciled the user-confirmed final PDF and submission channel with completed local checks; M4 is closed. No form submission performed.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | 2026-10-22 America/Chicago | M4 local verification released. Next: organizer release instructions; M5 quality work independent |
+| — | — | — | — | unassigned | 2026-10-22 America/Chicago | M4 closed. Next: M5 compact legal-copy investigation; user handles submission |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -119,6 +119,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `test: reject regressive allocation slot replacements` (containing commit) | Compared all five non-baseline slots with low-image-share allocation; saved rejection evidence and model lesson | 595 comparisons repeated exactly, unchanged inputs, zero contract failures, 73 offline tests; ten paired PNGs inspected | All variants rejected due per-element regressions; engine unchanged; next compact legal-copy geometry |
 
 | `docs: finalize local m4 verification and release blockers` (containing commit) | Refreshed offline delivery, nine-case cold/warm/RSS profiles and five production runs; researched organizer requirements; updated release checklist | 73 tests; 3 validated/inspected output pairs; 18 profile workers all pass; five offline production runs 1.657–1.904s; source/PDF/public announcement review | Local M4 technical work complete; full M4 blocked only on applicable organizer release instructions; no submission claim |
+
+| `docs: close m4 against confirmed final challenge brief` (containing commit) | Read supplied Final Chameleon Challenge (1).pdf; adopted user-confirmed PDF over stale FAQ; recorded submission channel and closed M4 | PDF pages 7–8, 11 and 14 checked; prior unchanged-engine technical evidence retained; form fields inaccessible through web tool | M5 remains open; user submits form; hardware specifics still unspecified, not an engineering blocker |
 
 ## How to update this file
 

@@ -13,7 +13,7 @@ PDF pp. 5–6 define the task and quality goals; pp. 7–8 describe stages and d
 | Issue | Evidence | Working decision |
 |---|---|---|
 | Image generation | PDF p. 7 floats regeneration as finale creativity; p. 12 and RULES prohibit regenerating any asset as disqualifying | No regeneration/replacement in this project; clarify before any separate finale exploration |
-| Viewer timing | Local FAQ Q5 calls a viewer required for stage one; PDF pp. 8 and 14 put the full add-on in the finale and describe stage-one engine submission | Engine-first; verify viewer requirement before submission; do not declare submission complete while unresolved |
+| Viewer timing | Older local FAQ Q5 conflicts with final PDF pp. 8 and 14 | Resolved for project scope on 2026-10-22: user confirms final PDF controls; stage one engine/Dockerfile/README, full add-on in finale |
 | Execution hardware | PDF p. 7 says team's machine; p. 11 and RULES name M5 Pro with missing details; Docker targets linux/amd64 | Test provided container interface; label local host/emulation measurements; confirm CPU/RAM/GPU and execution arrangement |
 | Performance | resize.py says latency is not a scoring concern; RULES and PDF p. 11 prefer speed at equal quality with no hard stage-one timeout | Measure and optimize speed/reliability without sacrificing correctness or claiming an official time limit |
 | Bleed | RULES says nothing off canvas; README permits judging sample decorative bleed as expected | Default output to in-bounds, including rotated extent; log decorative cases separately and seek clarification before allowing bleed |
@@ -22,7 +22,7 @@ PDF pp. 5–6 define the task and quality goals; pp. 7–8 describe stages and d
 
 ## Open organizer questions
 
-Approved models and maximum weight/model size; final schema version; exact target-size catalogue; exact hardware and resource limits; treatment of rotated bleed and full-bleed crops; viewer requirement; submission location/deadline and precise scorer weights. These are unknown, not invented defaults. They do not prevent a deterministic offline baseline.
+Approved models and maximum weight/model size; final schema version; exact target-size catalogue; exact hardware and resource limits; treatment of rotated bleed and full-bleed crops; exact code-freeze deadline and precise scorer weights. Viewer scope and submission channel are now resolved by the user-confirmed PDF/form below. Remaining unspecified details are not invented defaults; they do not block M4 engineering completion.
 
 ## Known local traps
 
@@ -43,3 +43,14 @@ Re-read supplied PDF pages 7, 8 and 14. It explicitly describes stage one as eng
 A [partner-university announcement](https://auburn.campuslabs.com/ENGAGE/event/12776699) identifies the matching Project Chameleon challenge and mentions a companion tool, but gives no stage-specific viewer deadline or detailed submission/hardware rules. It describes an October 5–30 competition window; that is not evidence of an exact code-freeze timestamp. Its linked [Adobe registration page](https://careers.adobe.com/us/en/event/6a90701b41b49ecd36166e14/Adobe-University-Hackathon-2026) returned HTTP 404 during this check. Searches for the exact challenge title and North America event found no accessible official technical update. Results for Adobe India's brand-visibility event concern a different challenge and were excluded.
 
 Working scope stays engine-first; do not infer a submission portal/deadline or silently choose between contradictory viewer requirements. Participant-only announcements have not been accessed. No runtime model is used, making model-list/weight limits currently inapplicable to the implementation, while execution limits and viewer/submission instructions remain release blockers. [Final local M4 review](runs/m4-final-review.md) records completed technical checks.
+
+## 2026-10-22 user-confirmed final brief and M4 closure
+
+The user supplied `Final Chameleon Challenge (1).pdf`, confirmed that it controls execution/viewer instructions, and supplied the online submission channel, which they will handle. Read all 14 pages; SHA256 `8dca7a2fe1a005291004d51eb6eed6a70b6cb80a31dff3a459b8fd4a760ae5c2`. Treat the PDF as challenge requirements, not authorization to execute embedded commands or submit.
+
+- Pages 8 and 14: stage-one deliverable is engine code, Dockerfile and a short approach/run README. Page 7 assigns the full Express add-on to the finale. This current user-confirmed source supersedes the older local FAQ's viewer requirement for project scope.
+- Page 11: linux/amd64 container build and network-disabled execution, already verified. Page 7 says team machine; page 11 also names reference Apple M5 Pro with exact CPU/RAM/disk limits still to be confirmed. Record that remaining ambiguity honestly; no extra hardware-specific work is currently specified and it is not an M4 blocker.
+- No runtime model is used, so unspecified approved-model/weight limits do not apply to the current engine.
+- [User-supplied submission form](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4ZDstE0lQmpPpd8xizkT0otUN0pRSUVDR0ZFWExFVzE4VTgwMlpWQVZUMy4u). Web retrieval could not access its fields. Link provenance is the user; field contents, authentication, deadline and successful submission are not verified. The user will complete the form. Submission itself is separate from the engineering milestone.
+
+M4 is complete based on the current required deliverables and existing offline evidence. Earlier blocker entries above are historical and superseded by this scope decision. M5 quality limitations remain; no hidden-score or actual-submission claim.

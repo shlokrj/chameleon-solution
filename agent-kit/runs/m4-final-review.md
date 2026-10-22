@@ -1,6 +1,6 @@
 # M4 final local efficiency and delivery review
 
-2026-10-22; frozen revision `04c8358`, production engine unchanged since `a411461`. **Local efficiency and packaging checks complete; full M4 exit remains blocked on unresolved organizer requirements.** Dense typography is tracked as M5 quality debt, not a Docker blocker. No submission or viewer was published.
+2026-10-22; frozen revision `04c8358`, production engine unchanged since `a411461`. **M4 complete following the user-confirmed final PDF and submission channel; see the closure addendum below.** Dense typography is tracked as M5 quality debt, not a Docker blocker. No submission or viewer was published.
 
 ## Current verification
 
@@ -44,3 +44,9 @@ docker run --rm --platform linux/amd64 --network none -v "$PWD:/app" --entrypoin
 ```
 
 Run the saved `m4-container-evidence/measure.py` in the production image with input read-only, an isolated writable output directory, and networking disabled for the five full-pipeline runs. The profile command mounts the checkout for Git revision metadata; it is validation tooling, not a runtime requirement. Original logs are under `artifacts/m4-final-*` and `artifacts/container-check.Cy2kNI`.
+
+## Closure addendum: user-confirmed final brief
+
+The user subsequently supplied `Final Chameleon Challenge (1).pdf` and the Microsoft Forms submission link, confirmed the PDF controls execution/viewer scope, and took responsibility for submitting. The PDF was read: pages 8/14 require engine, Dockerfile and README for stage one; the full add-on is finale work; page 11 requires the already-tested offline Docker interface. Adopt this current source over the older FAQ. The preceding release-blocker paragraph records the earlier state and is superseded.
+
+M4 is now complete with no engine changes or repeated technical testing needed. Hardware detail remains unspecified in the PDF, and form contents/deadline were not accessible via the web tool; neither is represented as verified. Submission is user-owned and has not occurred in this chat. See [source register](../SOURCES.md) for PDF hash, exact link and evidence boundaries. M5 quality work remains open.
