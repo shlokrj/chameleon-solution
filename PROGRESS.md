@@ -6,10 +6,10 @@ Read this first when joining or resuming work. This is the shared current-state 
 
 - **Phase:** M3 complete; M4 complete under the user-confirmed final PDF; submission handled by the user; M5 grouped-label repair and bounded fresh review verified; M5.3 contrast tiebreak remains rejected.
 - **Implementation progress:** 5 of 6 implementation milestones complete (M0–M5; M5 remains in progress). This count is not an effort estimate.
-- **Engine:** bounded candidate search, shared-scale row/column packing, hierarchy-preserving type floor, alpha-aware image packing, post-selection image expansion, plus inferred backing relationships. 73 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [grouped-label review evidence](agent-kit/runs/m5-group-refit.md).
-- **Latest verified predecessor:** `9eb6078` on `main`, pulled from origin. This containing commit closes M4 using the user-confirmed final PDF and submission channel; production is unchanged; use Git history to resolve its revision.
-- **Active implementation owners:** none; final local M4 verification claim released.
-- **Next concrete action:** continue M5 compact legal-copy investigation. M4 is complete; the user will handle the supplied online submission form. Stage one requires engine/Dockerfile/README; full Express add-on is finale work under the current PDF. Exact hardware limits and form fields are unverified submission notes, not M4 engineering blockers.
+- **Engine:** bounded candidate search, shared-scale row/column packing, hierarchy-preserving type floor, alpha-aware image packing, post-selection image expansion, plus inferred backing relationships. 75 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [final-box text evidence](agent-kit/runs/m5-tail-copy.md).
+- **Latest verified predecessor:** `6a5433e` on `main`, pulled from origin. This containing commit adds guarded final-box text growth and verification; use Git history to resolve its revision.
+- **Active implementation owners:** none; M5 final-box text claim released.
+- **Next concrete action:** address remaining small grouped labels/logos with a feasible general improvement, or perform a bounded final M5 review with explicit quality limits. Compact Level 3 legal copy now reaches 6.111px without changing peers; seven catalogue layouts improve, but three still have sub-6px text. M4 remains complete; user handles submission.
 
 ## Milestone board
 
@@ -50,11 +50,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims. Root reconciled the user-confirmed final PDF and submission channel with completed local checks; M4 is closed. No form submission performed.
+No active claims. Root completed and verified the guarded final-box text repair. M4 remains complete; M5 quality work is still in progress.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | 2026-10-22 America/Chicago | M4 closed. Next: M5 compact legal-copy investigation; user handles submission |
+| — | — | — | — | unassigned | 2026-10-23 America/Chicago | Text repair claim released. Next: remaining M5 quality limits/final review |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -114,13 +114,15 @@ Keep entries concise and factual. Use a stable change label when the containing 
 
 | `fix: fit grouped labels within their existing boxes` (containing commit) | Completed six-case challenger round, accepted one repair, verified three fresh judge-held cases; saved fixtures and model notes | 73 offline tests; 3 delivery pairs; 70 catalogue cases (16 improvements, none worse); 42 exact repeat cases; 15 M3 + 9 M5 cases; paired renders inspected; warm sweep median 0.549→0.703s | Review closed; three sub-6px catalogue cases remain; M4/M5 quality and organizer release questions open |
 
-| `test: add bounded dense layout feasibility probe` (containing commit) | Added offline allocation probe; saved two feasible improvements and compact negative result; updated model notes | 125 alternatives × two exact-repeat runs; six paired renders inspected; 73 offline Linux tests pass; source immutability and candidate contracts checked | Engine unchanged; compare candidate-slot replacement broadly before integration; three dense cases still below 6px |
+| `test: add bounded dense layout feasibility probe` (containing commit) | Added offline allocation probe; saved two feasible improvements and compact negative result; updated model notes | 125 alternatives × two exact-repeat runs; six paired renders inspected; 75 offline Linux tests pass; source immutability and candidate contracts checked | Engine unchanged; compare candidate-slot replacement broadly before integration; three dense cases still below 6px |
 
 | `test: reject regressive allocation slot replacements` (containing commit) | Compared all five non-baseline slots with low-image-share allocation; saved rejection evidence and model lesson | 595 comparisons repeated exactly, unchanged inputs, zero contract failures, 73 offline tests; ten paired PNGs inspected | All variants rejected due per-element regressions; engine unchanged; next compact legal-copy geometry |
 
 | `docs: finalize local m4 verification and release blockers` (containing commit) | Refreshed offline delivery, nine-case cold/warm/RSS profiles and five production runs; researched organizer requirements; updated release checklist | 73 tests; 3 validated/inspected output pairs; 18 profile workers all pass; five offline production runs 1.657–1.904s; source/PDF/public announcement review | Local M4 technical work complete; full M4 blocked only on applicable organizer release instructions; no submission claim |
 
 | `docs: close m4 against confirmed final challenge brief` (containing commit) | Read supplied Final Chameleon Challenge (1).pdf; adopted user-confirmed PDF over stale FAQ; recorded submission channel and closed M4 | PDF pages 7–8, 11 and 14 checked; prior unchanged-engine technical evidence retained; form fields inaccessible through web tool | M5 remains open; user submits form; hardware specifics still unspecified, not an engineering blocker |
+
+| `fix: grow final copy into unused text region space` (containing commit) | Added guarded final-box font/height growth with unchanged peers; updated model notes | 75 offline tests, 3 delivery pairs, 70 catalogue cases with seven improvements and no worse loss, 42 exact repeat cases, 9 saved M5 cases; all changed catalogue/review renders inspected; five warm sweeps per revision | M4 complete; M5 remains open, three catalogue cases still have sub-6px copy |
 
 ## How to update this file
 

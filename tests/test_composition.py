@@ -191,6 +191,35 @@ class CompositionTests(unittest.TestCase):
         self.assertEqual(refine_group_labels(source, design), [])
         self.assertEqual(design, original)
 
+    def test_tail_copy_uses_spare_height_without_changing_peers(self):
+        from unittest.mock import patch
+        from engine.resize import resize_with_diagnostics
+        task = json.loads(Path('input/chameleon_sample_level3_advanced.json').read_text())
+        target = {'width': 300, 'height': 250}
+        with patch('engine.resize.refine_tail_text', return_value=[]):
+            baseline, old = resize_with_diagnostics(task['source'], target)
+        result, diagnostics = resize_with_diagnostics(task['source'], target)
+        self.assertEqual(diagnostics['selected'], old['selected'])
+        self.assertEqual(diagnostics['refined_tail_text'], ['legal_text'])
+        for before, after in zip(baseline['elements'], result['elements']):
+            if before['id'] == 'legal_text':
+                self.assertGreaterEqual(after['font_size'], 6)
+                self.assertEqual({k:v for k,v in before.items() if k not in ('height','font_size')},
+                                 {k:v for k,v in after.items() if k not in ('height','font_size')})
+            else:
+                self.assertEqual(before, after)
+
+    def test_tail_copy_skips_rotation(self):
+        from copy import deepcopy
+        from engine.resize import refine_tail_text
+        el = dict(id='rotated', type='text', content='Label', font_family='Solstice Sans',
+                  font_size=4, x=10, y=10, width=60, height=10, rotation=15)
+        design = dict(canvas=dict(width=100,height=100), elements=[el])
+        original = deepcopy(design)
+        refs = [([[el]], [[deepcopy(el)]], (0,0,100,100), 2, 0.5)]
+        self.assertEqual(refine_tail_text(original, design, refs), [])
+        self.assertEqual(design, original)
+
     def test_missing_asset_leaves_hero_slot(self):
         task = json.loads(Path('input/chameleon_sample_level3_advanced.json').read_text())
         out = {e['id']: e for e in resize(task['source'], {'width': 1200, 'height': 628})['elements']}

@@ -90,7 +90,47 @@ def resize_with_diagnostics(source, target_canvas, *, max_candidates=MAX_CANDIDA
                 el.update(saved)
             refined_text = []
     refined_group_text = refine_group_labels(source, best)
-    return best, {'refined_group_text': refined_group_text, 'refined_text': refined_text, 'selected': selected, 'candidate_count': len(records), 'candidates': records}
+    refined_tail_text = refine_tail_text(source, best, best_text_refinements)
+    return best, {'refined_tail_text': refined_tail_text, 'refined_group_text': refined_group_text, 'refined_text': refined_text, 'selected': selected, 'candidate_count': len(records), 'candidates': records}
+
+
+def refine_tail_text(source, design, refinements):
+    """Use unused space below the final unrotated copy box without moving peers."""
+    originals = {el['id']: el for el in source['elements']}
+    text = [el for el in design['elements'] if el['type'] == 'text' and el['content']]
+    changed = []
+    for units, _, slot, _, _ in refinements:
+        if not units:
+            continue
+        el = units[-1][0]
+        if el.get('rotation', 0) or not el['content']:
+            continue
+        x, y, width, height = slot
+        bottom = y+height
+        if el['y'] < y or el['x'] < x or el['x']+el['width'] > x+width+1e-6:
+            continue
+        if bottom <= el['y']+el['height']+1e-6:
+            continue
+        upper = min(12.0, originals[el['id']]['font_size'])
+        # Preserve stronger source hierarchy relative to every other text box.
+        for other in text:
+            if originals[other['id']]['font_size'] > originals[el['id']]['font_size']*1.5:
+                upper = min(upper, other['font_size'])
+        if upper <= el['font_size']+1e-6:
+            continue
+        before = deepcopy(el)
+        old_quality = quality(source, design)
+        el['height'] = bottom-el['y']
+        fit_text(el, upper)
+        new_quality = quality(source, design)
+        if (el['font_size'] <= before['font_size']+1e-6
+                or new_quality['loss'] > old_quality['loss']+1e-9
+                or new_quality['hierarchy_inversion'] > old_quality['hierarchy_inversion']+1e-9
+                or len(new_quality['overflow_ids']) > len(old_quality['overflow_ids'])):
+            el.update(before)
+        else:
+            changed.append(el['id'])
+    return changed
 
 
 def refine_group_labels(source, design):

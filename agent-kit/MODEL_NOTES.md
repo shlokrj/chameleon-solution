@@ -139,3 +139,7 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 ## Compare final outputs when changing candidate sets
 
 [Slot replacement testing](runs/m5-slot-probe.md) found five apparent improvements and zero worse aggregate losses for its best variant, yet CTA/ribbon text shrank about 11% elsewhere. A saturated zero-loss proxy and a guard against candidate zero cannot protect the previous release's selected result. Keep per-element final-output comparisons and reject a candidate-set change that only looks safe in aggregate. Preserve negative results to avoid repeating broad allocation tuning.
+
+## Use local spare space when a global text floor fails
+
+[Final-box fitting](runs/m5-tail-copy.md) improves compact legal copy without sacrificing the headline. A rejected all-copy refit does not prove each individual box is at its limit. Check unused space within the already-selected region, preserve peers, bound font growth by source hierarchy, and retain final quality rollback. Compare full element properties as well as aggregate loss; inspect styled and multiline output. Small noisy timing differences are not evidence of a speedup.
