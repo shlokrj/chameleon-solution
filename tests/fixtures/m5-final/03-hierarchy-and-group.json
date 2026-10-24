@@ -1,0 +1,80 @@
+{
+  "source": {
+    "canvas": {
+      "width": 800,
+      "height": 800
+    },
+    "elements": [
+      {
+        "id": "g",
+        "type": "text",
+        "content": "Room to breathe",
+        "x": 50,
+        "y": 45,
+        "width": 700,
+        "height": 110,
+        "font_size": 48,
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "font_weight": "bold"
+      },
+      {
+        "id": "h",
+        "type": "text",
+        "content": "Start with a simple routine",
+        "x": 50,
+        "y": 195,
+        "width": 700,
+        "height": 80,
+        "font_size": 26,
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      },
+      {
+        "id": "i",
+        "type": "text",
+        "content": "Available in participating locations only.\nAsk in store for terms and details.",
+        "x": 50,
+        "y": 340,
+        "width": 700,
+        "height": 90,
+        "font_size": 16,
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "font_style": "italic",
+        "max_lines": 3
+      },
+      {
+        "id": "j",
+        "type": "shape",
+        "shape_type": "rectangle",
+        "x": 80,
+        "y": 570,
+        "width": 640,
+        "height": 100,
+        "fill_color": "#e4eee7",
+        "corner_radius": 15,
+        "group_id": "offer"
+      },
+      {
+        "id": "k",
+        "type": "text",
+        "content": "DISCOVER MORE",
+        "x": 100,
+        "y": 595,
+        "width": 600,
+        "height": 50,
+        "font_size": 24,
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "font_weight": "bold",
+        "group_id": "offer",
+        "z_index": 1
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 320,
+    "height": 180
+  }
+}

@@ -143,3 +143,7 @@ The [packaging pass](runs/m4-packaging.md) aligns Python with installed dependen
 ## Use local spare space when a global text floor fails
 
 [Final-box fitting](runs/m5-tail-copy.md) improves compact legal copy without sacrificing the headline. A rejected all-copy refit does not prove each individual box is at its limit. Check unused space within the already-selected region, preserve peers, bound font growth by source hierarchy, and retain final quality rollback. Compare full element properties as well as aggregate loss; inspect styled and multiline output. Small noisy timing differences are not evidence of a speedup.
+
+## Close a bounded milestone with explicit limits
+
+[Final M5 review](runs/m5-final.md) pairs fresh independently authored cases with existing regression evidence and names the remaining tiny-copy/logo limits. Keep exposed holdouts as regressions and stop when the defined review is complete; do not call independent contexts different models when identifiers are unknown. Completion is a bounded engineering decision, not a universal quality guarantee.

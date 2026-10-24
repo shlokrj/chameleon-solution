@@ -1,0 +1,59 @@
+{
+  "source": {
+    "canvas": {
+      "width": 800,
+      "height": 800
+    },
+    "elements": [
+      {
+        "id": "a",
+        "type": "text",
+        "content": "Explore the quiet",
+        "x": 50,
+        "y": 45,
+        "width": 700,
+        "height": 100,
+        "font_size": 48,
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "font_weight": "bold"
+      },
+      {
+        "id": "b",
+        "type": "text",
+        "content": "Every day begins with a little space.",
+        "x": 50,
+        "y": 180,
+        "width": 700,
+        "height": 85,
+        "font_size": 28,
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      },
+      {
+        "id": "c",
+        "type": "text",
+        "content": "Offer valid while supplies last.\nSee store for full details.",
+        "x": 50,
+        "y": 400,
+        "width": 700,
+        "height": 90,
+        "font_size": 18,
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "letter_spacing": 0.4,
+        "style_runs": [
+          {
+            "start": 0,
+            "end": 4,
+            "font_weight": "bold"
+          }
+        ]
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 300,
+    "height": 250
+  }
+}

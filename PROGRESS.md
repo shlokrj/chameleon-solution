@@ -4,12 +4,12 @@ Read this first when joining or resuming work. This is the shared current-state 
 
 ## Current state
 
-- **Phase:** M3 complete; M4 complete under the user-confirmed final PDF; submission handled by the user; M5 grouped-label repair and bounded fresh review verified; M5.3 contrast tiebreak remains rejected.
-- **Implementation progress:** 5 of 6 implementation milestones complete (M0–M5; M5 remains in progress). This count is not an effort estimate.
+- **Phase:** M0–M5 complete. M5 closed after bounded independent final review; known dense-copy/logo limitations remain documented. User handles submission.
+- **Implementation progress:** 6 of 6 implementation milestones complete (M0–M5), with documented quality limits. This count is not an effort estimate.
 - **Engine:** bounded candidate search, shared-scale row/column packing, hierarchy-preserving type floor, alpha-aware image packing, post-selection image expansion, plus inferred backing relationships. 75 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [final-box text evidence](agent-kit/runs/m5-tail-copy.md).
-- **Latest verified predecessor:** `6a5433e` on `main`, pulled from origin. This containing commit adds guarded final-box text growth and verification; use Git history to resolve its revision.
-- **Active implementation owners:** none; M5 final-box text claim released.
-- **Next concrete action:** address remaining small grouped labels/logos with a feasible general improvement, or perform a bounded final M5 review with explicit quality limits. Compact Level 3 legal copy now reaches 6.111px without changing peers; seven catalogue layouts improve, but three still have sub-6px text. M4 remains complete; user handles submission.
+- **Latest verified predecessor:** `9dc59b3` on `main`, pulled from origin. This containing commit records independent final review and M5 closure; engine unchanged; use Git history to resolve its revision.
+- **Active implementation owners:** none; final review claims released.
+- **Next concrete action:** user completes the supplied submission form using the verified engine/Dockerfile/README. [M5 closure](agent-kit/runs/m5-final.md) records final checks and remaining quality limits. Future logo/anchoring or dense-copy improvements are separate follow-up tasks; no open implementation milestone remains.
 
 ## Milestone board
 
@@ -23,7 +23,7 @@ The definitions and exit criteria live in [IMPLEMENTATION.md](agent-kit/IMPLEMEN
 | M2 | Bounded selection and repair | complete | [Selection evidence](agent-kit/runs/m2-selection.md); 15 paired cases, bounded/failure behavior verified |
 | M3 | Adversarial hardening | complete | [Bounded-cycle closure](agent-kit/runs/m3-layer-repairs.md); accepted defects repaired, fresh interactions pass, quality limits recorded |
 | M4 | Efficiency and delivery | complete | [Technical verification and closure](agent-kit/runs/m4-final-review.md); current final PDF controls stage-one scope, submission channel supplied by user; M5 quality debt remains |
-| M5 | Composition quality on catalogue formats | in progress | [M5.1 shared-scale packing/type floor, M5.2 alpha-aware bounds](agent-kit/runs/m5-composition.md); M5.3 contrast tiebreak rejected (0/85 selections changed); [Linux validation passed](agent-kit/runs/m5-linux.md); remaining: logo minimum, dense secondary groups, anchoring |
+| M5 | Composition quality on catalogue formats | complete | [Final closure and independent review](agent-kit/runs/m5-final.md); 75 tests, 70 catalogue cases, 42 exact repeats and three fresh cases pass; remaining dense text/logo/anchoring limits documented |
 
 ## Completed steps within M0
 
@@ -50,11 +50,11 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims. Root completed and verified the guarded final-box text repair. M4 remains complete; M5 quality work is still in progress.
+No active claims. Root integrated final evidence; m5_final_review completed three fresh cases and independent adjudication. Engine remains frozen at 9dc59b3; exposed cases are now saved regressions.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
-| — | — | — | — | unassigned | 2026-10-23 America/Chicago | Text repair claim released. Next: remaining M5 quality limits/final review |
+| — | — | — | — | unassigned | 2026-10-23 America/Chicago | Final review claims released. Next: user-owned submission; optional enhancements separate |
 
 Claims are coordination records, not locks. Before editing, re-read this table and check current Git status. Do not overwrite another owner's changes. Assign one integrator for overlapping paths or the shared tracker. In separate clones/branches, reconcile claims through the collaborators' coordination channel; a local Markdown edit cannot reserve remote work. Treat old claims as needing verification, not automatic permission to take over.
 
@@ -123,6 +123,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `docs: close m4 against confirmed final challenge brief` (containing commit) | Read supplied Final Chameleon Challenge (1).pdf; adopted user-confirmed PDF over stale FAQ; recorded submission channel and closed M4 | PDF pages 7–8, 11 and 14 checked; prior unchanged-engine technical evidence retained; form fields inaccessible through web tool | M5 remains open; user submits form; hardware specifics still unspecified, not an engineering blocker |
 
 | `fix: grow final copy into unused text region space` (containing commit) | Added guarded final-box font/height growth with unchanged peers; updated model notes | 75 offline tests, 3 delivery pairs, 70 catalogue cases with seven improvements and no worse loss, 42 exact repeat cases, 9 saved M5 cases; all changed catalogue/review renders inspected; five warm sweeps per revision | M4 complete; M5 remains open, three catalogue cases still have sub-6px copy |
+
+| `test: close m5 with independent final review` (containing commit) | Closed bounded composition milestone; saved three fresh judge cases/report, final catalogue and explicit quality limits | Independent schema/contract/fit/repeat/immutability/render review passes; 15 M3 cases rerun; unchanged-engine 75 tests, 3 delivery pairs, 70 catalogue and 42 exact repeat evidence retained | M0–M5 complete; user owns submission; tiny copy/logos/anchoring remain known limitations |
 
 ## How to update this file
 

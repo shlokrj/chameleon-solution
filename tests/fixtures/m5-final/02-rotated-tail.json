@@ -1,0 +1,52 @@
+{
+  "source": {
+    "canvas": {
+      "width": 800,
+      "height": 800
+    },
+    "elements": [
+      {
+        "id": "d",
+        "type": "text",
+        "content": "Find your balance",
+        "x": 50,
+        "y": 45,
+        "width": 700,
+        "height": 100,
+        "font_size": 44,
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "font_weight": "bold"
+      },
+      {
+        "id": "e",
+        "type": "text",
+        "content": "Choose a slower morning",
+        "x": 50,
+        "y": 200,
+        "width": 700,
+        "height": 80,
+        "font_size": 24,
+        "font_family": "Solstice Sans",
+        "color": "#18352c"
+      },
+      {
+        "id": "f",
+        "type": "text",
+        "content": "Terms apply. Read details before ordering.",
+        "x": 50,
+        "y": 450,
+        "width": 700,
+        "height": 70,
+        "font_size": 18,
+        "font_family": "Solstice Sans",
+        "color": "#18352c",
+        "rotation": 9
+      }
+    ]
+  },
+  "target_canvas": {
+    "width": 468,
+    "height": 100
+  }
+}

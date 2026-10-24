@@ -171,6 +171,8 @@ These call the real renderer, write previews and a report, and exit with an erro
 
 ## Verification status
 
+M0–M5 engineering milestones are complete, including a final independent three-case review. See [M5 closure and known limitations](agent-kit/runs/m5-final.md). Completion describes the bounded project work, not perfect layouts or a guaranteed competition score.
+
 Local efficiency and delivery checks pass: 75 offline tests, three validated JSON/PNG output pairs, and cold/warm profiling through 120-element designs. On the recorded emulated amd64 environment, median warm engine times range from roughly 0.5ms to 270ms; these are local measurements, not competition hardware guarantees. See [M4 evidence](agent-kit/runs/m4-final-review.md).
 
 M4 engineering work is complete under the user-confirmed final challenge PDF: stage one requires the engine, Dockerfile and this README; the full Express add-on is finale work. Offline linux/amd64 execution is verified. The user handles the supplied submission form; its fields and deadline have not been verified here. Exact hardware limits remain unspecified. No runtime model is required. Dense-layout readability limitations above remain open.

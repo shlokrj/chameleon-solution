@@ -39,3 +39,9 @@ Profile first. Cache immutable font/asset metadata and repeated measurements usi
 Try optional local model assistance only if a controlled comparison shows a useful quality gain within offline/resource constraints. Development-time model collaboration does not require inference in the shipped engine. Unconfirmed approved-model rules block claiming such a model is submission-ready.
 
 Exit: complete EVALUATION release checklist and update the concise project README with verified run instructions and limitations.
+
+## Milestone 5: composition quality (completed extension)
+
+M5 extended the original M0–M4 plan with shared-scale packing, alpha-aware images, guarded text fitting and catalogue-based quality improvements. Scope and chronology are recorded in the M5 run records. Closure reviews shipped improvements, rejects unsuccessful probes, verifies offline catalogue/regression evidence and a final fresh independent check, and documents worst-case limitations. It does not require eliminating every visual compromise on arbitrary designs.
+
+Status: complete at frozen engine `9dc59b3`; see [final acceptance record](runs/m5-final.md). Logo minimum sizing, collision-aware corner anchoring and remaining dense-group typography are deferred follow-ups, not claims of solved functionality.

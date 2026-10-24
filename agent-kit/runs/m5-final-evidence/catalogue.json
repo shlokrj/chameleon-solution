@@ -1,0 +1,632 @@
+[
+  {
+    "case": "level1_warmup@ig-square",
+    "issues": [],
+    "selected": 0,
+    "max_font": 60.0,
+    "min_font": 30.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level1_warmup@ig-portrait",
+    "issues": [],
+    "selected": 0,
+    "max_font": 67.0820393249937,
+    "min_font": 33.54101966249685,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level1_warmup@story",
+    "issues": [],
+    "selected": 0,
+    "max_font": 106.66666666666666,
+    "min_font": 53.33333333333333,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level1_warmup@fb-link",
+    "issues": [],
+    "selected": 0,
+    "max_font": 66.66666666666667,
+    "min_font": 33.333333333333336,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level1_warmup@yt-thumb",
+    "issues": [],
+    "selected": 0,
+    "max_font": 71.11111111111111,
+    "min_font": 35.55555555555556,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level1_warmup@twitter-header",
+    "issues": [],
+    "selected": 0,
+    "max_font": 83.33333333333333,
+    "min_font": 41.666666666666664,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level1_warmup@wide-banner",
+    "issues": [],
+    "selected": 0,
+    "max_font": 88.88888888888889,
+    "min_font": 44.44444444444444,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level1_warmup@leaderboard",
+    "issues": [],
+    "selected": 0,
+    "max_font": 40.44444444444444,
+    "min_font": 20.22222222222222,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level1_warmup@med-rect",
+    "issues": [],
+    "selected": 1,
+    "max_font": 16.666666666666668,
+    "min_font": 12.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level1_warmup@skyscraper",
+    "issues": [],
+    "selected": 0,
+    "max_font": 33.333333333333336,
+    "min_font": 16.666666666666668,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level2_core@ig-square",
+    "issues": [],
+    "selected": 0,
+    "max_font": 56.0,
+    "min_font": 18.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level2_core@ig-portrait",
+    "issues": [],
+    "selected": 0,
+    "max_font": 62.609903369994115,
+    "min_font": 20.12461179749811,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level2_core@story",
+    "issues": [],
+    "selected": 0,
+    "max_font": 99.55555555555554,
+    "min_font": 31.999999999999993,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level2_core@fb-link",
+    "issues": [],
+    "selected": 0,
+    "max_font": 62.22222222222223,
+    "min_font": 20.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level2_core@yt-thumb",
+    "issues": [],
+    "selected": 0,
+    "max_font": 66.37037037037037,
+    "min_font": 21.333333333333332,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level2_core@twitter-header",
+    "issues": [],
+    "selected": 0,
+    "max_font": 77.77777777777777,
+    "min_font": 20.239999890327447,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level2_core@wide-banner",
+    "issues": [],
+    "selected": 0,
+    "max_font": 82.96296296296296,
+    "min_font": 16.191999117533364,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level2_core@leaderboard",
+    "issues": [],
+    "selected": 4,
+    "max_font": 36.45821623625579,
+    "min_font": 8.752586364746094,
+    "overflow": [],
+    "loss": 0.01830849881672395
+  },
+  {
+    "case": "level2_core@med-rect",
+    "issues": [],
+    "selected": 5,
+    "max_font": 15.555555555555557,
+    "min_font": 6.349189758300781,
+    "overflow": [],
+    "loss": 0.07576560647723658
+  },
+  {
+    "case": "level2_core@skyscraper",
+    "issues": [],
+    "selected": 0,
+    "max_font": 31.111111111111114,
+    "min_font": 8.010871887207031,
+    "overflow": [],
+    "loss": 0.02931157465205717
+  },
+  {
+    "case": "level3_advanced@ig-square",
+    "issues": [],
+    "selected": 2,
+    "max_font": 40.0,
+    "min_font": 12.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level3_advanced@ig-portrait",
+    "issues": [],
+    "selected": 0,
+    "max_font": 40.0,
+    "min_font": 12.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level3_advanced@story",
+    "issues": [],
+    "selected": 0,
+    "max_font": 40.0,
+    "min_font": 12.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level3_advanced@fb-link",
+    "issues": [],
+    "selected": 3,
+    "max_font": 43.85935465494791,
+    "min_font": 12.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level3_advanced@yt-thumb",
+    "issues": [],
+    "selected": 2,
+    "max_font": 46.47352430555556,
+    "min_font": 13.942057291666666,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level3_advanced@twitter-header",
+    "issues": [],
+    "selected": 3,
+    "max_font": 45.96116807725694,
+    "min_font": 12.59368409713109,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level3_advanced@wide-banner",
+    "issues": [],
+    "selected": 1,
+    "max_font": 43.81894712094906,
+    "min_font": 12.319233682420517,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "level3_advanced@leaderboard",
+    "issues": [],
+    "selected": 4,
+    "max_font": 10.870493570963543,
+    "min_font": 4.908393859863281,
+    "overflow": [],
+    "loss": 0.22297474749210847
+  },
+  {
+    "case": "level3_advanced@med-rect",
+    "issues": [],
+    "selected": 2,
+    "max_font": 11.11111111111111,
+    "min_font": 5.158695220947266,
+    "overflow": [],
+    "loss": 0.21690288786319778
+  },
+  {
+    "case": "level3_advanced@skyscraper",
+    "issues": [],
+    "selected": 1,
+    "max_font": 14.093695746527777,
+    "min_font": 4.733371734619141,
+    "overflow": [],
+    "loss": 0.22238074762324522
+  },
+  {
+    "case": "editorial@ig-square",
+    "issues": [],
+    "selected": 0,
+    "max_font": 62.4,
+    "min_font": 21.599999999999998,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "editorial@ig-portrait",
+    "issues": [],
+    "selected": 0,
+    "max_font": 69.76532089799343,
+    "min_font": 24.149534156997728,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "editorial@story",
+    "issues": [],
+    "selected": 0,
+    "max_font": 110.93333333333334,
+    "min_font": 38.4,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "editorial@fb-link",
+    "issues": [],
+    "selected": 0,
+    "max_font": 69.33333333333333,
+    "min_font": 24.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "editorial@yt-thumb",
+    "issues": [],
+    "selected": 0,
+    "max_font": 73.95555555555556,
+    "min_font": 25.6,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "editorial@twitter-header",
+    "issues": [],
+    "selected": 0,
+    "max_font": 86.66666666666667,
+    "min_font": 30.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "editorial@wide-banner",
+    "issues": [],
+    "selected": 0,
+    "max_font": 90.43117947048611,
+    "min_font": 31.303100585937504,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "editorial@leaderboard",
+    "issues": [],
+    "selected": 0,
+    "max_font": 21.339825846354174,
+    "min_font": 10.0,
+    "overflow": [],
+    "loss": 0.010015853527658544
+  },
+  {
+    "case": "editorial@med-rect",
+    "issues": [],
+    "selected": 1,
+    "max_font": 17.333333333333332,
+    "min_font": 10.0,
+    "overflow": [],
+    "loss": 0.020833333333333325
+  },
+  {
+    "case": "editorial@skyscraper",
+    "issues": [],
+    "selected": 0,
+    "max_font": 34.666666666666664,
+    "min_font": 12.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "catalog@ig-square",
+    "issues": [],
+    "selected": 0,
+    "max_font": 50.4,
+    "min_font": 24.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "catalog@ig-portrait",
+    "issues": [],
+    "selected": 0,
+    "max_font": 56.348913032994695,
+    "min_font": 26.832815729997478,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "catalog@story",
+    "issues": [],
+    "selected": 0,
+    "max_font": 89.6,
+    "min_font": 40.56656138102213,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "catalog@fb-link",
+    "issues": [],
+    "selected": 0,
+    "max_font": 56.0,
+    "min_font": 26.666666666666664,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "catalog@yt-thumb",
+    "issues": [],
+    "selected": 0,
+    "max_font": 59.733333333333334,
+    "min_font": 28.444444444444446,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "catalog@twitter-header",
+    "issues": [],
+    "selected": 0,
+    "max_font": 70.0,
+    "min_font": 31.624998648961387,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "catalog@wide-banner",
+    "issues": [],
+    "selected": 0,
+    "max_font": 74.66666666666666,
+    "min_font": 25.299998389350044,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "catalog@leaderboard",
+    "issues": [],
+    "selected": 2,
+    "max_font": 29.29679016113282,
+    "min_font": 11.921867370605469,
+    "overflow": [],
+    "loss": 1.0598451000179233e-05
+  },
+  {
+    "case": "catalog@med-rect",
+    "issues": [],
+    "selected": 2,
+    "max_font": 14.0,
+    "min_font": 7.984352111816406,
+    "overflow": [],
+    "loss": 0.05281874455080368
+  },
+  {
+    "case": "catalog@skyscraper",
+    "issues": [],
+    "selected": 0,
+    "max_font": 28.0,
+    "min_font": 12.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "event@ig-square",
+    "issues": [],
+    "selected": 0,
+    "max_font": 57.599999999999994,
+    "min_font": 23.999999999999993,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "event@ig-portrait",
+    "issues": [],
+    "selected": 0,
+    "max_font": 64.39875775199394,
+    "min_font": 26.832815729997478,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "event@story",
+    "issues": [],
+    "selected": 0,
+    "max_font": 102.4,
+    "min_font": 36.671732584635414,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "event@fb-link",
+    "issues": [],
+    "selected": 0,
+    "max_font": 64.0,
+    "min_font": 23.500024477640785,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "event@yt-thumb",
+    "issues": [],
+    "selected": 0,
+    "max_font": 68.26666666666667,
+    "min_font": 26.942703247070312,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "event@twitter-header",
+    "issues": [],
+    "selected": 3,
+    "max_font": 80.0,
+    "min_font": 25.513923168182373,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "event@wide-banner",
+    "issues": [],
+    "selected": 3,
+    "max_font": 84.60514322916666,
+    "min_font": 20.41113959418402,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "event@leaderboard",
+    "issues": [],
+    "selected": 4,
+    "max_font": 28.682477213541663,
+    "min_font": 11.999958038330078,
+    "overflow": [],
+    "loss": 3.0569127475609717e-12
+  },
+  {
+    "case": "event@med-rect",
+    "issues": [],
+    "selected": 2,
+    "max_font": 16.0,
+    "min_font": 8.578109741210938,
+    "overflow": [],
+    "loss": 0.030973784543498875
+  },
+  {
+    "case": "event@skyscraper",
+    "issues": [],
+    "selected": 1,
+    "max_font": 32.0,
+    "min_font": 12.0,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "dense-labels@ig-square",
+    "issues": [],
+    "selected": 0,
+    "max_font": 45.6,
+    "min_font": 16.8,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "dense-labels@ig-portrait",
+    "issues": [],
+    "selected": 0,
+    "max_font": 48.2911749434976,
+    "min_font": 17.791485505499118,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "dense-labels@story",
+    "issues": [],
+    "selected": 0,
+    "max_font": 81.06666666666666,
+    "min_font": 29.866666666666667,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "dense-labels@fb-link",
+    "issues": [],
+    "selected": 1,
+    "max_font": 50.666666666666664,
+    "min_font": 18.666666666666664,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "dense-labels@yt-thumb",
+    "issues": [],
+    "selected": 1,
+    "max_font": 54.044444444444444,
+    "min_font": 19.91111111111111,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "dense-labels@twitter-header",
+    "issues": [],
+    "selected": 0,
+    "max_font": 63.333333333333336,
+    "min_font": 21.69230580329895,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "dense-labels@wide-banner",
+    "issues": [],
+    "selected": 0,
+    "max_font": 67.55555555555556,
+    "min_font": 23.5076904296875,
+    "overflow": [],
+    "loss": 0.0
+  },
+  {
+    "case": "dense-labels@leaderboard",
+    "issues": [],
+    "selected": 4,
+    "max_font": 21.136677924262155,
+    "min_font": 8.343711853027344,
+    "overflow": [],
+    "loss": 0.02377308906226163
+  },
+  {
+    "case": "dense-labels@med-rect",
+    "issues": [],
+    "selected": 1,
+    "max_font": 12.666666666666666,
+    "min_font": 7.968742370605469,
+    "overflow": [],
+    "loss": 0.05893626484498069
+  },
+  {
+    "case": "dense-labels@skyscraper",
+    "issues": [],
+    "selected": 3,
+    "max_font": 25.333333333333332,
+    "min_font": 12.0,
+    "overflow": [],
+    "loss": 0.0
+  }
+]
