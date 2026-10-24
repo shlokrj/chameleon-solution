@@ -177,6 +177,8 @@ Local efficiency and delivery checks pass: 75 offline tests, three validated JSO
 
 M4 engineering work is complete under the user-confirmed final challenge PDF: stage one requires the engine, Dockerfile and this README; the full Express add-on is finale work. Offline linux/amd64 execution is verified. The user handles the supplied submission form; its fields and deadline have not been verified here. Exact hardware limits remain unspecified. No runtime model is required. Dense-layout readability limitations above remain open.
 
+For the final repository/source-ZIP handoff and submission steps, see [SUBMISSION.md](SUBMISSION.md).
+
 ## See also
 
 - `chameleon_design_schema_v0.9.json`: the field-by-field design format

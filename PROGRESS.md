@@ -7,7 +7,7 @@ Read this first when joining or resuming work. This is the shared current-state 
 - **Phase:** M0–M5 complete. M5 closed after bounded independent final review; known dense-copy/logo limitations remain documented. User handles submission.
 - **Implementation progress:** 6 of 6 implementation milestones complete (M0–M5), with documented quality limits. This count is not an effort estimate.
 - **Engine:** bounded candidate search, shared-scale row/column packing, hierarchy-preserving type floor, alpha-aware image packing, post-selection image expansion, plus inferred backing relationships. 75 offline Linux tests pass; all three production pairs validate; 70 catalogue cases have no contract/overflow findings; 42 Linux cases repeat exactly. See [final-box text evidence](agent-kit/runs/m5-tail-copy.md).
-- **Latest verified predecessor:** `9dc59b3` on `main`, pulled from origin. This containing commit records independent final review and M5 closure; engine unchanged; use Git history to resolve its revision.
+- **Latest verified predecessor:** `3cacf66` on `main`, pulled from origin. This containing commit adds the final submission handoff and resolves stale spec wording; engine unchanged; use Git history to resolve its revision.
 - **Active implementation owners:** none; final review claims released.
 - **Next concrete action:** user completes the supplied submission form using the verified engine/Dockerfile/README. [M5 closure](agent-kit/runs/m5-final.md) records final checks and remaining quality limits. Future logo/anchoring or dense-copy improvements are separate follow-up tasks; no open implementation milestone remains.
 
@@ -50,7 +50,7 @@ M2 evidence: [paired selection run](agent-kit/runs/m2-selection.md).
 
 ## Active work and ownership
 
-No active claims. Root integrated final evidence; m5_final_review completed three fresh cases and independent adjudication. Engine remains frozen at 9dc59b3; exposed cases are now saved regressions.
+No active claims. Final handoff is in SUBMISSION.md. Production remains frozen at 9dc59b3; final review cases are saved regressions.
 
 | Task ID | Owner / session | Branch / worktree | Claimed paths | State | Last update (with timezone) | Next action / handoff |
 |---|---|---|---|---|---|---|
@@ -125,6 +125,8 @@ Keep entries concise and factual. Use a stable change label when the containing 
 | `fix: grow final copy into unused text region space` (containing commit) | Added guarded final-box font/height growth with unchanged peers; updated model notes | 75 offline tests, 3 delivery pairs, 70 catalogue cases with seven improvements and no worse loss, 42 exact repeat cases, 9 saved M5 cases; all changed catalogue/review renders inspected; five warm sweeps per revision | M4 complete; M5 remains open, three catalogue cases still have sub-6px copy |
 
 | `test: close m5 with independent final review` (containing commit) | Closed bounded composition milestone; saved three fresh judge cases/report, final catalogue and explicit quality limits | Independent schema/contract/fit/repeat/immutability/render review passes; 15 M3 cases rerun; unchanged-engine 75 tests, 3 delivery pairs, 70 catalogue and 42 exact repeat evidence retained | M0–M5 complete; user owns submission; tiny copy/logos/anchoring remain known limitations |
+
+| `docs: finalize stage-one submission handoff` (containing commit) | Added source/repository submission instructions and evidence links; removed stale viewer-blocker wording from spec | Documentation links, whitespace and archive contents checked; existing unchanged-engine verification retained | All engineering milestones complete; user completes form and supplies team/access details |
 
 ## How to update this file
 

@@ -39,4 +39,4 @@ These are evaluation categories, not published numerical weights. The official s
 
 ## Deliverables
 
-Engine, Dockerfile/dependencies, short run/approach README, reproducible validation evidence. Both returned JSON and its real rendered PNG matter. Viewer/add-on timing, approved models, model size limits, and hardware details remain unresolved in [SOURCES.md](SOURCES.md). Do not start a viewer as part of engine implementation without checking scope.
+Engine, Dockerfile/dependencies, short run/approach README, reproducible validation evidence. Both returned JSON and its real rendered PNG matter. Under the user-confirmed final PDF, stage one requires the engine, Dockerfile and README; the full Express add-on is finale work. The user owns the supplied submission form. Model rules are currently inapplicable because the engine uses no runtime model; exact hardware details remain unspecified. See [SOURCES.md](SOURCES.md).
