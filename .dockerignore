@@ -1,4 +1,4 @@
-# Send only the files used by the production image.
+# Limit the build context to production and verification inputs.
 **
 !Dockerfile
 !requirements.txt
