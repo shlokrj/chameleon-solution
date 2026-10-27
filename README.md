@@ -2,13 +2,11 @@
 
 Made by **Shlok Jadhav** and **Aadithya Balaji** for the **Adobe University Hackathon: North America 2026**.
 
-Chameleon rearranges an existing design for a new canvas size. It returns the same text, images, and shapes with updated positions, dimensions, and font sizes, then renders a PNG using the supplied brand assets.
+Chameleon rearranges text, images, and shapes to fit a new canvas size. It preserves the source content and brand assets, and produces a resized JSON design and a rendered PNG. No model, API key, or internet connection is needed at runtime.
 
-The engine is deterministic within the same runtime environment. It uses no model or external API and runs offline after installation.
+## Run
 
-## Run with Docker
-
-From the repository root, with Docker running:
+With Docker running, execute these commands from the repository root:
 
 ```sh
 mkdir -p output
@@ -18,16 +16,11 @@ docker run --rm --platform linux/amd64 --network none \
   -v "$(pwd)/output:/app/output" chameleon-engine
 ```
 
-The build downloads dependencies; execution requires no network access. Each task in `input/` produces two files in `output/`:
+Dependencies are downloaded during the build. The engine processes every JSON task in `input/` and writes `<task>_output.json` and `<task>_output.png` to `output/`.
 
-- `<task>_output.json`: the resized design
-- `<task>_output.png`: the rendered preview
+Three [sample tasks](input/) are included. Each task has a `source` design and a `target_canvas` with `width` and `height`. The full format is defined in the [design schema](chameleon_design_schema_v0.9.json).
 
-Three sample tasks are included. To process another design, add a JSON file to `input/` with `source` and `target_canvas` fields. The source contains a `canvas` and an `elements` list; the target specifies `width` and `height`. See the [design schema](chameleon_design_schema_v0.9.json) and [sample tasks](input/).
-
-## Run locally
-
-Use Python 3.12. The Docker image uses Python 3.12.13 and pinned package versions.
+For local development, use Python 3.12:
 
 ```sh
 python3.12 -m venv .venv
@@ -36,64 +29,28 @@ pip install -r requirements.txt
 python -m engine.main
 ```
 
-Font measurements can differ between macOS and Linux. Use the Docker output for final checks.
+Use Docker for final validation: font measurements can differ between macOS and Linux.
 
-## Approach
+## How it works
 
-The entry point is `resize(source, target_canvas)` in [engine/resize.py](engine/resize.py).
+The engine implements `resize(source, target_canvas)` in [engine/resize.py](engine/resize.py).
 
-1. **Identify layout units.** Explicit groups move together. Geometry and stacking order identify text that belongs on a backing panel or image. Backgrounds and decorations are handled separately.
-2. **Preserve or reflow.** Similar canvas proportions retain the source arrangement where feasible. Larger changes use image, text, and grouped-content regions, with row or column packing.
-3. **Compare up to six layouts.** Candidates vary the space assigned to each region. Structural checks reject invalid geometry and changed source properties. Regression checks limit text/image shrinkage relative to the initial candidate. Remaining layouts are ranked by text overflow, readability, hierarchy, overlap, and backing relationships.
-4. **Use spare space.** Images and text can grow within their selected regions, subject to bounds, fit, spacing, and hierarchy checks. Transparent image padding is excluded when measuring visible content. Text fitting uses the renderer's actual fonts and wrapping behavior.
+It keeps explicit groups and inferred text/backing relationships together. Similar canvas proportions retain the original arrangement where feasible; larger changes reflow content into image, text, and grouped-content regions.
 
-Text content, font families, asset references, styling, and element identities are preserved. Ordinary images keep their proportions; existing cover backgrounds retain their cropping behavior. Shape corner radii and stroke widths scale with their groups. The engine does not regenerate assets or rewrite copy.
+Up to six layouts are compared using structural checks, text fit, hierarchy, overlap, and readability estimates. Text is measured with the renderer's fonts. Image sizing accounts for transparent padding. Final adjustments use spare space without changing the selected arrangement or accepting worse fit and hierarchy scores.
 
-The quality measures are local heuristics, not the official scoring system. Font-size targets guide fitting but are not guaranteed minimums.
+Text content, font families, element IDs, and asset references are preserved. Ordinary images keep their proportions; existing cover backgrounds retain their cropping behavior. The engine does not rewrite copy or regenerate image assets. Selection is deterministic within the same runtime environment and does not branch on sample IDs or exact target sizes.
 
-## Code layout
-
-| Path | Purpose |
-|---|---|
-| `engine/resize.py` | Candidate selection and final text refinements |
-| `engine/layout.py` | Layout regions, packing, image sizing, and text placement |
-| `engine/typography.py` | Font measurements and bounded text fitting |
-| `engine/relationships.py` | Backing-panel relationships |
-| `engine/quality.py` | Structural checks and layout metrics |
-| `engine/main.py` | Input/output and rendering |
-| `renderer/` | Conversion to the supplied rendering format |
-| `brand_kit/` | Original assets and fonts |
-| `tests/`, `evaluation/` | Regression tests and validation tools |
-
-## Validation
-
-Run the container checks:
+## Tests
 
 ```sh
 ./scripts/verify-container.sh
 ```
 
-This builds production and verification images, runs the unit tests offline, processes the three samples, and independently checks the output JSON and rendered PNGs.
-
-For local development:
-
-```sh
-pip install -r requirements-dev.txt
-python -m unittest discover -s tests -v
-python -m evaluation.catalogue --output artifacts/catalogue
-python -m evaluation.regressions --output artifacts/regressions
-python -m evaluation.parity --output artifacts/parity
-python -m evaluation.profile --output artifacts/profile
-```
-
-The validated engine passes 75 unit tests, all three sample delivery checks, and structural/text-fit checks across 70 catalogue layouts. Repeated evaluation of 42 cases produced identical designs and rendered pixels in Linux. These checks cover the included cases, not every possible design. See [tests/README.md](tests/README.md) for additional regression fixtures.
+This builds both images, runs 75 unit tests offline, processes the three supplied tasks, and validates output structure and rendered pixels. Additional evaluation covers 70 catalogue layouts and exact repeatability across 42 cases. These are local checks, not official scores. See [tests/README.md](tests/README.md) for regression commands.
 
 ## Limitations
 
-- Dense content in small canvases can still produce tiny text. The Level 3 sample has labels below 6px in the 728×90, 300×250, and 160×600 formats.
-- Logos can remain small beside large product images. Source contrast is preserved, so low-contrast branding may remain difficult to read.
-- Corner badges may be reflowed into a content region rather than kept at the same corner.
-- Overlapping text boxes are handled conservatively, and rotated text is excluded from some final font-growth passes.
-- The Level 3 sample intentionally references a missing holiday badge. It renders as a labelled placeholder; no replacement asset is supplied.
+Dense layouts can still have small text: some Level 3 labels are below 6px in small banner, rectangle, and tall formats. Logos may remain small or low-contrast, and corner badges may move into a content region. The intentionally missing Level 3 holiday badge renders as a labelled placeholder.
 
-The original challenge rules are in [RULES.md](RULES.md). The supplied final challenge PDF takes precedence over older FAQ wording about the viewer: stage one requires the engine, Dockerfile, and README; the full Express add-on belongs to the finale.
+This is the stage-one engine submission. The final challenge brief places the full Adobe Express add-on in the finale.
