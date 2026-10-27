@@ -1,5 +1,7 @@
 # Chameleon
 
+Made by **Shlok Jadhav** and **Aadithya Balaji** for the **Adobe University Hackathon: North America 2026**.
+
 Chameleon rearranges an existing design for a new canvas size. It returns the same text, images, and shapes with updated positions, dimensions, and font sizes, then renders a PNG using the supplied brand assets.
 
 The engine is deterministic within the same runtime environment. It uses no model or external API and runs offline after installation.
